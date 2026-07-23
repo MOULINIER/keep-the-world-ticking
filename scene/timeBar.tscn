@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cnrxsly7ry5y5"]
+
+[ext_resource type="Script" uid="uid://pbct20kk7htk" path="res://time_bar_node_2d.gd" id="1_wuwmj"]
+[ext_resource type="Texture2D" uid="uid://dp36x08m5xwnr" path="res://assets/placeHolderUnderProgressBar.png" id="2_qvmsr"]
+[ext_resource type="Texture2D" uid="uid://lhbb1mn5pm6t" path="res://assets/placeHolderFullProgressBar.png" id="3_i7kqv"]
+[ext_resource type="Texture2D" uid="uid://o1ehwg2sel3e" path="res://assets/placeHolderUnpressedButton.png" id="4_i7kqv"]
+[ext_resource type="Texture2D" uid="uid://bm6jaup8kvev2" path="res://assets/placeHolderPressedButton.png" id="5_4cf4v"]
+
+[node name="TimeBarNode2D" type="Node2D" unique_id=1719118476]
+script = ExtResource("1_wuwmj")
+
+[node name="Timer" type="Timer" parent="." unique_id=1932198095]
+process_callback = 0
+wait_time = 10.0
+one_shot = true
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=19530654]
+offset_left = 53.0
+offset_top = 53.0
+offset_right = 253.0
+offset_bottom = 253.0
+action_mode = 0
+texture_normal = ExtResource("4_i7kqv")
+texture_pressed = ExtResource("5_4cf4v")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1943228863]
+offset_left = 3.0
+offset_top = 30.0
+offset_right = 313.0
+offset_bottom = 75.0
+value = 100.0
+texture_under = ExtResource("2_qvmsr")
+texture_progress = ExtResource("3_i7kqv")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

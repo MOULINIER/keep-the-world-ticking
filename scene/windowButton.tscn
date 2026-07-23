@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b7wjnphq1sfs0"]
+
+[ext_resource type="Script" uid="uid://bqt6fhus82m0r" path="res://Scripts/window_button.gd" id="1_bqmkv"]
+[ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_r4apc"]
+[ext_resource type="Texture2D" uid="uid://b106rey4ej32c" path="res://icon.svg" id="2_bqmkv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bqmkv"]
+width = 128
+height = 128
+
+[node name="Node2D" type="Node2D" unique_id=136743137]
+script = ExtResource("1_bqmkv")
+
+[node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_r4apc")]
+
+[node name="Label" type="Label" parent="Window" unique_id=166285898]
+z_index = 1
+offset_left = -121.0
+offset_top = -151.0
+offset_right = -81.0
+offset_bottom = -128.0
+text = "dsd"
+
+[node name="TextureButton" type="TextureButton" parent="Window" unique_id=1866224545]
+offset_left = -66.0
+offset_top = -62.0
+offset_right = 62.0
+offset_bottom = 66.0
+action_mode = 0
+texture_normal = ExtResource("2_bqmkv")
+texture_pressed = SubResource("NoiseTexture2D_bqmkv")
+
+[node name="Timer" type="Timer" parent="." unique_id=1618922403]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="Window/TextureButton" to="." method="_on_texture_button_pressed"]

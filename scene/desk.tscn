@@ -2,8 +2,39 @@
 
 [ext_resource type="Texture2D" uid="uid://pr576mcev6v6" path="res://assets/placeHolderDesk.png" id="1_p4wh1"]
 
-[node name="Desk" type="Node2D" unique_id=633662642]
+[sub_resource type="GDScript" id="GDScript_p4wh1"]
+script/source = "extends Node2D
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1825315184]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_computer_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		get_tree().change_scene_to_file(\"res://scene/computer.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4wh1"]
+size = Vector2(194, 172)
+
+[node name="DeskNode2D" type="Node2D" unique_id=633662642]
+script = SubResource("GDScript_p4wh1")
+
+[node name="DeskSprite" type="Sprite2D" parent="." unique_id=1825315184]
 texture = ExtResource("1_p4wh1")
 centered = false
+
+[node name="ComputerArea" type="Area2D" parent="DeskSprite" unique_id=411643514]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeskSprite/ComputerArea" unique_id=470789181]
+position = Vector2(1104, 473)
+shape = SubResource("RectangleShape2D_p4wh1")
+
+[connection signal="input_event" from="DeskSprite/ComputerArea" to="." method="_on_computer_area_input_event"]

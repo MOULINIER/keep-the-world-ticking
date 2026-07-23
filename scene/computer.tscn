@@ -28,9 +28,13 @@ position = Vector2(9.507034, -2)
 shape = SubResource("RectangleShape2D_svdou")
 
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("3_tdtlj")]
-position = Vector2(671, 439)
+position = Vector2(532, 503)
+script = SubResource("GDScript_qamey")
 
 [node name="WindowTest1" parent="." unique_id=136743137 instance=ExtResource("4_cxrug")]
-position = Vector2(1212, 423)
+position = Vector2(1508, 468)
+
+[node name="Node2D" parent="." unique_id=1296321778 instance=ExtResource("6_g6mmx")]
+position = Vector2(994, 370)
 
 [connection signal="input_event" from="BackButton/BackArea" to="." method="_on_back_area_input_event"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dldg6uf1rh6mw"]
+
+[ext_resource type="Texture2D" uid="uid://cvfjymb0gmocs" path="res://assets/placeHolderComputer.png" id="1_ty6n0"]
+
+[node name="Node2D" type="Node2D" unique_id=1027316699]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=272829031]
+texture = ExtResource("1_ty6n0")
+centered = false

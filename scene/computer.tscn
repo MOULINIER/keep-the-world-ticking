@@ -1,34 +1,16 @@
 [gd_scene format=3 uid="uid://dldg6uf1rh6mw"]
 
+[ext_resource type="Script" uid="uid://cgaceuugmskfl" path="res://Scripts/computer.gd" id="1_36qyv"]
 [ext_resource type="Texture2D" uid="uid://cvfjymb0gmocs" path="res://assets/placeHolderComputer.png" id="1_ty6n0"]
 [ext_resource type="Texture2D" uid="uid://djgqdwslnwl0" path="res://assets/placeHolderBackArrow.png" id="2_q4rav"]
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="3_tdtlj"]
 [ext_resource type="PackedScene" uid="uid://bq46welpa5pdw" path="res://scene/windowTest1.tscn" id="4_cxrug"]
 
-[sub_resource type="GDScript" id="GDScript_p4wh1"]
-script/source = "extends Node2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_back_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		get_tree().change_scene_to_file(\"res://scene/desk.tscn\")
-		
-"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
 size = Vector2(276.76056, 74)
 
 [node name="ComputerNode2D" type="Node2D" unique_id=1027316699]
-script = SubResource("GDScript_p4wh1")
+script = ExtResource("1_36qyv")
 
 [node name="ComputerSprite" type="Sprite2D" parent="." unique_id=272829031]
 texture = ExtResource("1_ty6n0")

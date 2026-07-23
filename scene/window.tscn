@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dnpuulanrl0yb"]
+
+[ext_resource type="Texture2D" uid="uid://br1bh6kmijutx" path="res://assets/placeHolderWindow.png" id="1_aitir"]
+
+[sub_resource type="GDScript" id="GDScript_qamey"]
+script/source = "extends Node2D
+
+var mousePos : Vector2 = Vector2.ZERO
+var difference : Vector2
+var mouseIn : bool
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	difference = mousePos - get_global_mouse_position()
+	if Input.is_action_pressed(\"Click\") and mouseIn and difference != Vector2.ZERO:
+		global_position -= difference
+	mousePos = get_global_mouse_position()
+
+
+
+func _on_move_window_area_mouse_entered() -> void:
+	mouseIn = true
+
+
+func _on_move_window_area_mouse_exited() -> void:
+	mouseIn = false
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x567"]
+size = Vector2(400, 24)
+
+[node name="Window" type="Node2D" unique_id=341003668]
+script = SubResource("GDScript_qamey")
+
+[node name="windowSprite" type="Sprite2D" parent="." unique_id=1230029786]
+texture = ExtResource("1_aitir")
+
+[node name="moveWindowArea" type="Area2D" parent="windowSprite" unique_id=1784525188]
+position = Vector2(-173, -127)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="windowSprite/moveWindowArea" unique_id=1700177945]
+position = Vector2(173, -11)
+shape = SubResource("RectangleShape2D_2x567")
+
+[connection signal="mouse_entered" from="windowSprite/moveWindowArea" to="." method="_on_move_window_area_mouse_entered"]
+[connection signal="mouse_exited" from="windowSprite/moveWindowArea" to="." method="_on_move_window_area_mouse_exited"]

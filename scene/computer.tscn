@@ -2,10 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cvfjymb0gmocs" path="res://assets/placeHolderComputer.png" id="1_ty6n0"]
 [ext_resource type="Texture2D" uid="uid://djgqdwslnwl0" path="res://assets/placeHolderBackArrow.png" id="2_q4rav"]
+[ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="3_tdtlj"]
+[ext_resource type="PackedScene" uid="uid://bq46welpa5pdw" path="res://scene/windowTest1.tscn" id="4_cxrug"]
 
 [sub_resource type="GDScript" id="GDScript_p4wh1"]
 script/source = "extends Node2D
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +21,7 @@ func _process(delta: float) -> void:
 func _on_back_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		get_tree().change_scene_to_file(\"res://scene/desk.tscn\")
+		
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
@@ -42,5 +44,11 @@ texture = ExtResource("2_q4rav")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackButton/BackArea" unique_id=1607075101]
 position = Vector2(9.507034, -2)
 shape = SubResource("RectangleShape2D_svdou")
+
+[node name="Window" parent="." unique_id=341003668 instance=ExtResource("3_tdtlj")]
+position = Vector2(671, 439)
+
+[node name="WindowTest1" parent="." unique_id=136743137 instance=ExtResource("4_cxrug")]
+position = Vector2(1212, 423)
 
 [connection signal="input_event" from="BackButton/BackArea" to="." method="_on_back_area_input_event"]

@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://djgqdwslnwl0" path="res://assets/placeHolderBackArrow.png" id="2_q4rav"]
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="3_tdtlj"]
 [ext_resource type="PackedScene" uid="uid://bq46welpa5pdw" path="res://scene/windowTest1.tscn" id="4_cxrug"]
+[ext_resource type="PackedScene" uid="uid://b7wjnphq1sfs0" path="res://scene/windowButton.tscn" id="6_g6mmx"]
+[ext_resource type="PackedScene" uid="uid://dqmisvqi02sk4" path="res://scene/windowTimeBar.tscn" id="7_a8nm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
 size = Vector2(276.76056, 74)
@@ -28,13 +30,15 @@ position = Vector2(9.507034, -2)
 shape = SubResource("RectangleShape2D_svdou")
 
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("3_tdtlj")]
-position = Vector2(532, 503)
-script = SubResource("GDScript_qamey")
+position = Vector2(482, 259)
 
 [node name="WindowTest1" parent="." unique_id=136743137 instance=ExtResource("4_cxrug")]
-position = Vector2(1508, 468)
+position = Vector2(1381, 272)
 
-[node name="Node2D" parent="." unique_id=1296321778 instance=ExtResource("6_g6mmx")]
-position = Vector2(994, 370)
+[node name="WindowButtonTest" parent="." unique_id=1614833038 instance=ExtResource("6_g6mmx")]
+position = Vector2(635, 591)
+
+[node name="Node2D" parent="WindowButtonTest" unique_id=1296321778 instance=ExtResource("7_a8nm8")]
+position = Vector2(733, 17)
 
 [connection signal="input_event" from="BackButton/BackArea" to="." method="_on_back_area_input_event"]

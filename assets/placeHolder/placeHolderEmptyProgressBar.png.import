@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cinpa1eutxvn0"
-path="res://.godot/imported/placeHolderEmptyProgressBar.png-49004b325a5baa36a8e1cfba3e7c0db6.ctex"
+path="res://.godot/imported/placeHolderEmptyProgressBar.png-62ca1c23692c55b626bd5df54be73500.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeHolderEmptyProgressBar.png"
-dest_files=["res://.godot/imported/placeHolderEmptyProgressBar.png-49004b325a5baa36a8e1cfba3e7c0db6.ctex"]
+source_file="res://assets/placeHolder/placeHolderEmptyProgressBar.png"
+dest_files=["res://.godot/imported/placeHolderEmptyProgressBar.png-62ca1c23692c55b626bd5df54be73500.ctex"]
 
 [params]
 

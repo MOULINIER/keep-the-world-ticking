@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o1ehwg2sel3e"
-path="res://.godot/imported/placeHolderUnpressedButton.png-4ec655341097d31d64aa64c1c346ce6a.ctex"
+uid="uid://b4x3jcamqn1ye"
+path="res://.godot/imported/placeHolderProgressBarOrange.png-bb04c6430e0c1af4fd87cd82d59695cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeHolderUnpressedButton.png"
-dest_files=["res://.godot/imported/placeHolderUnpressedButton.png-4ec655341097d31d64aa64c1c346ce6a.ctex"]
+source_file="res://assets/placeHolder/placeHolderProgressBarOrange.png"
+dest_files=["res://.godot/imported/placeHolderProgressBarOrange.png-bb04c6430e0c1af4fd87cd82d59695cb.ctex"]
 
 [params]
 

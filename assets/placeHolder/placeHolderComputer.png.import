@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pr576mcev6v6"
-path="res://.godot/imported/placeHolderDesk.png-8f3ac884296bb2c60cc8270722f3ca03.ctex"
+uid="uid://cvfjymb0gmocs"
+path="res://.godot/imported/placeHolderComputer.png-0a966af2207775566e3f09d14e180c21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeHolderDesk.png"
-dest_files=["res://.godot/imported/placeHolderDesk.png-8f3ac884296bb2c60cc8270722f3ca03.ctex"]
+source_file="res://assets/placeHolder/placeHolderComputer.png"
+dest_files=["res://.godot/imported/placeHolderComputer.png-0a966af2207775566e3f09d14e180c21.ctex"]
 
 [params]
 

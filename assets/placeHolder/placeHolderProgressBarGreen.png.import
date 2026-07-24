@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djgqdwslnwl0"
-path="res://.godot/imported/placeHolderBackArrow.png-ba09f140f6aa121e9aabe23856866ba4.ctex"
+uid="uid://ftpamix5fdt8"
+path="res://.godot/imported/placeHolderProgressBarGreen.png-c862dba949cf3fa46dad5f97433d56ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeHolderBackArrow.png"
-dest_files=["res://.godot/imported/placeHolderBackArrow.png-ba09f140f6aa121e9aabe23856866ba4.ctex"]
+source_file="res://assets/placeHolder/placeHolderProgressBarGreen.png"
+dest_files=["res://.godot/imported/placeHolderProgressBarGreen.png-c862dba949cf3fa46dad5f97433d56ff.ctex"]
 
 [params]
 

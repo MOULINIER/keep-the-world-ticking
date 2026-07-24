@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bq46welpa5pdw"]
 
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_edu0v"]
+[ext_resource type="Script" uid="uid://br7e4bgw86xaq" path="res://scene/window_test_1.gd" id="1_emwb5"]
 [ext_resource type="Texture2D" uid="uid://b106rey4ej32c" path="res://icon.svg" id="2_emwb5"]
 
 [node name="Node2D" type="Node2D" unique_id=136743137]
+script = ExtResource("1_emwb5")
 
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_edu0v")]
 

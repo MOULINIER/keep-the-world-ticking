@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cptsluyhht4ke"]
 
-[ext_resource type="Texture2D" uid="uid://pr576mcev6v6" path="res://assets/placeHolderDesk.png" id="1_p4wh1"]
+[ext_resource type="Texture2D" uid="uid://pr576mcev6v6" path="res://assets/placeHolder/placeHolderDesk.png" id="1_p4wh1"]
 [ext_resource type="Script" uid="uid://5n8wlpiikbqn" path="res://Scripts/desk.gd" id="1_tvw7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4wh1"]

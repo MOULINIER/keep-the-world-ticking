@@ -1,26 +1,37 @@
 extends Node2D
 
-var mousePos : Vector2 = Vector2.ZERO
-var difference : Vector2
+var mouseInMove : bool
 var mouseIn : bool
+var onTop : bool
+var shouldMove : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	difference = mousePos - get_global_mouse_position()
-	if Input.is_action_pressed("Click") and mouseIn and difference != Vector2.ZERO:
-		global_position -= difference
-	mousePos = get_global_mouse_position()
+	if  mouseIn and ((Input.is_action_pressed("Click") and onTop) or Input.is_action_just_pressed("Click")):
+		onTop = true
+	else :
+		onTop = false
+	if  mouseInMove and ((Input.is_action_pressed("Click") and shouldMove) or Input.is_action_just_pressed("Click")):
+		shouldMove = true
+	else :
+		shouldMove = false
 
 
 
 func _on_move_window_area_mouse_entered() -> void:
-	mouseIn = true
+	mouseInMove = true
 
 
 func _on_move_window_area_mouse_exited() -> void:
+	mouseInMove = false
+
+
+func _on_window_area_mouse_entered() -> void:
+	mouseIn = true
+
+func _on_window_area_mouse_exited() -> void:
 	mouseIn = false

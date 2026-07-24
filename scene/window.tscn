@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://dnpuulanrl0yb"]
 
 [ext_resource type="Script" uid="uid://fwcopt86dblu" path="res://Scripts/window.gd" id="1_2x567"]
-[ext_resource type="Texture2D" uid="uid://br1bh6kmijutx" path="res://assets/placeHolderWindow.png" id="1_aitir"]
+[ext_resource type="Texture2D" uid="uid://br1bh6kmijutx" path="res://assets/placeHolder/placeHolderWindow.png" id="1_aitir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2x567"]
 size = Vector2(400, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
+size = Vector2(400, 300)
 
 [node name="Window" type="Node2D" unique_id=341003668]
 script = ExtResource("1_2x567")
@@ -19,5 +22,12 @@ position = Vector2(-173, -127)
 position = Vector2(173, -11)
 shape = SubResource("RectangleShape2D_2x567")
 
+[node name="WindowArea" type="Area2D" parent="windowSprite" unique_id=1135412940]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="windowSprite/WindowArea" unique_id=1706110952]
+shape = SubResource("RectangleShape2D_svdou")
+
 [connection signal="mouse_entered" from="windowSprite/moveWindowArea" to="." method="_on_move_window_area_mouse_entered"]
 [connection signal="mouse_exited" from="windowSprite/moveWindowArea" to="." method="_on_move_window_area_mouse_exited"]
+[connection signal="mouse_entered" from="windowSprite/WindowArea" to="." method="_on_window_area_mouse_entered"]
+[connection signal="mouse_exited" from="windowSprite/WindowArea" to="." method="_on_window_area_mouse_exited"]

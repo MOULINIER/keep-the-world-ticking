@@ -59,6 +59,7 @@ action_mode = 0
 texture_normal = SubResource("AtlasTexture_bqmkv")
 texture_pressed = SubResource("AtlasTexture_2x567")
 texture_hover = SubResource("AtlasTexture_qamey")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Window/TextureButton" unique_id=114948809]
 root_node = NodePath("../../..")
@@ -70,6 +71,7 @@ offset_right = 44.0
 offset_bottom = 7.0
 value = 100.0
 texture_progress = ExtResource("4_r4nkh")
+metadata/_edit_use_anchors_ = true
 
 [node name="CounterAnimatedSprite2D" type="AnimatedSprite2D" parent="Window" unique_id=646238081]
 position = Vector2(7, 12)

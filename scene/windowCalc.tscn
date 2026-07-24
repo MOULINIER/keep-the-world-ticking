@@ -1,0 +1,354 @@
+[gd_scene format=3 uid="uid://bcw76lwd8x6rm"]
+
+[ext_resource type="Script" uid="uid://g5pgyby37wqr" path="res://Scripts/window_calc.gd" id="1_wu0ut"]
+[ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="2_dyl0l"]
+[ext_resource type="Texture2D" uid="uid://bqr23ni0lxgaa" path="res://assets/Window2.png" id="3_iugp1"]
+[ext_resource type="Texture2D" uid="uid://cfoxa1v4kx1o4" path="res://assets/Window2TimeBarGreen.png" id="4_x4yo3"]
+[ext_resource type="Texture2D" uid="uid://cxfejyhs72tn5" path="res://assets/gauge_hand.png" id="5_jmkef"]
+[ext_resource type="Texture2D" uid="uid://d5yq1xa7qda0" path="res://assets/numpad1-Sheet.png" id="6_dqs0g"]
+[ext_resource type="Texture2D" uid="uid://cf50kabmo0dhg" path="res://assets/white_numbers-Sheet.png" id="6_x4yo3"]
+[ext_resource type="Texture2D" uid="uid://ghyhi257comj" path="res://assets/numpad2-Sheet.png" id="7_iugp1"]
+[ext_resource type="Texture2D" uid="uid://c38bnns8sg6mo" path="res://assets/numpad3-Sheet.png" id="8_dqs0g"]
+[ext_resource type="Texture2D" uid="uid://bedt81bogxvmy" path="res://assets/numpad4-Sheet.png" id="10_uigus"]
+[ext_resource type="Texture2D" uid="uid://ck8m1whoh1wvo" path="res://assets/numpad5-Sheet.png" id="11_ure60"]
+[ext_resource type="Texture2D" uid="uid://btybl1qayx08a" path="res://assets/numpad6-Sheet.png" id="12_bu7ok"]
+[ext_resource type="Texture2D" uid="uid://didaj2b8s2xru" path="res://assets/numpad7-Sheet.png" id="13_o6c1c"]
+[ext_resource type="Texture2D" uid="uid://56hlv8xu6x2" path="res://assets/numpad8-Sheet.png" id="14_x4yo3"]
+[ext_resource type="Texture2D" uid="uid://cfef2trgjqyew" path="res://assets/numpad9-Sheet.png" id="15_2xvh6"]
+[ext_resource type="Texture2D" uid="uid://di61mjcom4b03" path="res://assets/numpad0-Sheet.png" id="16_bu7ok"]
+[ext_resource type="Texture2D" uid="uid://6p5iwwpdxt64" path="res://assets/numpadX-Sheet.png" id="17_o6c1c"]
+[ext_resource type="Texture2D" uid="uid://bwmitxw0ovryl" path="res://assets/numpad#-Sheet.png" id="18_o6c1c"]
+[ext_resource type="Texture2D" uid="uid://hpsdtxokkdsj" path="res://assets/blue_screen.png" id="19_x4yo3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqkyb"]
+size = Vector2(58.999928, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4nuw"]
+size = Vector2(58.99991, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uosyr"]
+atlas = ExtResource("6_x4yo3")
+region = Rect2(54, 0, 6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ahlp"]
+atlas = ExtResource("6_x4yo3")
+region = Rect2(54, 0, 6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utwvx"]
+atlas = ExtResource("6_x4yo3")
+region = Rect2(54, 0, 6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdna4"]
+atlas = ExtResource("6_x4yo3")
+region = Rect2(54, 0, 6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4728"]
+atlas = ExtResource("6_x4yo3")
+region = Rect2(0, 0, 6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctips"]
+atlas = ExtResource("6_x4yo3")
+region = Rect2(0, 0, 6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i57p"]
+atlas = ExtResource("6_x4yo3")
+region = Rect2(0, 0, 6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svdou"]
+atlas = ExtResource("6_dqs0g")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iugp1"]
+atlas = ExtResource("6_dqs0g")
+region = Rect2(11, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqkyb"]
+atlas = ExtResource("7_iugp1")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fb6m"]
+atlas = ExtResource("7_iugp1")
+region = Rect2(11, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4nuw"]
+atlas = ExtResource("8_dqs0g")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c341"]
+atlas = ExtResource("8_dqs0g")
+region = Rect2(11, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjj6c"]
+atlas = ExtResource("10_uigus")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb64x"]
+atlas = ExtResource("10_uigus")
+region = Rect2(11, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w7mk"]
+atlas = ExtResource("11_ure60")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg6ga"]
+atlas = ExtResource("11_ure60")
+region = Rect2(11, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjqto"]
+atlas = ExtResource("12_bu7ok")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51mh8"]
+atlas = ExtResource("12_bu7ok")
+region = Rect2(11, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1ni2"]
+atlas = ExtResource("13_o6c1c")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otgsb"]
+atlas = ExtResource("13_o6c1c")
+region = Rect2(11, 0, 11, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j2mso"]
+load_path = "res://.godot/imported/numpad8-Sheet.png-3c170b5016688eb0245ed440957286d4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg5up"]
+atlas = SubResource("CompressedTexture2D_j2mso")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dnmq"]
+atlas = ExtResource("14_x4yo3")
+region = Rect2(11, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w0wa"]
+atlas = ExtResource("15_2xvh6")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_201mk"]
+atlas = ExtResource("15_2xvh6")
+region = Rect2(11, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4yo3"]
+atlas = ExtResource("16_bu7ok")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xvh6"]
+atlas = ExtResource("16_bu7ok")
+region = Rect2(11, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2mso"]
+atlas = ExtResource("17_o6c1c")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny40l"]
+atlas = ExtResource("17_o6c1c")
+region = Rect2(11, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oclhg"]
+atlas = ExtResource("18_o6c1c")
+region = Rect2(0, 0, 11, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65xn5"]
+atlas = ExtResource("18_o6c1c")
+region = Rect2(11, 0, 11, 0)
+
+[node name="Node2D" type="Node2D" unique_id=818146548]
+script = ExtResource("1_wu0ut")
+
+[node name="Timer" type="Timer" parent="." unique_id=220265377]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="Window" parent="." unique_id=341003668 instance=ExtResource("2_dyl0l")]
+
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
+texture = ExtResource("3_iugp1")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(341003668, 1784525188) index="0" unique_id=1700177945]
+position = Vector2(29.5, 5)
+shape = SubResource("RectangleShape2D_wqkyb")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(341003668, 1135412940) index="0" unique_id=1706110952]
+position = Vector2(29.5, 37)
+shape = SubResource("RectangleShape2D_w4nuw")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Window" unique_id=353991825]
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 7.0
+value = 100.0
+texture_progress = ExtResource("4_x4yo3")
+metadata/_edit_use_anchors_ = true
+
+[node name="BlueScreen" type="Sprite2D" parent="Window" unique_id=245626155]
+position = Vector2(7.999996, 10.000004)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("19_x4yo3")
+centered = false
+
+[node name="num00Sprite2D" type="Sprite2D" parent="Window/BlueScreen" unique_id=1212173352]
+position = Vector2(1.0000038, 2.9999962)
+texture = SubResource("AtlasTexture_uosyr")
+centered = false
+
+[node name="num01Sprite2D" type="Sprite2D" parent="Window/BlueScreen" unique_id=1331312811]
+position = Vector2(7.000005, 2.9999962)
+texture = SubResource("AtlasTexture_2ahlp")
+centered = false
+
+[node name="num10Sprite2D" type="Sprite2D" parent="Window/BlueScreen" unique_id=1583819585]
+position = Vector2(18.000006, 2.9999962)
+texture = SubResource("AtlasTexture_utwvx")
+centered = false
+
+[node name="num11Sprite2D" type="Sprite2D" parent="Window/BlueScreen" unique_id=1355154079]
+position = Vector2(24.000006, 2.9999962)
+texture = SubResource("AtlasTexture_tdna4")
+centered = false
+
+[node name="res0Sprite2D" type="Sprite2D" parent="Window/BlueScreen" unique_id=273212664]
+position = Vector2(21.000008, 12.999996)
+texture = SubResource("AtlasTexture_h4728")
+centered = false
+
+[node name="res1Sprite2D" type="Sprite2D" parent="Window/BlueScreen" unique_id=1465955311]
+position = Vector2(27.000006, 12.999996)
+texture = SubResource("AtlasTexture_ctips")
+centered = false
+
+[node name="res2Sprite2D" type="Sprite2D" parent="Window/BlueScreen" unique_id=164414362]
+position = Vector2(33, 13)
+texture = SubResource("AtlasTexture_5i57p")
+centered = false
+
+[node name="calcBackgroud" type="Sprite2D" parent="Window" unique_id=1870087668]
+position = Vector2(25, 39)
+texture = ExtResource("5_jmkef")
+centered = false
+
+[node name="TextureButton1" type="TextureButton" parent="Window/calcBackgroud" unique_id=726094706]
+offset_left = -12.0
+offset_top = -5.0
+offset_right = -1.0
+offset_bottom = 4.0
+texture_normal = SubResource("AtlasTexture_svdou")
+texture_pressed = SubResource("AtlasTexture_iugp1")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton2" type="TextureButton" parent="Window/calcBackgroud" unique_id=2014427437]
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 10.0
+offset_bottom = 4.0
+texture_normal = SubResource("AtlasTexture_wqkyb")
+texture_pressed = SubResource("AtlasTexture_8fb6m")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton3" type="TextureButton" parent="Window/calcBackgroud" unique_id=1614518039]
+offset_left = 10.0
+offset_top = -5.0
+offset_right = 21.0
+offset_bottom = 4.0
+texture_normal = SubResource("AtlasTexture_w4nuw")
+texture_pressed = SubResource("AtlasTexture_8c341")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton4" type="TextureButton" parent="Window/calcBackgroud" unique_id=1325193286]
+offset_left = -12.0
+offset_top = 4.0
+offset_right = -1.0
+offset_bottom = 13.0
+texture_normal = SubResource("AtlasTexture_tjj6c")
+texture_pressed = SubResource("AtlasTexture_nb64x")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton5" type="TextureButton" parent="Window/calcBackgroud" unique_id=878587512]
+offset_left = -1.0
+offset_top = 4.0
+offset_right = 10.0
+offset_bottom = 13.0
+texture_normal = SubResource("AtlasTexture_1w7mk")
+texture_pressed = SubResource("AtlasTexture_dg6ga")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton6" type="TextureButton" parent="Window/calcBackgroud" unique_id=2052807840]
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 21.0
+offset_bottom = 13.0
+texture_normal = SubResource("AtlasTexture_hjqto")
+texture_pressed = SubResource("AtlasTexture_51mh8")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton7" type="TextureButton" parent="Window/calcBackgroud" unique_id=34478985]
+offset_left = -12.0
+offset_top = 13.0
+offset_right = -1.0
+offset_bottom = 22.0
+texture_normal = SubResource("AtlasTexture_k1ni2")
+texture_pressed = SubResource("AtlasTexture_otgsb")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton8" type="TextureButton" parent="Window/calcBackgroud" unique_id=1467230486]
+offset_left = -1.0
+offset_top = 13.0
+offset_right = 10.0
+offset_bottom = 22.0
+texture_normal = SubResource("AtlasTexture_tg5up")
+texture_pressed = SubResource("AtlasTexture_5dnmq")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton9" type="TextureButton" parent="Window/calcBackgroud" unique_id=547412981]
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 21.0
+offset_bottom = 22.0
+texture_normal = SubResource("AtlasTexture_7w0wa")
+texture_pressed = SubResource("AtlasTexture_201mk")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton0" type="TextureButton" parent="Window/calcBackgroud" unique_id=1335990989]
+offset_left = -1.0
+offset_top = 22.0
+offset_right = 10.0
+offset_bottom = 31.0
+texture_normal = SubResource("AtlasTexture_x4yo3")
+texture_pressed = SubResource("AtlasTexture_2xvh6")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButtonX" type="TextureButton" parent="Window/calcBackgroud" unique_id=1134148186]
+offset_left = -12.0
+offset_top = 22.0
+offset_right = -1.0
+offset_bottom = 31.0
+texture_normal = SubResource("AtlasTexture_j2mso")
+texture_pressed = SubResource("AtlasTexture_ny40l")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButtonV" type="TextureButton" parent="Window/calcBackgroud" unique_id=1490974600]
+offset_left = 10.0
+offset_top = 22.0
+offset_right = 21.0
+offset_bottom = 31.0
+texture_normal = SubResource("AtlasTexture_oclhg")
+texture_pressed = SubResource("AtlasTexture_65xn5")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButton1" to="." method="_on_texture_button_1_pressed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButton4" to="." method="_on_texture_button_4_pressed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButton5" to="." method="_on_texture_button_5_pressed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButton6" to="." method="_on_texture_button_6_pressed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButton7" to="." method="_on_texture_button_7_pressed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButton8" to="." method="_on_texture_button_8_pressed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButton9" to="." method="_on_texture_button_9_pressed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButton0" to="." method="_on_texture_button_0_pressed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButtonX" to="." method="_on_texture_button_x_pressed"]
+[connection signal="pressed" from="Window/calcBackgroud/TextureButtonV" to="." method="_on_texture_button_v_pressed"]
+
+[editable path="Window"]

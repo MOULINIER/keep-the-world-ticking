@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b7wjnphq1sfs0" path="res://scene/windowButton.tscn" id="6_g6mmx"]
 [ext_resource type="PackedScene" uid="uid://dqmisvqi02sk4" path="res://scene/windowTimeBar.tscn" id="7_a8nm8"]
 [ext_resource type="PackedScene" uid="uid://dcbfokbctd1eg" path="res://scene/windowPress.tscn" id="7_h4728"]
+[ext_resource type="PackedScene" uid="uid://bcw76lwd8x6rm" path="res://scene/windowCalc.tscn" id="8_h4728"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
 size = Vector2(276.76056, 74)
@@ -37,9 +38,12 @@ total_seconds = 20
 position = Vector2(176, 59)
 
 [node name="WindowTimeBar" parent="." unique_id=1296321778 instance=ExtResource("7_a8nm8")]
-position = Vector2(132, 110)
+position = Vector2(133, 98)
 
 [node name="WindowPress" parent="." unique_id=1371987939 instance=ExtResource("7_h4728")]
-position = Vector2(116, 39)
+position = Vector2(114, 43)
+
+[node name="WindowCalc" parent="." unique_id=818146548 instance=ExtResource("8_h4728")]
+position = Vector2(66, 103)
 
 [connection signal="input_event" from="BackButton/BackArea" to="." method="_on_back_area_input_event"]

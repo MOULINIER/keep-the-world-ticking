@@ -4,31 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://4v2p3t3st2q6" path="res://assets/Window1.png" id="2_2x567"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2x567"]
-size = Vector2(55.114197, 10)
+size = Vector2(54.99993, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
-size = Vector2(55.114197, 51)
+size = Vector2(54.999916, 51)
 
 [node name="Window" type="Node2D" unique_id=341003668]
 script = ExtResource("1_2x567")
 
 [node name="windowSprite" type="Sprite2D" parent="." unique_id=1230029786]
-scale = Vector2(0.9797827, 1)
 texture = ExtResource("2_2x567")
-offset = Vector2(0, 0.5)
+centered = false
 
 [node name="moveWindowArea" type="Area2D" parent="windowSprite" unique_id=1784525188]
-position = Vector2(-173, -127)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="windowSprite/moveWindowArea" unique_id=1700177945]
-position = Vector2(173, 107)
+position = Vector2(27.5, 5)
 scale = Vector2(1.0000012, 1)
 shape = SubResource("RectangleShape2D_2x567")
 
 [node name="WindowArea" type="Area2D" parent="windowSprite" unique_id=1135412940]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="windowSprite/WindowArea" unique_id=1706110952]
-position = Vector2(-2.842171e-14, 0.50000095)
+position = Vector2(27.5, 25.5)
 scale = Vector2(1.0000015, 1)
 shape = SubResource("RectangleShape2D_svdou")
 

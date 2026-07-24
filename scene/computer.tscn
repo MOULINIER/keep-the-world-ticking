@@ -29,13 +29,13 @@ position = Vector2(1.9073486e-06, 0.00010585785)
 shape = SubResource("RectangleShape2D_svdou")
 
 [node name="WindowButtonTest" parent="." unique_id=1614833038 instance=ExtResource("6_g6mmx")]
-position = Vector2(97, 78)
+position = Vector2(50, 47)
 total_seconds = 20
 
 [node name="WindowTest1" parent="." unique_id=136743137 instance=ExtResource("4_cxrug")]
-position = Vector2(212, 68)
+position = Vector2(176, 59)
 
 [node name="WindowTimeBar" parent="." unique_id=1296321778 instance=ExtResource("7_a8nm8")]
-position = Vector2(165, 116)
+position = Vector2(132, 110)
 
 [connection signal="input_event" from="BackButton/BackArea" to="." method="_on_back_area_input_event"]

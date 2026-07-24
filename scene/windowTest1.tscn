@@ -17,9 +17,7 @@ script = ExtResource("1_emwb5")
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_edu0v")]
 
 [node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
-scale = Vector2(1, 1)
 texture = ExtResource("3_kdom2")
-offset = Vector2(0, 0)
 
 [node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(341003668, 1784525188) index="0" unique_id=1700177945]
 position = Vector2(173, 115)
@@ -27,11 +25,11 @@ scale = Vector2(1.0000015, 1)
 shape = SubResource("RectangleShape2D_pmgya")
 
 [node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(341003668, 1135412940) index="0" unique_id=1706110952]
-position = Vector2(0, 0)
+position = Vector2(35, 15)
 shape = SubResource("RectangleShape2D_l133p")
 
 [node name="Sprite2D" type="Sprite2D" parent="Window" unique_id=1290371802]
-position = Vector2(-27.5, 3)
+position = Vector2(7, 17)
 scale = Vector2(0.0859375, 0.140625)
 texture = ExtResource("2_emwb5")
 

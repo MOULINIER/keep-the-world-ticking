@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_r4apc"]
 [ext_resource type="Texture2D" uid="uid://do5n3cbgwejdf" path="res://assets/red_button-Sheet.png" id="3_bqmkv"]
 [ext_resource type="Texture2D" uid="uid://cyjmvcyrvrcnc" path="res://assets/Window1TimeBarGreen.png" id="4_r4nkh"]
+[ext_resource type="Texture2D" uid="uid://dilpy43h74vjh" path="res://assets/green_counter-Sheet.png" id="5_tcr7i"]
+[ext_resource type="Texture2D" uid="uid://bx8dnn1183w3" path="res://assets/green_counter_number-Sheet.png" id="6_komj5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bqmkv"]
 atlas = ExtResource("3_bqmkv")
@@ -17,25 +19,42 @@ region = Rect2(38, 0, 19, 13)
 atlas = ExtResource("3_bqmkv")
 region = Rect2(57, 0, 19, 13)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcr7i"]
+atlas = ExtResource("5_tcr7i")
+region = Rect2(0, 0, 41, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_komj5"]
+atlas = ExtResource("5_tcr7i")
+region = Rect2(41, 0, 41, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcr7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcr7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_komj5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8qsm"]
+atlas = ExtResource("6_komj5")
+region = Rect2(56, 0, 7, 0)
+
 [node name="Node2D" type="Node2D" unique_id=136743137]
 script = ExtResource("1_bqmkv")
 
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_r4apc")]
 
-[node name="Label" type="Label" parent="Window" unique_id=166285898]
-z_index = 1
-offset_left = -3.0
-offset_top = -9.0
-offset_right = 25.0
-offset_bottom = 14.0
-scale = Vector2(0.225, 0.225)
-text = "dsd"
-
 [node name="TextureButton" type="TextureButton" parent="Window" unique_id=1866224545]
-offset_left = -9.0
-offset_top = 3.0
-offset_right = 10.0
-offset_bottom = 16.0
+offset_left = 18.0
+offset_top = 34.0
+offset_right = 37.0
+offset_bottom = 47.0
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_bqmkv")
 texture_pressed = SubResource("AtlasTexture_2x567")
@@ -45,12 +64,38 @@ texture_hover = SubResource("AtlasTexture_qamey")
 root_node = NodePath("../../..")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Window" unique_id=624858404]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 16.0
-offset_bottom = -18.0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 7.0
 value = 100.0
 texture_progress = ExtResource("4_r4nkh")
+
+[node name="CounterAnimatedSprite2D" type="AnimatedSprite2D" parent="Window" unique_id=646238081]
+position = Vector2(7, 12)
+sprite_frames = SubResource("SpriteFrames_tcr7i")
+frame_progress = 0.5445163
+centered = false
+
+[node name="Counter0Sprite2D" type="Sprite2D" parent="Window" unique_id=246146810]
+position = Vector2(10, 15)
+texture = SubResource("AtlasTexture_k8qsm")
+centered = false
+
+[node name="Counter1Sprite2D" type="Sprite2D" parent="Window" unique_id=2029053527]
+position = Vector2(19, 15)
+texture = SubResource("AtlasTexture_k8qsm")
+centered = false
+
+[node name="Counter2Sprite2D" type="Sprite2D" parent="Window" unique_id=193612998]
+position = Vector2(29, 15)
+texture = SubResource("AtlasTexture_k8qsm")
+centered = false
+
+[node name="Counter3Sprite2D" type="Sprite2D" parent="Window" unique_id=1795252962]
+position = Vector2(38, 15)
+texture = SubResource("AtlasTexture_k8qsm")
+centered = false
 
 [node name="Timer" type="Timer" parent="." unique_id=1618922403]
 wait_time = 60.0

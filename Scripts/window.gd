@@ -1,4 +1,11 @@
+#@tool
 extends Node2D
+
+#@export var window_texture : Texture2D:
+#	set(value):
+#		window_texture = value
+#		if $windowSprite:
+#			$windowSprite.texture = value
 
 var mouseInMove : bool
 var mouseIn : bool
@@ -8,6 +15,8 @@ var shouldMove : bool
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+	#if window_texture:
+	#	$windowSprite.texture = window_texture
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

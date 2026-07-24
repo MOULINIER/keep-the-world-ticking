@@ -3,13 +3,36 @@
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_edu0v"]
 [ext_resource type="Script" uid="uid://br7e4bgw86xaq" path="res://scene/window_test_1.gd" id="1_emwb5"]
 [ext_resource type="Texture2D" uid="uid://b106rey4ej32c" path="res://icon.svg" id="2_emwb5"]
+[ext_resource type="Texture2D" uid="uid://csvng7grje8km" path="res://assets/placeHolder/placeHolderSmallWindow.png" id="3_kdom2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmgya"]
+size = Vector2(69.99989, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l133p"]
+size = Vector2(70, 29.999998)
 
 [node name="Node2D" type="Node2D" unique_id=136743137]
 script = ExtResource("1_emwb5")
 
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_edu0v")]
 
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
+scale = Vector2(1, 1)
+texture = ExtResource("3_kdom2")
+offset = Vector2(0, 0)
+
+[node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(341003668, 1784525188) index="0" unique_id=1700177945]
+position = Vector2(173, 115)
+scale = Vector2(1.0000015, 1)
+shape = SubResource("RectangleShape2D_pmgya")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(341003668, 1135412940) index="0" unique_id=1706110952]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_l133p")
+
 [node name="Sprite2D" type="Sprite2D" parent="Window" unique_id=1290371802]
-position = Vector2(-2.3841858e-07, -2.2737368e-13)
-scale = Vector2(0.15625001, 0.15625001)
+position = Vector2(-27.5, 3)
+scale = Vector2(0.0859375, 0.140625)
 texture = ExtResource("2_emwb5")
+
+[editable path="Window"]

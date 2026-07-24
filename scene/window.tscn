@@ -13,6 +13,8 @@ size = Vector2(400, 300)
 script = ExtResource("1_2x567")
 
 [node name="windowSprite" type="Sprite2D" parent="." unique_id=1230029786]
+position = Vector2(-1.5258789e-05, 7.6293945e-06)
+scale = Vector2(0.2575, 0.26)
 texture = ExtResource("1_aitir")
 
 [node name="moveWindowArea" type="Area2D" parent="windowSprite" unique_id=1784525188]

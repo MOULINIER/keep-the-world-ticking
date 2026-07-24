@@ -10,5 +10,6 @@ script = ExtResource("1_emwb5")
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_edu0v")]
 
 [node name="Sprite2D" type="Sprite2D" parent="Window" unique_id=1290371802]
-position = Vector2(1, 0)
+position = Vector2(-2.3841858e-07, -2.2737368e-13)
+scale = Vector2(0.15625001, 0.15625001)
 texture = ExtResource("2_emwb5")

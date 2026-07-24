@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dldg6uf1rh6mw"]
 
 [ext_resource type="Script" uid="uid://cgaceuugmskfl" path="res://Scripts/computer.gd" id="1_36qyv"]
-[ext_resource type="Texture2D" uid="uid://cvfjymb0gmocs" path="res://assets/placeHolder/placeHolderComputer.png" id="1_ty6n0"]
+[ext_resource type="Texture2D" uid="uid://tqvhyr1q0pk1" path="res://assets/ordi.png" id="2_g6mmx"]
 [ext_resource type="Texture2D" uid="uid://djgqdwslnwl0" path="res://assets/placeHolder/placeHolderBackArrow.png" id="2_q4rav"]
 [ext_resource type="PackedScene" uid="uid://bq46welpa5pdw" path="res://scene/windowTest1.tscn" id="4_cxrug"]
 [ext_resource type="PackedScene" uid="uid://b7wjnphq1sfs0" path="res://scene/windowButton.tscn" id="6_g6mmx"]
@@ -14,27 +14,27 @@ size = Vector2(276.76056, 74)
 script = ExtResource("1_36qyv")
 
 [node name="ComputerSprite" type="Sprite2D" parent="." unique_id=272829031]
-texture = ExtResource("1_ty6n0")
+texture = ExtResource("2_g6mmx")
 centered = false
 
 [node name="BackButton" type="Sprite2D" parent="." unique_id=295042817]
-position = Vector2(72, 1030)
-scale = Vector2(0.47333333, 1)
+position = Vector2(17, 191.99998)
+scale = Vector2(0.06999998, 0.19)
 texture = ExtResource("2_q4rav")
 
 [node name="BackArea" type="Area2D" parent="BackButton" unique_id=1855648]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackButton/BackArea" unique_id=1607075101]
-position = Vector2(9.507034, -2)
+position = Vector2(1.9073486e-06, 0.00010585785)
 shape = SubResource("RectangleShape2D_svdou")
 
 [node name="WindowTest1" parent="." unique_id=136743137 instance=ExtResource("4_cxrug")]
-position = Vector2(1467, 422)
+position = Vector2(213, 74)
 
 [node name="WindowTimeBar" parent="." unique_id=1296321778 instance=ExtResource("7_a8nm8")]
 position = Vector2(1012, 427)
 
 [node name="WindowButtonTest" parent="." unique_id=1614833038 instance=ExtResource("6_g6mmx")]
-position = Vector2(557, 431)
+position = Vector2(92, 72)
 
 [connection signal="input_event" from="BackButton/BackArea" to="." method="_on_back_area_input_event"]

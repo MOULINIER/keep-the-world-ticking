@@ -10,6 +10,7 @@ size = Vector2(194, 172)
 script = ExtResource("1_tvw7d")
 
 [node name="DeskSprite" type="Sprite2D" parent="." unique_id=1825315184]
+scale = Vector2(0.16666666, 0.16666667)
 texture = ExtResource("1_p4wh1")
 centered = false
 

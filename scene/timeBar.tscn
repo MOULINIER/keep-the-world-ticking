@@ -22,6 +22,7 @@ offset_bottom = 253.0
 action_mode = 0
 texture_normal = ExtResource("4_i7kqv")
 texture_pressed = ExtResource("5_4cf4v")
+metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=1943228863]
 offset_left = 3.0
@@ -31,6 +32,7 @@ offset_bottom = 75.0
 value = 100.0
 texture_under = ExtResource("2_qvmsr")
 texture_progress = ExtResource("3_i7kqv")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

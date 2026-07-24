@@ -4,9 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_r4apc"]
 [ext_resource type="Texture2D" uid="uid://do5n3cbgwejdf" path="res://assets/red_button-Sheet.png" id="3_bqmkv"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bqmkv"]
-width = 128
-height = 128
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqmkv"]
+atlas = ExtResource("3_bqmkv")
+region = Rect2(-0.51686764, 0, 20.239563, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2x567"]
+atlas = ExtResource("3_bqmkv")
+region = Rect2(37.369804, 0, 20.424759, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qamey"]
+atlas = ExtResource("3_bqmkv")
+region = Rect2(56.470737, 0, 20.235638, 13)
 
 [node name="Node2D" type="Node2D" unique_id=136743137]
 script = ExtResource("1_bqmkv")
@@ -15,20 +23,25 @@ script = ExtResource("1_bqmkv")
 
 [node name="Label" type="Label" parent="Window" unique_id=166285898]
 z_index = 1
-offset_left = -51.0
-offset_top = -53.0
-offset_right = -23.0
-offset_bottom = -30.0
+offset_left = -3.0
+offset_top = -9.0
+offset_right = 25.0
+offset_bottom = 14.0
+scale = Vector2(0.225, 0.225)
 text = "dsd"
 
 [node name="TextureButton" type="TextureButton" parent="Window" unique_id=1866224545]
-offset_left = -38.0
-offset_top = -6.0
-offset_right = 38.0
-offset_bottom = 7.0
+offset_left = -10.0
+offset_top = 5.0
+offset_right = 10.0
+offset_bottom = 18.0
 action_mode = 0
-texture_normal = ExtResource("3_bqmkv")
-texture_pressed = SubResource("NoiseTexture2D_bqmkv")
+texture_normal = SubResource("AtlasTexture_bqmkv")
+texture_pressed = SubResource("AtlasTexture_2x567")
+texture_hover = SubResource("AtlasTexture_qamey")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Window/TextureButton" unique_id=114948809]
+root_node = NodePath("../../..")
 
 [node name="Timer" type="Timer" parent="." unique_id=1618922403]
 wait_time = 60.0

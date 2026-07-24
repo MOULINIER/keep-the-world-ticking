@@ -1,32 +1,34 @@
 [gd_scene format=3 uid="uid://dnpuulanrl0yb"]
 
 [ext_resource type="Script" uid="uid://fwcopt86dblu" path="res://Scripts/window.gd" id="1_2x567"]
-[ext_resource type="Texture2D" uid="uid://br1bh6kmijutx" path="res://assets/placeHolder/placeHolderWindow.png" id="1_aitir"]
+[ext_resource type="Texture2D" uid="uid://4v2p3t3st2q6" path="res://assets/Window1.png" id="2_2x567"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2x567"]
-size = Vector2(400, 24)
+size = Vector2(54.265617, 9.846161)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
-size = Vector2(400, 300)
+size = Vector2(54.26571, 40.384636)
 
 [node name="Window" type="Node2D" unique_id=341003668]
 script = ExtResource("1_2x567")
 
 [node name="windowSprite" type="Sprite2D" parent="." unique_id=1230029786]
-position = Vector2(-1.5258789e-05, 7.6293945e-06)
-scale = Vector2(0.2575, 0.26)
-texture = ExtResource("1_aitir")
+scale = Vector2(0.9797827, 1)
+texture = ExtResource("2_2x567")
 
 [node name="moveWindowArea" type="Area2D" parent="windowSprite" unique_id=1784525188]
 position = Vector2(-173, -127)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="windowSprite/moveWindowArea" unique_id=1700177945]
-position = Vector2(173, -11)
+position = Vector2(172.94847, 106.92307)
+scale = Vector2(1.0000004, 1)
 shape = SubResource("RectangleShape2D_2x567")
 
 [node name="WindowArea" type="Area2D" parent="windowSprite" unique_id=1135412940]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="windowSprite/WindowArea" unique_id=1706110952]
+position = Vector2(0.0516482, 4.8076744)
+scale = Vector2(1.0000008, 1)
 shape = SubResource("RectangleShape2D_svdou")
 
 [connection signal="mouse_entered" from="windowSprite/moveWindowArea" to="." method="_on_move_window_area_mouse_entered"]

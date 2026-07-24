@@ -24,8 +24,8 @@ text = "dsd"
 [node name="TextureButton" type="TextureButton" parent="Window" unique_id=1866224545]
 offset_left = -38.0
 offset_top = -6.0
-offset_right = 90.0
-offset_bottom = 122.0
+offset_right = 38.0
+offset_bottom = 7.0
 action_mode = 0
 texture_normal = ExtResource("3_bqmkv")
 texture_pressed = SubResource("NoiseTexture2D_bqmkv")

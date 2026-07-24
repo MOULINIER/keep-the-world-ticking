@@ -26,8 +26,7 @@ func _process(delta: float) -> void:
 			windowArray.insert(0,temp)
 			break
 	for i in range(windowArray.size()) :
-		windowArray[i].z_index = 0
-	windowArray[0].z_index = 100
+		windowArray[i].z_index = 100-i
 
 
 func _on_back_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

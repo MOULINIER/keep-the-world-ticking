@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dcbfokbctd1eg"]
+
+[ext_resource type="Script" uid="uid://mptxx0gjp73p" path="res://scene/window_press.gd" id="1_2n5ry"]
+[ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_qouo5"]
+[ext_resource type="Texture2D" uid="uid://cyjmvcyrvrcnc" path="res://assets/Window1TimeBarGreen.png" id="3_61mgk"]
+[ext_resource type="Texture2D" uid="uid://dh0uyasrlabfb" path="res://assets/blue_button-Sheet.png" id="3_qouo5"]
+[ext_resource type="Texture2D" uid="uid://bsmnsfbrb81lq" path="res://assets/gauge.png" id="5_qouo5"]
+[ext_resource type="Texture2D" uid="uid://cxfejyhs72tn5" path="res://assets/gauge_hand.png" id="6_2n5ry"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulaig"]
+atlas = ExtResource("3_qouo5")
+region = Rect2(0, 0, 38, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uxen"]
+atlas = ExtResource("3_qouo5")
+region = Rect2(38, 0, 38, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq3r6"]
+atlas = ExtResource("3_qouo5")
+region = Rect2(76, 0, 38, 12)
+
+[node name="Node2D" type="Node2D" unique_id=1371987939]
+script = ExtResource("1_2n5ry")
+
+[node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_qouo5")]
+
+[node name="TextureButton" type="TextureButton" parent="Window" unique_id=1830316439]
+offset_left = 8.0
+offset_top = 34.0
+offset_right = 46.0
+offset_bottom = 47.0
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_ulaig")
+texture_pressed = SubResource("AtlasTexture_2uxen")
+texture_hover = SubResource("AtlasTexture_qq3r6")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Window/TextureButton" unique_id=1035303958]
+root_node = NodePath("../../..")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Window" unique_id=523875028]
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 7.0
+value = 100.0
+texture_progress = ExtResource("3_61mgk")
+metadata/_edit_use_anchors_ = true
+
+[node name="GaugeSprite2D" type="Sprite2D" parent="Window" unique_id=1673263483]
+position = Vector2(11, 13)
+texture = ExtResource("5_qouo5")
+centered = false
+
+[node name="GaugeHandSprite2D" type="Sprite2D" parent="Window/GaugeSprite2D" unique_id=1950105137]
+position = Vector2(16.5, 14.5)
+texture = ExtResource("6_2n5ry")
+centered = false
+offset = Vector2(-1.5, -7.5)
+
+[node name="Timer" type="Timer" parent="." unique_id=2135189487]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="Window/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]

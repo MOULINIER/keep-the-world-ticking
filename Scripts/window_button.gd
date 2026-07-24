@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var label: Label = $Window/Label
 @onready var timer: Timer = $Timer
 @onready var button: TextureButton = $Window/TextureButton
 @onready var bar: TextureProgressBar = $Window/TextureProgressBar
@@ -50,10 +49,11 @@ func _on_Timer_timeout() -> void:
 
 
 func _on_texture_button_pressed() -> void:
-	if timer.time_left > total_seconds - second_added :
-		timer.start(timer.time_left + (total_seconds - timer.time_left))
-	else:
-		timer.start(timer.time_left + second_added)
+	#if timer.time_left > total_seconds - second_added :
+	#	timer.start(timer.time_left + (total_seconds - timer.time_left))
+	#else:
+	#	timer.start(timer.time_left + second_added)
+	timer.start(total_seconds)
 
 
 func _on_texture_progress_bar_value_changed(value: float) -> void:

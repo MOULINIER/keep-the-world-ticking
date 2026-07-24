@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bq46welpa5pdw" path="res://scene/windowTest1.tscn" id="4_cxrug"]
 [ext_resource type="PackedScene" uid="uid://b7wjnphq1sfs0" path="res://scene/windowButton.tscn" id="6_g6mmx"]
 [ext_resource type="PackedScene" uid="uid://dqmisvqi02sk4" path="res://scene/windowTimeBar.tscn" id="7_a8nm8"]
+[ext_resource type="PackedScene" uid="uid://dcbfokbctd1eg" path="res://scene/windowPress.tscn" id="7_h4728"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
 size = Vector2(276.76056, 74)
@@ -29,7 +30,7 @@ position = Vector2(1.9073486e-06, 0.00010585785)
 shape = SubResource("RectangleShape2D_svdou")
 
 [node name="WindowButtonTest" parent="." unique_id=1614833038 instance=ExtResource("6_g6mmx")]
-position = Vector2(50, 47)
+position = Vector2(55, 48)
 total_seconds = 20
 
 [node name="WindowTest1" parent="." unique_id=136743137 instance=ExtResource("4_cxrug")]
@@ -37,5 +38,8 @@ position = Vector2(176, 59)
 
 [node name="WindowTimeBar" parent="." unique_id=1296321778 instance=ExtResource("7_a8nm8")]
 position = Vector2(132, 110)
+
+[node name="WindowPress" parent="." unique_id=1371987939 instance=ExtResource("7_h4728")]
+position = Vector2(116, 39)
 
 [connection signal="input_event" from="BackButton/BackArea" to="." method="_on_back_area_input_event"]

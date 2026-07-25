@@ -41,10 +41,6 @@ func _ready() -> void:
 	rand0 = randi_range(1,99)
 	rand1 = randi_range(1,99)
 	playerRes = 0
-	print(playerRes)
-	print(playerRes/100)
-	print((playerRes/10)%10)
-	print(playerRes%10)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

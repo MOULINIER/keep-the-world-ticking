@@ -41,9 +41,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(touchOrder)
-	print(isCorrect)
-	print(expectedNext)
 	bar.value = timer.time_left/total_seconds * bar.max_value
 			
 	for i in range(buttonArray.size()):

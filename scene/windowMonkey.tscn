@@ -81,11 +81,6 @@ value = 100.0
 texture_progress = ExtResource("3_2p0pq")
 metadata/_edit_use_anchors_ = true
 
-[node name="MonkeyFrameSprite2D" type="Sprite2D" parent="Window" unique_id=822365697]
-z_index = 5
-texture = ExtResource("2_1ispn")
-centered = false
-
 [node name="NumOOSprite2D" type="TextureButton" parent="Window" unique_id=798621160]
 offset_left = 13.0
 offset_top = 19.0
@@ -111,7 +106,6 @@ action_mode = 0
 texture_normal = SubResource("AtlasTexture_camsr")
 
 [node name="Num1OSprite2D" type="TextureButton" parent="Window" unique_id=1685579742]
-z_index = 1
 offset_left = 13.0
 offset_top = 35.0
 offset_right = 13.0
@@ -120,7 +114,6 @@ action_mode = 0
 texture_normal = SubResource("AtlasTexture_7o8yx")
 
 [node name="Num11Sprite2D" type="TextureButton" parent="Window" unique_id=1909550814]
-z_index = 1
 offset_left = 29.0
 offset_top = 35.0
 offset_right = 29.0
@@ -129,7 +122,6 @@ action_mode = 0
 texture_normal = SubResource("AtlasTexture_var4b")
 
 [node name="Num12Sprite2D" type="TextureButton" parent="Window" unique_id=660293185]
-z_index = 1
 offset_left = 45.0
 offset_top = 35.0
 offset_right = 45.0
@@ -138,7 +130,6 @@ action_mode = 0
 texture_normal = SubResource("AtlasTexture_bjvb1")
 
 [node name="Num2OSprite2D" type="TextureButton" parent="Window" unique_id=1344930828]
-z_index = 2
 offset_left = 13.0
 offset_top = 51.0
 offset_right = 13.0
@@ -147,7 +138,6 @@ action_mode = 0
 texture_normal = SubResource("AtlasTexture_jdmfg")
 
 [node name="Num21Sprite2D" type="TextureButton" parent="Window" unique_id=752291218]
-z_index = 2
 offset_left = 29.0
 offset_top = 51.0
 offset_right = 29.0
@@ -156,13 +146,16 @@ action_mode = 0
 texture_normal = SubResource("AtlasTexture_yth3s")
 
 [node name="Num22Sprite2D" type="TextureButton" parent="Window" unique_id=1767417117]
-z_index = 2
 offset_left = 45.0
 offset_top = 51.0
 offset_right = 45.0
 offset_bottom = 51.0
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_rosoe")
+
+[node name="MonkeyFrameSprite2D" type="Sprite2D" parent="Window" unique_id=822365697]
+texture = ExtResource("2_1ispn")
+centered = false
 
 [node name="Timer" type="Timer" parent="." unique_id=615719439]
 wait_time = 60.0

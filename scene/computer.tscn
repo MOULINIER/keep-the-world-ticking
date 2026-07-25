@@ -4,17 +4,40 @@
 [ext_resource type="Texture2D" uid="uid://djgqdwslnwl0" path="res://assets/placeHolder/placeHolderBackArrow.png" id="2_q4rav"]
 [ext_resource type="Texture2D" uid="uid://cp6ajo21x7b2r" path="res://assets/ordi_ecrampter2.png" id="3_5i57p"]
 [ext_resource type="Texture2D" uid="uid://dakrpnurxn7mf" path="res://assets/ordi_background2.png" id="3_ctips"]
-[ext_resource type="PackedScene" uid="uid://bq46welpa5pdw" path="res://scene/windowTest1.tscn" id="4_cxrug"]
 [ext_resource type="PackedScene" uid="uid://b7wjnphq1sfs0" path="res://scene/windowButton.tscn" id="6_g6mmx"]
 [ext_resource type="PackedScene" uid="uid://bc5pucbk6t8uo" path="res://scene/windowCableBox.tscn" id="6_h4728"]
 [ext_resource type="PackedScene" uid="uid://dcbfokbctd1eg" path="res://scene/windowPress.tscn" id="7_h4728"]
 [ext_resource type="PackedScene" uid="uid://bcw76lwd8x6rm" path="res://scene/windowCalc.tscn" id="8_h4728"]
-[ext_resource type="PackedScene" uid="uid://b7647bm2w7oyk" path="res://scene/windowWorldMap.tscn" id="10_5i57p"]
 [ext_resource type="PackedScene" uid="uid://2wv7w26uv0li" path="res://scene/windowHourglass.tscn" id="10_y4tp0"]
+[ext_resource type="Texture2D" uid="uid://dqgrg7cw4j5dn" path="res://assets/flags.png" id="11_y4tp0"]
 [ext_resource type="PackedScene" uid="uid://karuqlke2klb" path="res://scene/windowMonkey.tscn" id="12_5uo2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
 size = Vector2(276.76056, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svdou"]
+atlas = ExtResource("11_y4tp0")
+region = Rect2(90, 0, 10, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uo2x"]
+atlas = ExtResource("11_y4tp0")
+region = Rect2(10, 0, 10, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58078"]
+atlas = ExtResource("11_y4tp0")
+region = Rect2(80, 0, 10, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6ydj"]
+atlas = ExtResource("11_y4tp0")
+region = Rect2(20, 0, 10, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw6hy"]
+atlas = ExtResource("11_y4tp0")
+region = Rect2(100, 0, 10, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4tp0"]
+atlas = ExtResource("11_y4tp0")
+region = Rect2(0, 0, 10, 0)
 
 [node name="ComputerNode2D" type="Node2D" unique_id=1027316699]
 script = ExtResource("1_36qyv")
@@ -40,28 +63,78 @@ texture = ExtResource("2_q4rav")
 position = Vector2(1.9073486e-06, 0.00010585785)
 shape = SubResource("RectangleShape2D_svdou")
 
-[node name="WindowWorldMap" parent="." unique_id=815877706 instance=ExtResource("10_5i57p")]
-z_index = -1
-position = Vector2(63, 30)
-
 [node name="WindowButtonTest" parent="." unique_id=1614833038 instance=ExtResource("6_g6mmx")]
-position = Vector2(48, 29)
+z_index = 1
+position = Vector2(125, 60)
 total_seconds = 20
 
-[node name="WindowTest1" parent="." unique_id=136743137 instance=ExtResource("4_cxrug")]
-position = Vector2(187, 76)
-
 [node name="WindowPress" parent="." unique_id=1371987939 instance=ExtResource("7_h4728")]
-position = Vector2(121, 22)
+z_index = 1
+position = Vector2(122, 106)
 
 [node name="WindowCalc" parent="." unique_id=818146548 instance=ExtResource("8_h4728")]
-position = Vector2(46, 87)
+z_index = 1
+position = Vector2(71, 76)
 
 [node name="WindowHourglass" parent="." unique_id=671522378 instance=ExtResource("10_y4tp0")]
-position = Vector2(204, 115)
+z_index = 1
+position = Vector2(97, 36)
 
 [node name="WindowMonkey" parent="." unique_id=1045078971 instance=ExtResource("12_5uo2x")]
-position = Vector2(109, 78)
+z_index = 1
+position = Vector2(166, 78)
+
+[node name="WindowCableBox" parent="." unique_id=1703067553 instance=ExtResource("6_h4728")]
+z_index = 1
+position = Vector2(162, 18)
+
+[node name="ChinaButton" type="TextureButton" parent="." unique_id=1814177103]
+z_index = 500
+offset_left = 259.0
+offset_top = 154.0
+offset_right = 269.0
+offset_bottom = 162.0
+texture_normal = SubResource("AtlasTexture_svdou")
+
+[node name="MexicoButton" type="TextureButton" parent="." unique_id=1980362091]
+z_index = 500
+offset_left = 246.0
+offset_top = 154.0
+offset_right = 256.0
+offset_bottom = 162.0
+texture_normal = SubResource("AtlasTexture_5uo2x")
+
+[node name="IndiaButton" type="TextureButton" parent="." unique_id=264808390]
+z_index = 500
+offset_left = 194.0
+offset_top = 154.0
+offset_right = 204.0
+offset_bottom = 162.0
+texture_normal = SubResource("AtlasTexture_58078")
+
+[node name="ArgentinaButton" type="TextureButton" parent="." unique_id=344708640]
+z_index = 500
+offset_left = 207.0
+offset_top = 154.0
+offset_right = 217.0
+offset_bottom = 162.0
+texture_normal = SubResource("AtlasTexture_t6ydj")
+
+[node name="JapanButton" type="TextureButton" parent="." unique_id=1808741797]
+z_index = 500
+offset_left = 220.0
+offset_top = 154.0
+offset_right = 230.0
+offset_bottom = 162.0
+texture_normal = SubResource("AtlasTexture_jw6hy")
+
+[node name="CanadaButton" type="TextureButton" parent="." unique_id=1569463655]
+z_index = 500
+offset_left = 233.0
+offset_top = 154.0
+offset_right = 243.0
+offset_bottom = 162.0
+texture_normal = SubResource("AtlasTexture_y4tp0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1327166675]
 collision_layer = 2
@@ -71,7 +144,14 @@ collision_mask = 2
 z_index = 500
 polygon = PackedVector2Array(32, 12, 296, 12, 296, 193, 15, 193, 6, 193, 7, 13, -16, 56, -17, 214, 328, 222, 321, -1, 0, 7, 7, 13)
 
-[node name="WindowCableBox" parent="." unique_id=1703067553 instance=ExtResource("6_h4728")]
-position = Vector2(188, 32)
+[node name="TimerWindow" type="Timer" parent="." unique_id=2093246973]
+wait_time = 10.0
 
 [connection signal="input_event" from="BackButton/BackArea" to="." method="_on_back_area_input_event"]
+[connection signal="pressed" from="ChinaButton" to="." method="_on_china_button_pressed"]
+[connection signal="pressed" from="MexicoButton" to="." method="_on_mexico_button_pressed"]
+[connection signal="pressed" from="IndiaButton" to="." method="_on_india_button_pressed"]
+[connection signal="pressed" from="ArgentinaButton" to="." method="_on_argentina_button_pressed"]
+[connection signal="pressed" from="JapanButton" to="." method="_on_japan_button_pressed"]
+[connection signal="pressed" from="CanadaButton" to="." method="_on_canada_button_pressed"]
+[connection signal="timeout" from="TimerWindow" to="." method="_on_timer_window_timeout"]

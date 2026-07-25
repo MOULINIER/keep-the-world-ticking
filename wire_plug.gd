@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	if is_dragging and Input.is_action_just_released("Click"):
 		is_dragging = false
 		var endposition: Vector2 =  get_global_mouse_position()
-		if endposition.distance_to(partner_location) < 10:
+		if endposition.distance_to(partner_location) < 8:
 			is_plugged = true
 			
 

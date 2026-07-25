@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bq46welpa5pdw" path="res://scene/windowTest1.tscn" id="4_cxrug"]
 [ext_resource type="PackedScene" uid="uid://b7wjnphq1sfs0" path="res://scene/windowButton.tscn" id="6_g6mmx"]
 [ext_resource type="PackedScene" uid="uid://bc5pucbk6t8uo" path="res://scene/windowCableBox.tscn" id="6_h4728"]
-[ext_resource type="PackedScene" uid="uid://dqmisvqi02sk4" path="res://scene/windowTimeBar.tscn" id="7_a8nm8"]
 [ext_resource type="PackedScene" uid="uid://dcbfokbctd1eg" path="res://scene/windowPress.tscn" id="7_h4728"]
 [ext_resource type="PackedScene" uid="uid://bcw76lwd8x6rm" path="res://scene/windowCalc.tscn" id="8_h4728"]
 [ext_resource type="PackedScene" uid="uid://b7647bm2w7oyk" path="res://scene/windowWorldMap.tscn" id="10_5i57p"]
 [ext_resource type="PackedScene" uid="uid://2wv7w26uv0li" path="res://scene/windowHourglass.tscn" id="10_y4tp0"]
+[ext_resource type="PackedScene" uid="uid://karuqlke2klb" path="res://scene/windowMonkey.tscn" id="12_5uo2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
 size = Vector2(276.76056, 74)
@@ -40,6 +40,10 @@ texture = ExtResource("2_q4rav")
 position = Vector2(1.9073486e-06, 0.00010585785)
 shape = SubResource("RectangleShape2D_svdou")
 
+[node name="WindowWorldMap" parent="." unique_id=815877706 instance=ExtResource("10_5i57p")]
+z_index = -1
+position = Vector2(63, 30)
+
 [node name="WindowButtonTest" parent="." unique_id=1614833038 instance=ExtResource("6_g6mmx")]
 position = Vector2(48, 29)
 total_seconds = 20
@@ -47,11 +51,8 @@ total_seconds = 20
 [node name="WindowTest1" parent="." unique_id=136743137 instance=ExtResource("4_cxrug")]
 position = Vector2(187, 76)
 
-[node name="WindowTimeBar" parent="." unique_id=1296321778 instance=ExtResource("7_a8nm8")]
-position = Vector2(130, 111)
-
 [node name="WindowPress" parent="." unique_id=1371987939 instance=ExtResource("7_h4728")]
-position = Vector2(114, 43)
+position = Vector2(121, 22)
 
 [node name="WindowCalc" parent="." unique_id=818146548 instance=ExtResource("8_h4728")]
 position = Vector2(46, 87)
@@ -59,9 +60,8 @@ position = Vector2(46, 87)
 [node name="WindowHourglass" parent="." unique_id=671522378 instance=ExtResource("10_y4tp0")]
 position = Vector2(204, 115)
 
-[node name="WindowWorldMap" parent="." unique_id=815877706 instance=ExtResource("10_5i57p")]
-z_index = -1
-position = Vector2(63, 30)
+[node name="WindowMonkey" parent="." unique_id=1045078971 instance=ExtResource("12_5uo2x")]
+position = Vector2(109, 78)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1327166675]
 collision_layer = 2

@@ -54,6 +54,8 @@ region = Rect2(120, 0, 15, 18)
 
 [node name="Node2D" type="Node2D" unique_id=1045078971]
 script = ExtResource("1_1v5hs")
+total_seconds = null
+second_added = null
 
 [node name="Window" parent="." unique_id=154025688 instance=ExtResource("1_1ispn")]
 
@@ -91,7 +93,6 @@ offset_left = 13.0
 offset_top = 19.0
 offset_right = 13.0
 offset_bottom = 19.0
-action_mode = 0
 texture_normal = SubResource("AtlasTexture_8fb6m")
 
 [node name="NumO1Sprite2D" type="TextureButton" parent="Window" unique_id=208688554]
@@ -99,7 +100,6 @@ offset_left = 29.0
 offset_top = 19.0
 offset_right = 29.0
 offset_bottom = 19.0
-action_mode = 0
 texture_normal = SubResource("AtlasTexture_gr2ya")
 
 [node name="NumO2Sprite2D" type="TextureButton" parent="Window" unique_id=1110981817]
@@ -107,7 +107,6 @@ offset_left = 45.0
 offset_top = 19.0
 offset_right = 45.0
 offset_bottom = 19.0
-action_mode = 0
 texture_normal = SubResource("AtlasTexture_camsr")
 
 [node name="Num1OSprite2D" type="TextureButton" parent="Window" unique_id=1685579742]
@@ -116,7 +115,6 @@ offset_left = 13.0
 offset_top = 35.0
 offset_right = 13.0
 offset_bottom = 35.0
-action_mode = 0
 texture_normal = SubResource("AtlasTexture_7o8yx")
 
 [node name="Num11Sprite2D" type="TextureButton" parent="Window" unique_id=1909550814]
@@ -125,7 +123,6 @@ offset_left = 29.0
 offset_top = 35.0
 offset_right = 29.0
 offset_bottom = 35.0
-action_mode = 0
 texture_normal = SubResource("AtlasTexture_var4b")
 
 [node name="Num12Sprite2D" type="TextureButton" parent="Window" unique_id=660293185]
@@ -134,7 +131,6 @@ offset_left = 45.0
 offset_top = 35.0
 offset_right = 45.0
 offset_bottom = 35.0
-action_mode = 0
 texture_normal = SubResource("AtlasTexture_bjvb1")
 
 [node name="Num2OSprite2D" type="TextureButton" parent="Window" unique_id=1344930828]
@@ -143,7 +139,6 @@ offset_left = 13.0
 offset_top = 51.0
 offset_right = 13.0
 offset_bottom = 51.0
-action_mode = 0
 texture_normal = SubResource("AtlasTexture_jdmfg")
 
 [node name="Num21Sprite2D" type="TextureButton" parent="Window" unique_id=752291218]
@@ -152,7 +147,6 @@ offset_left = 29.0
 offset_top = 51.0
 offset_right = 29.0
 offset_bottom = 51.0
-action_mode = 0
 texture_normal = SubResource("AtlasTexture_yth3s")
 
 [node name="Num22Sprite2D" type="TextureButton" parent="Window" unique_id=1767417117]
@@ -161,7 +155,6 @@ offset_left = 45.0
 offset_top = 51.0
 offset_right = 45.0
 offset_bottom = 51.0
-action_mode = 0
 texture_normal = SubResource("AtlasTexture_rosoe")
 
 [node name="Timer" type="Timer" parent="." unique_id=615719439]
@@ -170,14 +163,5 @@ one_shot = true
 autostart = true
 
 [connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
-[connection signal="pressed" from="Window/NumOOSprite2D" to="." method="_on_num_oo_sprite_2d_pressed"]
-[connection signal="pressed" from="Window/NumO1Sprite2D" to="." method="_on_num_o_1_sprite_2d_pressed"]
-[connection signal="pressed" from="Window/NumO2Sprite2D" to="." method="_on_num_o_2_sprite_2d_pressed"]
-[connection signal="pressed" from="Window/Num1OSprite2D" to="." method="_on_num_1o_sprite_2d_pressed"]
-[connection signal="pressed" from="Window/Num11Sprite2D" to="." method="_on_num_11_sprite_2d_pressed"]
-[connection signal="pressed" from="Window/Num12Sprite2D" to="." method="_on_num_12_sprite_2d_pressed"]
-[connection signal="pressed" from="Window/Num2OSprite2D" to="." method="_on_num_2o_sprite_2d_pressed"]
-[connection signal="pressed" from="Window/Num21Sprite2D" to="." method="_on_num_21_sprite_2d_pressed"]
-[connection signal="pressed" from="Window/Num22Sprite2D" to="." method="_on_num_22_sprite_2d_pressed"]
 
 [editable path="Window"]

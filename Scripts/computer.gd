@@ -5,7 +5,7 @@ var mouseDifference : Vector2
 var windowArray = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	windowArray = [$WindowButtonTest, $WindowTest1, $WindowTimeBar,$WindowPress, $WindowCalc, $WindowWorldMap,$WindowHourglass,$WindowCableBox]
+	windowArray = [$WindowButtonTest, $WindowTest1,$WindowPress, $WindowCalc,$WindowMonkey, $WindowHourglass,$WindowCableBox, $WindowWorldMap]
 	windowArray[0].z_index = 100
 
 

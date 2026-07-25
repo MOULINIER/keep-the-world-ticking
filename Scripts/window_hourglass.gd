@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var timer: Timer = $Timer
-@onready var timer2: Timer = $Timer2
 @onready var bar: TextureProgressBar = $Window/TextureProgressBar
 @onready var hourglass : AnimatedSprite2D = $Window/HourglassAnimatedSprite2D
 

@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://karuqlke2klb"]
+
+[ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_1ispn"]
+[ext_resource type="Texture2D" uid="uid://ccrx7jxwny1e" path="res://assets/monkey_frame.png" id="2_1ispn"]
+[ext_resource type="Texture2D" uid="uid://csvng7grje8km" path="res://assets/placeHolder/placeHolderSmallWindow.png" id="2_5wk3d"]
+[ext_resource type="Texture2D" uid="uid://drwxef3xkjj3w" path="res://assets/monkey_test-spritesheet.png" id="4_j1qyp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1qyp"]
+size = Vector2(69.99992, 3.7974682)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2p0pq"]
+size = Vector2(69.999886, 29.999998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1v5hs"]
+size = Vector2(73, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svdou"]
+atlas = ExtResource("4_j1qyp")
+region = Rect2(0, 0, 15, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p0pq"]
+atlas = ExtResource("4_j1qyp")
+region = Rect2(15, 0, 15, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1qyp"]
+atlas = ExtResource("4_j1qyp")
+region = Rect2(30, 0, 15, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v5hs"]
+atlas = ExtResource("4_j1qyp")
+region = Rect2(45, 0, 15, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrg5c"]
+atlas = ExtResource("4_j1qyp")
+region = Rect2(60, 0, 15, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eusu8"]
+atlas = ExtResource("4_j1qyp")
+region = Rect2(75, 0, 15, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7df0i"]
+atlas = ExtResource("4_j1qyp")
+region = Rect2(90, 0, 15, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tujoq"]
+atlas = ExtResource("4_j1qyp")
+region = Rect2(105, 0, 15, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkpx5"]
+atlas = ExtResource("4_j1qyp")
+region = Rect2(120, 0, 15, 18)
+
+[node name="Node2D" type="Node2D" unique_id=1045078971]
+
+[node name="Window" parent="." unique_id=154025688 instance=ExtResource("1_1ispn")]
+
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
+scale = Vector2(1.0428572, 2.6333334)
+texture = ExtResource("2_5wk3d")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(154025688, 1784525188) index="0" unique_id=1700177945]
+position = Vector2(35.000004, 1.8987341)
+shape = SubResource("RectangleShape2D_j1qyp")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(154025688, 1135412940) index="0" unique_id=1706110952]
+position = Vector2(35, 15)
+shape = SubResource("RectangleShape2D_2p0pq")
+
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
+position = Vector2(36.5, 39.5)
+shape = SubResource("RectangleShape2D_1v5hs")
+
+[node name="NumOOSprite2D" type="Sprite2D" parent="Window" unique_id=907258954]
+position = Vector2(13, 19)
+texture = SubResource("AtlasTexture_svdou")
+centered = false
+
+[node name="NumO1Sprite2D" type="Sprite2D" parent="Window" unique_id=1877297742]
+position = Vector2(29, 19)
+texture = SubResource("AtlasTexture_2p0pq")
+centered = false
+
+[node name="NumO2Sprite2D" type="Sprite2D" parent="Window" unique_id=1177456878]
+position = Vector2(45, 19)
+texture = SubResource("AtlasTexture_j1qyp")
+centered = false
+
+[node name="Num1OSprite2D" type="Sprite2D" parent="Window" unique_id=1982800236]
+z_index = 1
+position = Vector2(13, 35)
+texture = SubResource("AtlasTexture_1v5hs")
+centered = false
+
+[node name="Num11Sprite2D" type="Sprite2D" parent="Window" unique_id=2115577826]
+z_index = 1
+position = Vector2(29, 35)
+texture = SubResource("AtlasTexture_mrg5c")
+centered = false
+
+[node name="Num12Sprite2D" type="Sprite2D" parent="Window" unique_id=1655576294]
+z_index = 1
+position = Vector2(45, 35)
+texture = SubResource("AtlasTexture_eusu8")
+centered = false
+
+[node name="Num2OSprite2D" type="Sprite2D" parent="Window" unique_id=619874829]
+z_index = 2
+position = Vector2(13, 51)
+texture = SubResource("AtlasTexture_7df0i")
+centered = false
+
+[node name="Num21Sprite2D" type="Sprite2D" parent="Window" unique_id=861443822]
+z_index = 2
+position = Vector2(29, 51)
+texture = SubResource("AtlasTexture_tujoq")
+centered = false
+
+[node name="Num22Sprite2D" type="Sprite2D" parent="Window" unique_id=213247706]
+z_index = 2
+position = Vector2(45, 51)
+texture = SubResource("AtlasTexture_rkpx5")
+centered = false
+
+[node name="MonkeyFrameSprite2D" type="Sprite2D" parent="Window" unique_id=822365697]
+z_index = 5
+texture = ExtResource("2_1ispn")
+centered = false
+
+[editable path="Window"]

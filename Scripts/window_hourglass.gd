@@ -24,7 +24,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if isRotating:
-		hourglass.rotation += 6*PI/180
+		hourglass.rotation += 4*PI/180
 		if int(hourglass.rotation/PI*180) > 90 and int(hourglass.rotation/PI*180) < 270:
 			hourglass.rotation = 270*(PI/180)
 			timer.start(total_seconds - timer.time_left)

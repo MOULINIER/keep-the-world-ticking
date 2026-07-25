@@ -26,6 +26,9 @@ size = Vector2(58.999928, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4nuw"]
 size = Vector2(58.99991, 74)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4yo3"]
+size = Vector2(59, 74)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_uosyr"]
 atlas = ExtResource("6_x4yo3")
 region = Rect2(54, 0, 6, 0)
@@ -173,6 +176,10 @@ shape = SubResource("RectangleShape2D_wqkyb")
 [node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(341003668, 1135412940) index="0" unique_id=1706110952]
 position = Vector2(29.5, 37)
 shape = SubResource("RectangleShape2D_w4nuw")
+
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
+position = Vector2(29.5, 37)
+shape = SubResource("RectangleShape2D_x4yo3")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Window" unique_id=353991825]
 offset_left = 7.0

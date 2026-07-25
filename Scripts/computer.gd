@@ -15,8 +15,12 @@ func _process(delta: float) -> void:
 	mousePos = get_global_mouse_position()
 	
 	for i in range(windowArray.size()) :
+		windowArray[i].get_node("Window").velocity = Vector2.ZERO
+	
+	for i in range(windowArray.size()) :
 		if windowArray[i].get_node("Window").shouldMove :
-			windowArray[i].global_position -= mouseDifference
+			#windowArray[i].global_position -= mouseDifference
+			windowArray[i].get_node("Window").velocity -= mouseDifference/delta
 			break
 			
 	for i in range(windowArray.size()) :

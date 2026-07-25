@@ -11,6 +11,9 @@ size = Vector2(69.99989, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l133p"]
 size = Vector2(70, 29.999998)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdom2"]
+size = Vector2(70, 30)
+
 [node name="Node2D" type="Node2D" unique_id=136743137]
 script = ExtResource("1_emwb5")
 
@@ -27,6 +30,10 @@ shape = SubResource("RectangleShape2D_pmgya")
 [node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(341003668, 1135412940) index="0" unique_id=1706110952]
 position = Vector2(35, 15)
 shape = SubResource("RectangleShape2D_l133p")
+
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
+position = Vector2(35, 15)
+shape = SubResource("RectangleShape2D_kdom2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Window" unique_id=1290371802]
 position = Vector2(7, 17)

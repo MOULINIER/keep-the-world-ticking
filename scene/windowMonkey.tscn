@@ -72,6 +72,10 @@ shape = SubResource("RectangleShape2D_2p0pq")
 position = Vector2(36.5, 39.5)
 shape = SubResource("RectangleShape2D_1v5hs")
 
+[node name="HideTextureButton" parent="Window" index="2" unique_id=379569171]
+offset_left = 65.0
+offset_right = 70.0
+
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Window" unique_id=1534918959]
 offset_left = 7.0
 offset_top = 5.0

@@ -39,7 +39,14 @@ shape = SubResource("RectangleShape2D_svdou")
 position = Vector2(27.5, 25.5)
 shape = SubResource("RectangleShape2D_camsr")
 
+[node name="HideTextureButton" type="TextureButton" parent="." unique_id=379569171]
+offset_left = 47.0
+offset_top = 3.0
+offset_right = 52.0
+offset_bottom = 8.0
+
 [connection signal="mouse_entered" from="windowSprite/moveWindowArea" to="." method="_on_move_window_area_mouse_entered"]
 [connection signal="mouse_exited" from="windowSprite/moveWindowArea" to="." method="_on_move_window_area_mouse_exited"]
 [connection signal="mouse_entered" from="windowSprite/WindowArea" to="." method="_on_window_area_mouse_entered"]
 [connection signal="mouse_exited" from="windowSprite/WindowArea" to="." method="_on_window_area_mouse_exited"]
+[connection signal="pressed" from="HideTextureButton" to="." method="_on_hide_texture_button_pressed"]

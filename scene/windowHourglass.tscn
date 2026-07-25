@@ -187,6 +187,10 @@ shape = SubResource("RectangleShape2D_yjb52")
 position = Vector2(22.5, 20)
 shape = SubResource("RectangleShape2D_x3ih7")
 
+[node name="HideTextureButton" parent="Window" index="2" unique_id=379569171]
+offset_left = 37.0
+offset_right = 42.0
+
 [node name="HourglassAnimatedSprite2D" type="AnimatedSprite2D" parent="Window" unique_id=177685452]
 position = Vector2(14.5, 23.5)
 sprite_frames = SubResource("SpriteFrames_svdou")

@@ -15,10 +15,10 @@ var COLORS := [
 var complete: bool = false
 @export var total_seconds: int = 40
 
-var greenTexture = preload("res://assets/Window1TimeBarGreen.png")
-var orangeTexture = preload("res://assets/Window1TimeBarOrange.png")
-var redTexture = preload("res://assets/Window1TimeBarRed.png")
-var whiteTexture = preload("res://assets/Window1TimeBarWhite.png")
+var greenTexture = preload("res://assets/Window3TimeBarGreen.png")
+var orangeTexture = preload("res://assets/Window3TimeBarOrange.png")
+var redTexture = preload("res://assets/Window3TimeBarRed.png")
+var whiteTexture = preload("res://assets/Window3TimeBarWhite.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

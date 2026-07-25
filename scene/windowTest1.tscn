@@ -35,6 +35,12 @@ shape = SubResource("RectangleShape2D_l133p")
 position = Vector2(35, 15)
 shape = SubResource("RectangleShape2D_kdom2")
 
+[node name="HideTextureButton" parent="Window" index="2" unique_id=379569171]
+offset_left = 64.0
+offset_top = 1.0
+offset_right = 69.0
+offset_bottom = 6.0
+
 [node name="Sprite2D" type="Sprite2D" parent="Window" unique_id=1290371802]
 position = Vector2(7, 17)
 scale = Vector2(0.0859375, 0.140625)

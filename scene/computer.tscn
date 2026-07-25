@@ -87,6 +87,7 @@ position = Vector2(166, 78)
 [node name="WindowCableBox" parent="." unique_id=1703067553 instance=ExtResource("6_h4728")]
 z_index = 1
 position = Vector2(162, 18)
+metadata/_edit_vertical_guides_ = [5.0, 49.0]
 
 [node name="ChinaButton" type="TextureButton" parent="." unique_id=1814177103]
 z_index = 500
@@ -155,3 +156,6 @@ wait_time = 10.0
 [connection signal="pressed" from="JapanButton" to="." method="_on_japan_button_pressed"]
 [connection signal="pressed" from="CanadaButton" to="." method="_on_canada_button_pressed"]
 [connection signal="timeout" from="TimerWindow" to="." method="_on_timer_window_timeout"]
+
+[editable path="WindowMonkey"]
+[editable path="WindowMonkey/Window"]

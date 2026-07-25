@@ -85,25 +85,26 @@ func _on_timer_window_timeout() -> void:
 
 
 func _on_china_button_pressed() -> void:
+	print($WindowButtonTest.visible)
 	if $WindowButtonTest.process_mode != Node.PROCESS_MODE_DISABLED:
-		$WindowButtonTest.visible = !$WindowButtonTest.visible
+		$WindowButtonTest.get_node("Window").visible = !$WindowButtonTest.get_node("Window").visible
 
 func _on_mexico_button_pressed() -> void:
 	if $WindowPress.process_mode != Node.PROCESS_MODE_DISABLED:
-		$WindowPress.visible = !$WindowPress.visible
+		$WindowPress.get_node("Window").visible = !$WindowPress.get_node("Window").visible
 
 func _on_argentina_button_pressed() -> void:
 	if $WindowHourglass.process_mode != Node.PROCESS_MODE_DISABLED:
-		$WindowHourglass.visible = !$WindowHourglass.visible
+		$WindowHourglass.get_node("Window").visible = !$WindowHourglass.get_node("Window").visible
 
 func _on_japan_button_pressed() -> void:
 	if $WindowMonkey.process_mode != Node.PROCESS_MODE_DISABLED:
-		$WindowMonkey.visible = !$WindowMonkey.visible
+		$WindowMonkey.get_node("Window").visible = !$WindowMonkey.get_node("Window").visible
 
 func _on_canada_button_pressed() -> void:
 	if $WindowCableBox.process_mode != Node.PROCESS_MODE_DISABLED:
-		$WindowCableBox.visible = !$WindowCableBox.visible
+		$WindowCableBox.get_node("Window").visible = !$WindowCableBox.get_node("Window").visible
 
 func _on_india_button_pressed() -> void:
 	if $WindowCalc.process_mode != Node.PROCESS_MODE_DISABLED:
-		$WindowCalc.visible = !$WindowCalc.visible
+		$WindowCalc.get_node("Window").visible = !$WindowCalc.get_node("Window").visible

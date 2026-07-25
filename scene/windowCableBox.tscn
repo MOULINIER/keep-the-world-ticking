@@ -43,6 +43,10 @@ shape = SubResource("RectangleShape2D_f7ugw")
 position = Vector2(34.5, 43.5)
 shape = SubResource("RectangleShape2D_5lb3y")
 
+[node name="HideTextureButton" parent="Window" index="2" unique_id=379569171]
+offset_left = 61.0
+offset_right = 66.0
+
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Window" unique_id=2067023450]
 offset_left = 7.0
 offset_top = 5.0
@@ -100,31 +104,33 @@ rotation = 3.1415927
 [node name="BuldGroup" type="Node2D" parent="Window" unique_id=957552429]
 
 [node name="BulbSheet5" type="Sprite2D" parent="Window/BuldGroup" unique_id=1230639433]
-position = Vector2(30, 11)
+position = Vector2(30, 12)
 texture = SubResource("AtlasTexture_5lb3y")
 centered = false
 
 [node name="BulbSheet4" type="Sprite2D" parent="Window/BuldGroup" unique_id=1807616393]
-position = Vector2(40, 11)
+position = Vector2(40, 12)
 texture = SubResource("AtlasTexture_5lb3y")
 centered = false
 
 [node name="BulbSheet3" type="Sprite2D" parent="Window/BuldGroup" unique_id=776553430]
-position = Vector2(50, 11)
+position = Vector2(50, 12)
 texture = SubResource("AtlasTexture_5lb3y")
 centered = false
 
 [node name="BulbSheet2" type="Sprite2D" parent="Window/BuldGroup" unique_id=2134699441]
-position = Vector2(20, 11)
+position = Vector2(20, 12)
 texture = SubResource("AtlasTexture_5lb3y")
 centered = false
 
 [node name="BulbSheet" type="Sprite2D" parent="Window/BuldGroup" unique_id=1899788746]
-position = Vector2(10, 11)
+position = Vector2(10, 12)
 texture = SubResource("AtlasTexture_5lb3y")
 centered = false
 
 [node name="Timer" type="Timer" parent="." unique_id=496014821]
 wait_time = 40.0
+
+[connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
 
 [editable path="Window"]

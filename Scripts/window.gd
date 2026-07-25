@@ -37,3 +37,7 @@ func _on_window_area_mouse_entered() -> void:
 
 func _on_window_area_mouse_exited() -> void:
 	mouseIn = false
+
+
+func _on_hide_texture_button_pressed() -> void:
+	visible = false

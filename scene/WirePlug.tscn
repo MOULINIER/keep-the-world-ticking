@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://wv6yptix3hgh"]
+
+[ext_resource type="Script" uid="uid://d4fs06ienkx0b" path="res://wire_plug.gd" id="1_2n8nd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qihe5"]
+size = Vector2(6, 5)
+
+[sub_resource type="Gradient" id="Gradient_5lb3y"]
+colors = PackedColorArray(0.427493, 0.42749307, 0.42749307, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4y7eg"]
+gradient = SubResource("Gradient_5lb3y")
+width = 10
+
+[sub_resource type="Gradient" id="Gradient_gpwr6"]
+colors = PackedColorArray(1, 1, 1, 1, 0.3515629, 0.3515629, 0.35156286, 1)
+
+[node name="WireStartEnd" type="Node2D" unique_id=821796348]
+script = ExtResource("1_2n8nd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1446989177]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2112527383]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_qihe5")
+
+[node name="PlaceholderCable" type="Sprite2D" parent="Area2D" unique_id=488433939]
+position = Vector2(0, -2)
+scale = Vector2(0.2, 3)
+texture = SubResource("GradientTexture1D_4y7eg")
+centered = false
+
+[node name="Line2D" type="Line2D" parent="Area2D" unique_id=465033455]
+z_index = 12
+position = Vector2(1.5, -0.5)
+scale = Vector2(1, 1.3333334)
+points = PackedVector2Array(0, 0, 1, 0)
+width = 1.0
+gradient = SubResource("Gradient_gpwr6")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

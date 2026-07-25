@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://bc5pucbk6t8uo"]
+
+[ext_resource type="Script" uid="uid://cgia0c42qkn05" path="res://window_cable_box.gd" id="1_lprgb"]
+[ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_n78g2"]
+[ext_resource type="Texture2D" uid="uid://cyjmvcyrvrcnc" path="res://assets/Window1TimeBarGreen.png" id="2_als56"]
+[ext_resource type="Texture2D" uid="uid://dylt45q2j2v7k" path="res://assets/cabble_box.png" id="4_4y7eg"]
+[ext_resource type="PackedScene" uid="uid://wv6yptix3hgh" path="res://scene/WirePlug.tscn" id="4_ktiis"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ktiis"]
+load_path = "res://.godot/imported/Window1.png-c4266a0e9079437429f23bd551485db1.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4y7eg"]
+size = Vector2(54.99993, 8.791096)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7ugw"]
+size = Vector2(54.999916, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lb3y"]
+size = Vector2(54, 72)
+
+[node name="WindowCableBox" type="Node2D" unique_id=1703067553]
+script = ExtResource("1_lprgb")
+metadata/_edit_vertical_guides_ = [5.0, 49.0]
+
+[node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_n78g2")]
+
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
+scale = Vector2(1, 1.4901961)
+texture = SubResource("CompressedTexture2D_ktiis")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(341003668, 1784525188) index="0" unique_id=1700177945]
+position = Vector2(27.500002, 4.395548)
+scale = Vector2(1.0000013, 1.0000001)
+shape = SubResource("RectangleShape2D_4y7eg")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(341003668, 1135412940) index="0" unique_id=1706110952]
+position = Vector2(27.500004, 25.500002)
+scale = Vector2(1.0000018, 1)
+shape = SubResource("RectangleShape2D_f7ugw")
+
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
+position = Vector2(27, 36)
+shape = SubResource("RectangleShape2D_5lb3y")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Window" unique_id=2067023450]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 44.0
+offset_bottom = 10.0
+value = 100.0
+texture_progress = ExtResource("2_als56")
+
+[node name="CabbleBox" type="Sprite2D" parent="Window" unique_id=1512901889]
+position = Vector2(8, 18)
+texture = ExtResource("4_4y7eg")
+centered = false
+
+[node name="Start" type="Node2D" parent="Window/CabbleBox" unique_id=192853612]
+position = Vector2(-17, -23)
+
+[node name="WireStartEnd5" parent="Window/CabbleBox/Start" unique_id=821796348 instance=ExtResource("4_ktiis")]
+position = Vector2(21, 66)
+
+[node name="WireStartEnd" parent="Window/CabbleBox/Start" unique_id=1011717854 instance=ExtResource("4_ktiis")]
+position = Vector2(21, 34)
+
+[node name="WireStartEnd2" parent="Window/CabbleBox/Start" unique_id=678073394 instance=ExtResource("4_ktiis")]
+position = Vector2(21, 50)
+
+[node name="WireStartEnd3" parent="Window/CabbleBox/Start" unique_id=777440836 instance=ExtResource("4_ktiis")]
+position = Vector2(21, 42)
+
+[node name="WireStartEnd4" parent="Window/CabbleBox/Start" unique_id=1114272042 instance=ExtResource("4_ktiis")]
+position = Vector2(21, 58)
+
+[node name="End" type="Node2D" parent="Window/CabbleBox" unique_id=286079284]
+position = Vector2(-26, -41)
+
+[node name="WireStartEnd5" parent="Window/CabbleBox/End" unique_id=1290713395 instance=ExtResource("4_ktiis")]
+position = Vector2(63, 51)
+rotation = 3.1415927
+
+[node name="WireStartEnd6" parent="Window/CabbleBox/End" unique_id=729420353 instance=ExtResource("4_ktiis")]
+position = Vector2(63, 59)
+rotation = 3.1415927
+
+[node name="WireStartEnd7" parent="Window/CabbleBox/End" unique_id=1542586508 instance=ExtResource("4_ktiis")]
+position = Vector2(63, 67)
+rotation = 3.1415927
+
+[node name="WireStartEnd8" parent="Window/CabbleBox/End" unique_id=1176968504 instance=ExtResource("4_ktiis")]
+position = Vector2(63, 75)
+rotation = 3.1415927
+
+[node name="WireStartEnd9" parent="Window/CabbleBox/End" unique_id=449178614 instance=ExtResource("4_ktiis")]
+position = Vector2(63, 83)
+rotation = 3.1415927
+
+[node name="Timer" type="Timer" parent="." unique_id=496014821]
+wait_time = 40.0
+
+[editable path="Window"]

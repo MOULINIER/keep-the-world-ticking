@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dakrpnurxn7mf" path="res://assets/ordi_background2.png" id="3_ctips"]
 [ext_resource type="PackedScene" uid="uid://bq46welpa5pdw" path="res://scene/windowTest1.tscn" id="4_cxrug"]
 [ext_resource type="PackedScene" uid="uid://b7wjnphq1sfs0" path="res://scene/windowButton.tscn" id="6_g6mmx"]
+[ext_resource type="PackedScene" uid="uid://bc5pucbk6t8uo" path="res://scene/windowCableBox.tscn" id="6_h4728"]
 [ext_resource type="PackedScene" uid="uid://dqmisvqi02sk4" path="res://scene/windowTimeBar.tscn" id="7_a8nm8"]
 [ext_resource type="PackedScene" uid="uid://dcbfokbctd1eg" path="res://scene/windowPress.tscn" id="7_h4728"]
 [ext_resource type="PackedScene" uid="uid://bcw76lwd8x6rm" path="res://scene/windowCalc.tscn" id="8_h4728"]
@@ -40,23 +41,23 @@ position = Vector2(1.9073486e-06, 0.00010585785)
 shape = SubResource("RectangleShape2D_svdou")
 
 [node name="WindowButtonTest" parent="." unique_id=1614833038 instance=ExtResource("6_g6mmx")]
-position = Vector2(55, 48)
+position = Vector2(48, 29)
 total_seconds = 20
 
 [node name="WindowTest1" parent="." unique_id=136743137 instance=ExtResource("4_cxrug")]
-position = Vector2(176, 59)
+position = Vector2(187, 76)
 
 [node name="WindowTimeBar" parent="." unique_id=1296321778 instance=ExtResource("7_a8nm8")]
-position = Vector2(133, 98)
+position = Vector2(130, 111)
 
 [node name="WindowPress" parent="." unique_id=1371987939 instance=ExtResource("7_h4728")]
 position = Vector2(114, 43)
 
 [node name="WindowCalc" parent="." unique_id=818146548 instance=ExtResource("8_h4728")]
-position = Vector2(66, 103)
+position = Vector2(46, 87)
 
 [node name="WindowHourglass" parent="." unique_id=671522378 instance=ExtResource("10_y4tp0")]
-position = Vector2(199, 101)
+position = Vector2(204, 115)
 
 [node name="WindowWorldMap" parent="." unique_id=815877706 instance=ExtResource("10_5i57p")]
 z_index = -1
@@ -69,5 +70,8 @@ collision_mask = 2
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1725488580]
 z_index = 500
 polygon = PackedVector2Array(32, 12, 296, 12, 296, 193, 15, 193, 6, 193, 7, 13, -16, 56, -17, 214, 328, 222, 321, -1, 0, 7, 7, 13)
+
+[node name="WindowCableBox" parent="." unique_id=1703067553 instance=ExtResource("6_h4728")]
+position = Vector2(188, 32)
 
 [connection signal="input_event" from="BackButton/BackArea" to="." method="_on_back_area_input_event"]

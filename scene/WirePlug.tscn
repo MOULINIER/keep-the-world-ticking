@@ -13,7 +13,7 @@ gradient = SubResource("Gradient_5lb3y")
 width = 10
 
 [sub_resource type="Gradient" id="Gradient_gpwr6"]
-colors = PackedColorArray(1, 1, 1, 1, 0.3515629, 0.3515629, 0.35156286, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.5971761, 0.59717613, 0.597176, 1)
 
 [node name="WireStartEnd" type="Node2D" unique_id=821796348]
 script = ExtResource("1_2n8nd")
@@ -32,8 +32,7 @@ centered = false
 
 [node name="Line2D" type="Line2D" parent="Area2D" unique_id=465033455]
 z_index = 12
-position = Vector2(1.5, -0.5)
-scale = Vector2(1, 1.3333334)
+position = Vector2(4.01, -0.5)
 points = PackedVector2Array(0, 0, 1, 0)
 width = 1.0
 gradient = SubResource("Gradient_gpwr6")

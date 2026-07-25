@@ -25,6 +25,7 @@ texture = ExtResource("3_ctips")
 centered = false
 
 [node name="ComputerDesktopSprite2D" type="Sprite2D" parent="." unique_id=1602009947]
+z_index = -100
 texture = ExtResource("3_5i57p")
 centered = false
 
@@ -59,8 +60,8 @@ position = Vector2(46, 87)
 position = Vector2(204, 115)
 
 [node name="WindowWorldMap" parent="." unique_id=815877706 instance=ExtResource("10_5i57p")]
-visible = false
-position = Vector2(52, 25)
+z_index = -1
+position = Vector2(63, 30)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1327166675]
 collision_layer = 2

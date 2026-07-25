@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dqmisvqi02sk4" path="res://scene/windowTimeBar.tscn" id="7_a8nm8"]
 [ext_resource type="PackedScene" uid="uid://dcbfokbctd1eg" path="res://scene/windowPress.tscn" id="7_h4728"]
 [ext_resource type="PackedScene" uid="uid://bcw76lwd8x6rm" path="res://scene/windowCalc.tscn" id="8_h4728"]
+[ext_resource type="PackedScene" uid="uid://b7647bm2w7oyk" path="res://scene/windowWorldMap.tscn" id="10_5i57p"]
+[ext_resource type="PackedScene" uid="uid://2wv7w26uv0li" path="res://scene/windowHourglass.tscn" id="10_y4tp0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
 size = Vector2(276.76056, 74)
@@ -51,6 +53,13 @@ position = Vector2(114, 43)
 
 [node name="WindowCalc" parent="." unique_id=818146548 instance=ExtResource("8_h4728")]
 position = Vector2(66, 103)
+
+[node name="WindowHourglass" parent="." unique_id=671522378 instance=ExtResource("10_y4tp0")]
+position = Vector2(199, 101)
+
+[node name="WindowWorldMap" parent="." unique_id=815877706 instance=ExtResource("10_5i57p")]
+visible = false
+position = Vector2(52, 25)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1327166675]
 collision_layer = 2

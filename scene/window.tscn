@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://4v2p3t3st2q6" path="res://assets/Window1.png" id="2_2x567"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2x567"]
-size = Vector2(63.99992, 16)
+size = Vector2(54.99993, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
 size = Vector2(54.999916, 51)
@@ -24,7 +24,7 @@ centered = false
 [node name="moveWindowArea" type="Area2D" parent="windowSprite" unique_id=1784525188]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="windowSprite/moveWindowArea" unique_id=1700177945]
-position = Vector2(28, 5)
+position = Vector2(27.500002, 5)
 scale = Vector2(1.0000012, 1)
 shape = SubResource("RectangleShape2D_2x567")
 

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b7647bm2w7oyk"]
+
+[ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_26qp0"]
+[ext_resource type="Texture2D" uid="uid://botxlwa253igc" path="res://assets/world_map.png" id="2_k5hcm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2c0fb"]
+size = Vector2(190.99976, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i84b7"]
+size = Vector2(190.99971, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5ma4"]
+size = Vector2(191, 115)
+
+[node name="Node2D" type="Node2D" unique_id=815877706]
+
+[node name="Window" parent="." unique_id=154025688 instance=ExtResource("1_26qp0")]
+
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
+texture = ExtResource("2_k5hcm")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(154025688, 1784525188) index="0" unique_id=1700177945]
+position = Vector2(95.50001, 5)
+shape = SubResource("RectangleShape2D_2c0fb")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(154025688, 1135412940) index="0" unique_id=1706110952]
+position = Vector2(95.50001, 57.5)
+shape = SubResource("RectangleShape2D_i84b7")
+
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
+position = Vector2(95.5, 57.5)
+shape = SubResource("RectangleShape2D_y5ma4")
+
+[editable path="Window"]

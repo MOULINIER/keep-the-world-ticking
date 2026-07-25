@@ -25,6 +25,8 @@ func _ready() -> void:
 		[$WindowCableBox,$CanadaButton]
 	]
 	windowArray = [$WindowButtonTest]
+	
+	$WindowButtonTest.process_mode = Node.PROCESS_MODE_DISABLED
 	for window in windowShort:
 		window.visible = false
 		window.process_mode = Node.PROCESS_MODE_DISABLED
@@ -34,7 +36,6 @@ func _ready() -> void:
 	for window in windowLong:
 		window.visible = false
 		window.process_mode = Node.PROCESS_MODE_DISABLED
-	$TimerWindow.start()
 	
 	for windowButton in windowButtonDict:
 		windowButton[1].visible = false
@@ -42,6 +43,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	for windowButton in windowButtonDict:
+		if (windowButton[0].get_node("Timer").time_left)/(windowButton[0].total_seconds) < 0.33:
+			windowButton[1].get_node("WarningAnimatedSprite2D").frame = 1
+		else:
+			windowButton[1].get_node("WarningAnimatedSprite2D").frame = 0
 		if windowButton[0].visible :
 			windowButton[1].visible = true		
 	mouseDifference = mousePos - get_global_mouse_position()
@@ -85,7 +90,6 @@ func _on_timer_window_timeout() -> void:
 
 
 func _on_china_button_pressed() -> void:
-	print($WindowButtonTest.visible)
 	if $WindowButtonTest.process_mode != Node.PROCESS_MODE_DISABLED:
 		$WindowButtonTest.get_node("Window").visible = !$WindowButtonTest.get_node("Window").visible
 
@@ -108,3 +112,12 @@ func _on_canada_button_pressed() -> void:
 func _on_india_button_pressed() -> void:
 	if $WindowCalc.process_mode != Node.PROCESS_MODE_DISABLED:
 		$WindowCalc.get_node("Window").visible = !$WindowCalc.get_node("Window").visible
+
+
+func _on_start_button_pressed() -> void:
+	$StartButtonBackGroundSprite2D.visible = false
+	$WindowButtonTest.visible = true
+	$WindowButtonTest.process_mode = Node.PROCESS_MODE_INHERIT
+	$TimerWindow.start()
+	$NukeSentAnimatedSprite2D.visible=true
+	$NukeSentAnimatedSprite2D.play("default")

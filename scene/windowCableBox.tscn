@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bc5pucbk6t8uo"]
 
-[ext_resource type="Script" uid="uid://cgia0c42qkn05" path="res://window_cable_box.gd" id="1_lprgb"]
+[ext_resource type="Script" uid="uid://cgia0c42qkn05" path="res://Scripts/window_cable_box.gd" id="1_lprgb"]
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_n78g2"]
 [ext_resource type="Texture2D" uid="uid://cyjmvcyrvrcnc" path="res://assets/Window1TimeBarGreen.png" id="2_als56"]
 [ext_resource type="Texture2D" uid="uid://dv61grfwvq5qb" path="res://assets/Window3.png" id="3_f7ugw"]
@@ -130,6 +130,7 @@ centered = false
 
 [node name="Timer" type="Timer" parent="." unique_id=496014821]
 wait_time = 40.0
+one_shot = true
 
 [connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
 

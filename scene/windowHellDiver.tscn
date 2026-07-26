@@ -21,11 +21,13 @@ size = Vector2(103, 34)
 atlas = ExtResource("4_gpf7g")
 region = Rect2(0, 0, 17, 17)
 
-[node name="Control" type="Control" unique_id=2100162009]
+[node name="Control2" type="Control" unique_id=2100162009]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -217.0
+offset_bottom = -146.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_17c2j")

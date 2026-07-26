@@ -169,7 +169,7 @@ region = Rect2(0, 0, 14, 0)
 atlas = ExtResource("6_x3ih7")
 region = Rect2(14, 0, 14, 0)
 
-[node name="Node2D" type="Control" unique_id=1639924250]
+[node name="Node2D2" type="Control" unique_id=1639924250]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_1xpyq")

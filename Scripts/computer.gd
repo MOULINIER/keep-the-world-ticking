@@ -37,7 +37,7 @@ func _ready() -> void:
 	windowMedium = [$WindowMonkey,$WindowHellDiver]
 	windowLong = [$WindowCalc,$WindowCableBox]
 	windowAvailable = [windowShort,windowLong,windowMedium,windowShort,windowLong,windowMedium]
-	windowTimeArray = [15,25,20,40,60,999]
+	windowTimeArray = [15,15,20,30,40,999]
 	windowButtonDict = [
 			[$WindowButtonTest, $ChinaButton, false],
 			[$WindowPress, $MexicoButton, false],
@@ -138,6 +138,7 @@ func _on_timer_pop_up_timeout() -> void:
 	var randX = randi_range(38,220)
 	var randY = randi_range(18,125)
 	popUpInst.global_position = Vector2(randX,randY)
+	$TimerPopUp.start(randi_range(5,25))
 	#add_child(popUpPreloadArray[randi].instanciate())
 
 func _on_country_button_pressed(window : Control) -> void:

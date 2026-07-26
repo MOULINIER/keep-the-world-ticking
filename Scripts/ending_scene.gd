@@ -70,7 +70,7 @@ func trigger(country: String) -> void:
 
 	get_tree().paused = false
 	visible = false
-	for i in range(nukeArray.size()): nukeArray[i].visible = false
+	for i in range(nukeArray.size()): nukeArray[i].queue_free()
 	nuke.visible = false
 	white.color.a = 0.0
 	_triggered = false

@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 	if is_plugged:
 		line.set_point_position(1, line.to_local(partner_location))
 	elif is_dragging:
-		sonclick.play()
 		line.set_point_position(1, line.to_local(get_global_mouse_position()))
 	else: 
 		line.set_point_position(1, Vector2.ZERO)
@@ -41,3 +40,4 @@ func set_color(color_temp: Color) -> void:
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and not is_plugged and not isend:
 		is_dragging = true
+		sonclick.play()

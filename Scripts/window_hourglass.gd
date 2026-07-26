@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 		if int(hourglass.rotation/PI*180) > 360 :
 			hourglass.rotation = 0
 			isRotating = false
-	hourglass.frame = int(total_seconds - timer.time_left)/(total_seconds/frameN)
+	hourglass.frame = clamp(int((total_seconds - timer.time_left) / float(total_seconds) * float(frameN)), 0, frameN - 1)
 	bar.value = timer.time_left/total_seconds * bar.max_value
 
 

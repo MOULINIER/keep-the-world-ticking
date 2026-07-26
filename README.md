@@ -10,8 +10,8 @@ Good luck Mr. Président.
 
 Controls : 
 
-    The mouse (left click) 
-    Arrow key or WASD (minigame with arrows) 
+	The mouse (left click) 
+	Arrow key or WASD (minigame with arrows) 
 
 Hi !
 

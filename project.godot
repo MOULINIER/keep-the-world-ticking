@@ -32,7 +32,7 @@ project/assembly_name="keep-the-world-ticking"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/rider-plugin/plugin.cfg")
 
 [input]
 

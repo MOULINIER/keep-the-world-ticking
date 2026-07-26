@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var timer: Timer = $Timer
 @onready var button: TextureButton = $Window/TextureButton

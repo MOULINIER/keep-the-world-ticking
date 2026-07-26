@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 var COLORS := [
 	Color.html("ea323c"),
 	Color.html("0c0293"),

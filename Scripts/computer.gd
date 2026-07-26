@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var volumeDbMusic = -10
+
 var mousePos : Vector2 = Vector2.ZERO
 var mouseDifference : Vector2
 var windowArray = []
@@ -10,8 +12,22 @@ var windowLong = []
 
 var windowButtonDict : Array
 
+var cursorHandPreload = preload("res://assets/curseur.png")
+
+var popUpPreloadArray = [preload("res://scene/popUpHeathcare.tscn"),preload("res://scene/windowTest1.tscn")]
+var popUpArray = []
+
+var iClignotage : int
+var shouldClignote : bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	iClignotage = 5
+	shouldClignote = false
+	$WindowMail.z_index = 500
+	$AudioPlayerChill.volume_db = volumeDbMusic
+	$AudioPlayerGame.volume_db = -80
+	$AudioPlayerGameInstr.volume_db = -80
 	windowShort = [$WindowPress,$WindowHourglass]
 	windowMedium = [$WindowMonkey]
 	windowLong = [$WindowCalc,$WindowCableBox]
@@ -86,8 +102,17 @@ func _on_timer_window_timeout() -> void:
 			windowArray[0].visible = true
 			windowArray[0].process_mode = Node.PROCESS_MODE_INHERIT
 			windowAvailable.remove_at(0)
-		
 
+func _on_timer_pop_up_timeout() -> void:
+	var randi = randi_range(0,popUpPreloadArray.size()-1)
+	var popUp = popUpPreloadArray[randi]
+	var popUpInst = popUp.instantiate(PackedScene.GEN_EDIT_STATE_MAIN_INHERITED)
+	add_child(popUpInst)
+	windowArray.insert(0,popUpInst)
+	var randX = randi_range(38,220)
+	var randY = randi_range(18,125)
+	popUpInst.global_position = Vector2(randX,randY)
+	#add_child(popUpPreloadArray[randi].instanciate())
 
 func _on_china_button_pressed() -> void:
 	if $WindowButtonTest.process_mode != Node.PROCESS_MODE_DISABLED:
@@ -119,5 +144,71 @@ func _on_start_button_pressed() -> void:
 	$WindowButtonTest.visible = true
 	$WindowButtonTest.process_mode = Node.PROCESS_MODE_INHERIT
 	$TimerWindow.start()
+	$TimerPopUp.start()
+	
+	$TimerFiltre0.start()
+	shouldClignote = true
+	$CanvasModulate.color = Color(1, 0.7, 0.7)
+	
 	$NukeSentAnimatedSprite2D.visible=true
 	$NukeSentAnimatedSprite2D.play("default")
+	
+	$TimerMusicInstr.start()
+	$AudioPlayerGame.play()
+	$AudioPlayerGameInstr.play()
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.set_trans(Tween.TRANS_EXPO)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	
+	tween.set_parallel(false)
+	tween.tween_property($AudioPlayerGame, "volume_db", volumeDbMusic-10, 1)
+	
+	tween.set_parallel(true)
+	tween.tween_property($AudioPlayerChill, "volume_db", volumeDbMusic-10, 1)
+	tween.tween_property($AudioPlayerGame, "volume_db", volumeDbMusic, 1)
+	
+	tween.set_parallel(false)
+	tween.tween_property($AudioPlayerChill, "volume_db", -80, 1)
+
+
+func _on_area_2d_mouse_entered() -> void:
+	Input.set_custom_mouse_cursor(cursorHandPreload)
+	pass
+
+
+func _on_area_2d_mouse_exited() -> void:
+	Input.set_custom_mouse_cursor(cursorHandPreload)
+	pass
+
+
+func _on_timer_music_instr_timeout() -> void:
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_EXPO)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	
+	tween.set_parallel(false)
+	tween.tween_property($AudioPlayerGameInstr, "volume_db", volumeDbMusic-10, 1)
+	
+	tween.set_parallel(true)
+	tween.tween_property($AudioPlayerGame, "volume_db", volumeDbMusic-10, 1)
+	tween.tween_property($AudioPlayerGameInstr, "volume_db", volumeDbMusic, 1)
+	
+	tween.set_parallel(false)
+	tween.tween_property($AudioPlayerGame, "volume_db", -80, 1)
+	
+
+
+func _on_timer_filtre_timeout() -> void:
+	iClignotage -= 1
+	if iClignotage <= 0:
+		print("caca")
+		shouldClignote = false
+	$CanvasModulate.color = Color(1, 1, 1)
+	if shouldClignote:
+		$TimerFiltre1.start()
+	
+
+func _on_timer_filtre_1_timeout() -> void:
+	$CanvasModulate.color = Color(1, 0.7, 0.7)
+	$TimerFiltre0.start()

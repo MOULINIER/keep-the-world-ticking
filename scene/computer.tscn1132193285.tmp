@@ -202,6 +202,7 @@ animations = [{
 
 [node name="ComputerNode2D" type="Node2D" unique_id=1027316699]
 script = ExtResource("1_36qyv")
+volumeDbMusic = null
 
 [node name="ComputerBackGroundSprite2D" type="Sprite2D" parent="." unique_id=1225791265]
 z_index = 200
@@ -396,14 +397,6 @@ wait_time = 25.0
 wait_time = 20.0
 one_shot = true
 
-[node name="TimerFiltre0" type="Timer" parent="." unique_id=430693508]
-wait_time = 0.5
-one_shot = true
-
-[node name="TimerFiltre1" type="Timer" parent="." unique_id=1971573314]
-wait_time = 0.5
-one_shot = true
-
 [node name="NukeSentAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=687535720]
 visible = false
 z_index = 550
@@ -439,6 +432,7 @@ parameters/looping = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1114208478]
 position = Vector2(41, 21)
+color = Color(1, 0.5684909, 0.5684909, 1)
 
 [connection signal="mouse_entered" from="ComputerDesktopSprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="ComputerDesktopSprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]
@@ -453,5 +447,3 @@ position = Vector2(41, 21)
 [connection signal="timeout" from="TimerWindow" to="." method="_on_timer_window_timeout"]
 [connection signal="timeout" from="TimerPopUp" to="." method="_on_timer_pop_up_timeout"]
 [connection signal="timeout" from="TimerMusicInstr" to="." method="_on_timer_music_instr_timeout"]
-[connection signal="timeout" from="TimerFiltre0" to="." method="_on_timer_filtre_timeout"]
-[connection signal="timeout" from="TimerFiltre1" to="." method="_on_timer_filtre_1_timeout"]

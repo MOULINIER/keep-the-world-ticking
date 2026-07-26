@@ -12,7 +12,9 @@ size = Vector2(190.99971, 115)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5ma4"]
 size = Vector2(191, 115)
 
-[node name="Node2D" type="Node2D" unique_id=815877706]
+[node name="Node2D" type="Control" unique_id=759171433]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Window" parent="." unique_id=154025688 instance=ExtResource("1_26qp0")]
 

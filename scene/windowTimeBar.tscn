@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://mo3d0w78o0re" path="res://Scripts/window_time_bar.gd" id="1_cjr0o"]
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_uf1my"]
 
-[node name="Node2D" type="Node2D" unique_id=1296321778]
+[node name="Node2D" type="Control" unique_id=2005834176]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_cjr0o")
 
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_uf1my")]

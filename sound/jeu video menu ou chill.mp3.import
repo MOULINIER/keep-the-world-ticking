@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://p5o3r6cfg6ff"
+path="res://.godot/imported/jeu video menu ou chill.mp3-a3df9627f6cf5d329196a43b896aad5e.mp3str"
+
+[deps]
+
+source_file="res://sound/jeu video menu ou chill.mp3"
+dest_files=["res://.godot/imported/jeu video menu ou chill.mp3-a3df9627f6cf5d329196a43b896aad5e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

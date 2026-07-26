@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dncrvl515c5ot"]
+
+[ext_resource type="Script" uid="uid://d1tnwrd85kiml" path="res://window_mail.gd" id="1_28f5t"]
+[ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="2_n0nu6"]
+[ext_resource type="Texture2D" uid="uid://m6wu6nwh7kcp" path="res://assets/mail_window1.png" id="3_lgpo8"]
+[ext_resource type="Texture2D" uid="uid://dwes7l8fbs3cx" path="res://assets/mail_window2.png" id="4_dpf4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjcrh"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx8x1"]
+size = Vector2(221.99966, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aiulh"]
+size = Vector2(222, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjcrh"]
+atlas = ExtResource("3_lgpo8")
+region = Rect2(176, 112, 27, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx8x1"]
+atlas = ExtResource("4_dpf4d")
+region = Rect2(176, 112, 27, 12)
+
+[node name="Node2D" type="Control" unique_id=1237130085]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_28f5t")
+
+[node name="Window" parent="." unique_id=154025688 instance=ExtResource("2_n0nu6")]
+
+[node name="Control" parent="Window" index="0" unique_id=349519325]
+offset_right = 222.0
+offset_bottom = 130.0
+
+[node name="windowSprite" parent="Window" index="1" unique_id=1230029786]
+texture = ExtResource("3_lgpo8")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(154025688, 1784525188) index="0" unique_id=1700177945]
+position = Vector2(9.536743e-07, 0)
+shape = SubResource("RectangleShape2D_bjcrh")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(154025688, 1135412940) index="0" unique_id=1706110952]
+position = Vector2(111, 65)
+shape = SubResource("RectangleShape2D_fx8x1")
+
+[node name="CollisionShape2D" parent="Window" index="2" unique_id=694965729]
+position = Vector2(111, 65)
+shape = SubResource("RectangleShape2D_aiulh")
+
+[node name="HideTextureButton" parent="Window" index="3" unique_id=379569171]
+offset_left = 214.0
+offset_right = 219.0
+
+[node name="TextureButton" type="TextureButton" parent="Window" unique_id=595632964]
+offset_left = 176.0
+offset_top = 112.0
+offset_right = 203.0
+offset_bottom = 124.0
+texture_normal = SubResource("AtlasTexture_bjcrh")
+texture_pressed = SubResource("AtlasTexture_fx8x1")
+
+[connection signal="pressed" from="Window/TextureButton" to="." method="_on_texture_button_pressed"]
+
+[editable path="Window"]

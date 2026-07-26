@@ -45,7 +45,9 @@ animations = [{
 atlas = ExtResource("6_komj5")
 region = Rect2(56, 0, 7, 0)
 
-[node name="Node2D" type="Node2D" unique_id=136743137]
+[node name="Node2D" type="Control" unique_id=19926473]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_bqmkv")
 
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_r4apc")]

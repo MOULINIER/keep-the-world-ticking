@@ -19,7 +19,9 @@ region = Rect2(38, 0, 38, 12)
 atlas = ExtResource("3_qouo5")
 region = Rect2(76, 0, 38, 12)
 
-[node name="Node2D" type="Node2D" unique_id=1371987939]
+[node name="Node2D" type="Control" unique_id=1687727648]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_2n5ry")
 
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_qouo5")]

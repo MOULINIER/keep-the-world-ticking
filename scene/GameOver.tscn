@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://cw0dh21q2nslf"]
 
 [ext_resource type="Script" uid="uid://lppkbw6p7ocr" path="res://game_over.gd" id="1_tbok3"]
-[ext_resource type="Texture2D" uid="uid://bm6jaup8kvev2" path="res://assets/placeHolder/placeHolderPressedButton.png" id="2_3qd2y"]
+[ext_resource type="Texture2D" uid="uid://b2niid570w635" path="res://assets/restart.png" id="2_3qd2y"]
 [ext_resource type="Texture2D" uid="uid://chqwrjc1dujrl" path="res://assets/game_over.png" id="2_u7gfx"]
 [ext_resource type="Texture2D" uid="uid://ccrx7jxwny1e" path="res://assets/monkey_frame.png" id="3_3qd2y"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n68tt"]
-load_path = "res://.godot/imported/placeHolderUnpressedButton.png-bf2e4a606ae22055df8444e55742ce59.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpwr6"]
+atlas = ExtResource("2_3qd2y")
+region = Rect2(0, 0, 103.105, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qur0p"]
+atlas = ExtResource("2_3qd2y")
+region = Rect2(101.77, 0, 103.86, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ipjwl"]
 atlas = ExtResource("2_u7gfx")
@@ -74,13 +79,14 @@ color = Color(0, 0, 0, 1)
 
 [node name="RestartButton" type="TextureButton" parent="Black" unique_id=871000313]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 80.00001
-offset_right = 330.0
-offset_bottom = 280.0
+offset_left = 44.000004
+offset_top = 68.00001
+offset_right = 764.0001
+offset_bottom = 268.0
 scale = Vector2(0.325, 0.325)
-texture_normal = SubResource("CompressedTexture2D_n68tt")
-texture_pressed = ExtResource("2_3qd2y")
+texture_normal = SubResource("AtlasTexture_gpwr6")
+texture_pressed = SubResource("AtlasTexture_qur0p")
+stretch_mode = 4
 
 [node name="GameOverAnimatedSprite2D" type="AnimatedSprite2D" parent="Black" unique_id=105648255]
 z_index = 550

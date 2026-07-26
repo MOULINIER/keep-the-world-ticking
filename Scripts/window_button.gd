@@ -11,6 +11,7 @@ extends Control
 
 @export var total_seconds: int = 60
 @export var second_added: int = 5
+@export var country: String = "China"
 
 var greenTexture = preload("res://assets/Window1TimeBarGreen.png")
 var orangeTexture = preload("res://assets/Window1TimeBarOrange.png")
@@ -67,3 +68,7 @@ func _on_texture_progress_bar_value_changed(value: float) -> void:
 		bar.texture_progress = whiteTexture
 	else :
 		bar.texture_progress = redTexture
+
+
+func _on_timer_timeout() -> void:
+	EndingScene.trigger(country)

@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://cn6sv7yrp6hpa"
 
+[autoload]
+
+EndingScene="*uid://cqykc5s4m15pw"
+
 [display]
 
 window/size/viewport_width=320

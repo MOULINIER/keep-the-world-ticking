@@ -49,9 +49,6 @@ region = Rect2(56, 0, 7, 0)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_bqmkv")
-total_seconds = null
-second_added = null
-country = null
 
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_r4apc")]
 

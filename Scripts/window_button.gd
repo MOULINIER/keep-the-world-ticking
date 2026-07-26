@@ -38,7 +38,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	count0.texture = numberTexture[int(timer.time_left*0.1)]
+	count0.texture = numberTexture[int(timer.time_left*0.1)%10]
 	count1.texture = numberTexture[int(timer.time_left)%10]
 	count2.texture = numberTexture[int(timer.time_left*10)%10]
 	count3.texture = numberTexture[int(timer.time_left*100)%10]

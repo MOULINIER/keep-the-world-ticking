@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var sonalert : AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var sonclick : AudioStreamPlayer2D = $AudioStreamPlayer2D2
+@onready var sonalarm : AudioStreamPlayer2D = $AudioStreamPlayer2D3
 
 var mousePos : Vector2 = Vector2.ZERO
 var mouseDifference : Vector2
@@ -180,6 +181,7 @@ func _on_france_button_pressed() -> void:
 
 
 func _on_start_button_pressed() -> void:
+	sonalarm.play()
 	$StartButtonBackGroundSprite2D.visible = false
 	$WindowButtonTest.visible = true
 	$WindowButtonTest.process_mode = Node.PROCESS_MODE_INHERIT

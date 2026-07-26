@@ -3,21 +3,18 @@
 [ext_resource type="Script" uid="uid://c0wc3eao0pnjy" path="res://Scripts/ending_scene.gd" id="1_xverj"]
 [ext_resource type="AudioStream" uid="uid://bwduc4yid56xq" path="res://assets/sounds/nuclear-siren-emergency-alarm-ra-music-1-00-11.mp3" id="2_xverj"]
 [ext_resource type="AudioStream" uid="uid://c6isgp0knd5m0" path="res://assets/sounds/322365__svarvarn__nuclear-distant.mp3" id="3_kpx8l"]
-[ext_resource type="Texture2D" uid="uid://dqu35hlp85dkn" path="res://65441385-07a1-45aa-92a6-6b68be386da9-0.png" id="4_kpx8l"]
-[ext_resource type="Texture2D" uid="uid://bbxjytu6sgpjl" path="res://65441385-07a1-45aa-92a6-6b68be386da9-1.png" id="5_bb0sd"]
-[ext_resource type="Texture2D" uid="uid://b0ctsdx4ieqs8" path="res://65441385-07a1-45aa-92a6-6b68be386da9-2.png" id="6_7oa06"]
-[ext_resource type="Texture2D" uid="uid://dnqymhcl0v3dn" path="res://65441385-07a1-45aa-92a6-6b68be386da9-3.png" id="7_0d5ha"]
-[ext_resource type="Texture2D" uid="uid://g1mke0hfc24x" path="res://65441385-07a1-45aa-92a6-6b68be386da9-4.png" id="8_gpwut"]
-[ext_resource type="Texture2D" uid="uid://bhmunktbhd8ey" path="res://65441385-07a1-45aa-92a6-6b68be386da9-5.png" id="9_66pp2"]
-[ext_resource type="Texture2D" uid="uid://bw1iyg8mo31hf" path="res://65441385-07a1-45aa-92a6-6b68be386da9-6.png" id="10_lyg3o"]
+[ext_resource type="Texture2D" uid="uid://dqu35hlp85dkn" path="res://assets/65441385-07a1-45aa-92a6-6b68be386da9-0.png" id="5_bb0sd"]
+[ext_resource type="Texture2D" uid="uid://bbxjytu6sgpjl" path="res://assets/65441385-07a1-45aa-92a6-6b68be386da9-1.png" id="6_7oa06"]
+[ext_resource type="Texture2D" uid="uid://b0ctsdx4ieqs8" path="res://assets/65441385-07a1-45aa-92a6-6b68be386da9-2.png" id="7_0d5ha"]
+[ext_resource type="Texture2D" uid="uid://dnqymhcl0v3dn" path="res://assets/65441385-07a1-45aa-92a6-6b68be386da9-3.png" id="8_gpwut"]
+[ext_resource type="Texture2D" uid="uid://g1mke0hfc24x" path="res://assets/65441385-07a1-45aa-92a6-6b68be386da9-4.png" id="9_66pp2"]
+[ext_resource type="Texture2D" uid="uid://bhmunktbhd8ey" path="res://assets/65441385-07a1-45aa-92a6-6b68be386da9-5.png" id="10_lyg3o"]
+[ext_resource type="Texture2D" uid="uid://bw1iyg8mo31hf" path="res://assets/65441385-07a1-45aa-92a6-6b68be386da9-6.png" id="11_7nsuc"]
 [ext_resource type="Texture2D" uid="uid://duimouoebai28" path="res://assets/world_map_with_flags.png" id="11_bb0sd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c40qi"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_kpx8l")
-}, {
 "duration": 1.0,
 "texture": ExtResource("5_bb0sd")
 }, {
@@ -35,6 +32,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_lyg3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7nsuc")
 }],
 "loop": 1,
 "name": &"default",
@@ -91,8 +91,8 @@ position = Vector2(98, 35)
 [node name="SouthAfrica" type="Marker2D" parent="Map" unique_id=671397446]
 position = Vector2(103, 84)
 
-[node name="Nuke" type="AnimatedSprite2D" parent="Map" unique_id=741623969]
-position = Vector2(-46, -15)
+[node name="Nuke" type="AnimatedSprite2D" parent="Map" unique_id=626503644]
+position = Vector2(-104, -40)
 scale = Vector2(0.095, 0.095)
 sprite_frames = SubResource("SpriteFrames_c40qi")
 frame_progress = 0.850241

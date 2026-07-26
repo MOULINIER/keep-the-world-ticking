@@ -14,7 +14,7 @@ var windowButtonDict : Array
 
 var cursorHandPreload = preload("res://assets/curseur.png")
 
-var popUpPreloadArray = [preload("res://scene/popUpHeathcare.tscn"),preload("res://scene/windowTest1.tscn")]
+var popUpPreloadArray = [preload("res://scene/popUpHeathcare.tscn"),preload("res://scene/popUpMicroslopeEdge.tscn")]
 var popUpArray = []
 
 var iClignotage : int
@@ -173,12 +173,12 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_area_2d_mouse_entered() -> void:
-	Input.set_custom_mouse_cursor(cursorHandPreload)
+	Input.set_custom_mouse_cursor(null)
 	pass
 
 
 func _on_area_2d_mouse_exited() -> void:
-	Input.set_custom_mouse_cursor(cursorHandPreload)
+	Input.set_custom_mouse_cursor(null)
 	pass
 
 
@@ -202,7 +202,6 @@ func _on_timer_music_instr_timeout() -> void:
 func _on_timer_filtre_timeout() -> void:
 	iClignotage -= 1
 	if iClignotage <= 0:
-		print("caca")
 		shouldClignote = false
 	$CanvasModulate.color = Color(1, 1, 1)
 	if shouldClignote:

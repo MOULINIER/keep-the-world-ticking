@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://bfl0nx1g06rwm"]
 
+[ext_resource type="Script" uid="uid://cktr6lchvvxsl" path="res://Scripts/pop_up_heathcare.gd" id="1_omy8a"]
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_yyw8e"]
 [ext_resource type="Texture2D" uid="uid://dtpf02nv2tbtc" path="res://assets/advert1.png" id="2_ohnh7"]
 [ext_resource type="Texture2D" uid="uid://cghd7fiqicfn8" path="res://assets/advert2.png" id="3_ohnh7"]
+[ext_resource type="Texture2D" uid="uid://bt4y6qvxbeg7n" path="res://assets/advert1_load1.png" id="4_bufxy"]
+[ext_resource type="Texture2D" uid="uid://dant2vledilwu" path="res://assets/advert1_load2.png" id="5_omy8a"]
+[ext_resource type="Texture2D" uid="uid://de1yto5jhmjrd" path="res://assets/advert1_load3.png" id="6_443i1"]
+[ext_resource type="Texture2D" uid="uid://dqk6i4ld6iyc8" path="res://assets/advert1_load4.png" id="7_msqgg"]
+[ext_resource type="Texture2D" uid="uid://dkkh47fb7pk15" path="res://assets/advert1_load5.png" id="8_4sjhp"]
+[ext_resource type="Texture2D" uid="uid://c0bhcuyk32fcy" path="res://assets/advert1_load6.png" id="9_djit7"]
+[ext_resource type="Texture2D" uid="uid://ctamfclegdgst" path="res://assets/advert1_load7.png" id="10_uro8o"]
+[ext_resource type="Texture2D" uid="uid://bm31b4k8p2v15" path="res://assets/advert1_load8.png" id="11_wj1m4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eehll"]
 size = Vector2(88.99989, 10)
@@ -21,17 +30,46 @@ region = Rect2(21, 47, 40, 12)
 atlas = ExtResource("3_ohnh7")
 region = Rect2(21, 47, 40, 12)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_svdou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bufxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_omy8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_443i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_msqgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4sjhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_djit7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uro8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wj1m4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Node2D" type="Control" unique_id=1033668283]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_omy8a")
 
 [node name="Window" parent="." unique_id=154025688 instance=ExtResource("1_yyw8e")]
 
-[node name="Control" parent="Window" index="0" unique_id=349519325]
-offset_right = 89.0
-offset_bottom = 72.0
-
-[node name="windowSprite" parent="Window" index="1" unique_id=1230029786]
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
 texture = ExtResource("2_ohnh7")
 
 [node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(154025688, 1784525188) index="0" unique_id=1700177945]
@@ -42,11 +80,11 @@ shape = SubResource("RectangleShape2D_eehll")
 position = Vector2(44.5, 36)
 shape = SubResource("RectangleShape2D_cnu4d")
 
-[node name="CollisionShape2D" parent="Window" index="2" unique_id=694965729]
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
 position = Vector2(44.5, 36)
 shape = SubResource("RectangleShape2D_3t7im")
 
-[node name="HideTextureButton" parent="Window" index="3" unique_id=379569171]
+[node name="HideTextureButton" parent="Window" index="2" unique_id=379569171]
 offset_left = 81.0
 offset_right = 86.0
 
@@ -57,5 +95,11 @@ offset_right = 63.0
 offset_bottom = 59.0
 texture_normal = SubResource("AtlasTexture_svdou")
 texture_pressed = SubResource("AtlasTexture_yyw8e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window" unique_id=137754445]
+sprite_frames = SubResource("SpriteFrames_svdou")
+centered = false
+
+[connection signal="animation_looped" from="Window/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 
 [editable path="Window"]

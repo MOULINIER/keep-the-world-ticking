@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://ce0whtjj8y1hv"]
+
+[ext_resource type="Script" uid="uid://ydvsx8okqyov" path="res://Scripts/pop_up_microslope_edge.gd" id="1_lp7iv"]
+[ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_q0mya"]
+[ext_resource type="Texture2D" uid="uid://dus1tpjmqtgue" path="res://assets/advert3.png" id="2_jin06"]
+[ext_resource type="Texture2D" uid="uid://cq27pwy1f2y0k" path="res://assets/advert4.png" id="3_jin06"]
+[ext_resource type="Texture2D" uid="uid://b1tj1k8joc5np" path="res://assets/advert3_load1.png" id="4_jjnfy"]
+[ext_resource type="Texture2D" uid="uid://d0sj7saxv2gie" path="res://assets/advert3_load2.png" id="5_lp7iv"]
+[ext_resource type="Texture2D" uid="uid://bg1kpkf1kid26" path="res://assets/advert3_load3.png" id="6_ecpgy"]
+[ext_resource type="Texture2D" uid="uid://0ysyxhki6shq" path="res://assets/advert3_load4.png" id="7_6a24u"]
+[ext_resource type="Texture2D" uid="uid://deiw5x7ljyddw" path="res://assets/advert3_load5.png" id="8_qjsxq"]
+[ext_resource type="Texture2D" uid="uid://d3aaotbc8cefp" path="res://assets/advert3_load6.png" id="9_iqbcn"]
+[ext_resource type="Texture2D" uid="uid://cxmoi66xcuph4" path="res://assets/advert3_load7.png" id="10_fqyc8"]
+[ext_resource type="Texture2D" uid="uid://dl1r62ik0f07y" path="res://assets/advert3_load8.png" id="11_ceca4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad0ih"]
+size = Vector2(82.99989, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0mya"]
+size = Vector2(82.99987, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jin06"]
+size = Vector2(83, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0mya"]
+atlas = ExtResource("2_jin06")
+region = Rect2(16, 49, 50, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jin06"]
+atlas = ExtResource("3_jin06")
+region = Rect2(16, 49, 50, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8era"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jjnfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lp7iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ecpgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6a24u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qjsxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iqbcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fqyc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ceca4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Control" type="Control" unique_id=723968394]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lp7iv")
+
+[node name="Window" parent="." unique_id=154025688 instance=ExtResource("1_q0mya")]
+
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
+texture = ExtResource("2_jin06")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(154025688, 1784525188) index="0" unique_id=1700177945]
+position = Vector2(41.5, 5)
+shape = SubResource("RectangleShape2D_ad0ih")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(154025688, 1135412940) index="0" unique_id=1706110952]
+position = Vector2(41.5, 33.5)
+shape = SubResource("RectangleShape2D_q0mya")
+
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
+position = Vector2(41.5, 33.5)
+shape = SubResource("RectangleShape2D_jin06")
+
+[node name="HideTextureButton" parent="Window" index="2" unique_id=379569171]
+offset_left = 75.0
+offset_right = 80.0
+
+[node name="UselessButton" type="TextureButton" parent="Window" unique_id=446680875]
+offset_left = 16.0
+offset_top = 49.0
+offset_right = 66.0
+offset_bottom = 61.0
+texture_normal = SubResource("AtlasTexture_q0mya")
+texture_pressed = SubResource("AtlasTexture_jin06")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Window" unique_id=738818372]
+sprite_frames = SubResource("SpriteFrames_t8era")
+centered = false
+
+[connection signal="animation_looped" from="Window/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+
+[editable path="Window"]

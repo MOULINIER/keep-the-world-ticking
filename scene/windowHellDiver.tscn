@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bcr80vs1tij04"]
+
+[ext_resource type="Script" uid="uid://bs6geeeu3uhjn" path="res://Scripts/window_hell_diver.gd" id="1_17c2j"]
+[ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_g207e"]
+[ext_resource type="Texture2D" uid="uid://b0ml6kl0ad8s0" path="res://assets/Window6.png" id="2_2r5nb"]
+[ext_resource type="Texture2D" uid="uid://cyjmvcyrvrcnc" path="res://assets/Window1TimeBarGreen.png" id="3_2r5nb"]
+[ext_resource type="Texture2D" uid="uid://uchoydiixawu" path="res://assets/arrows-Sheet.png" id="4_gpf7g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpf7g"]
+size = Vector2(102.99988, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17c2j"]
+size = Vector2(102.99983, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6woy"]
+size = Vector2(103, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svdou"]
+atlas = ExtResource("4_gpf7g")
+region = Rect2(0, 0, 17, 17)
+
+[node name="Control" type="Control" unique_id=2100162009]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_17c2j")
+
+[node name="Window" parent="." unique_id=154025688 instance=ExtResource("1_g207e")]
+
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
+texture = ExtResource("2_2r5nb")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(154025688, 1784525188) index="0" unique_id=1700177945]
+position = Vector2(51.5, 5)
+shape = SubResource("RectangleShape2D_gpf7g")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(154025688, 1135412940) index="0" unique_id=1706110952]
+position = Vector2(51.499996, 17)
+shape = SubResource("RectangleShape2D_17c2j")
+
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
+position = Vector2(51.5, 17)
+shape = SubResource("RectangleShape2D_q6woy")
+
+[node name="HideTextureButton" parent="Window" index="2" unique_id=379569171]
+offset_left = 95.0
+offset_right = 100.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Window" unique_id=1428902192]
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 7.0
+value = 100.0
+texture_progress = ExtResource("3_2r5nb")
+metadata/_edit_use_anchors_ = true
+
+[node name="ArrowButton0" type="TextureButton" parent="Window" unique_id=1095171563]
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 22.0
+offset_bottom = 29.0
+texture_normal = SubResource("AtlasTexture_svdou")
+
+[node name="ArrowButton1" type="TextureButton" parent="Window" unique_id=815705392]
+offset_left = 24.0
+offset_top = 12.0
+offset_right = 41.0
+offset_bottom = 29.0
+texture_normal = SubResource("AtlasTexture_svdou")
+
+[node name="ArrowButton2" type="TextureButton" parent="Window" unique_id=671406014]
+offset_left = 43.0
+offset_top = 12.0
+offset_right = 60.0
+offset_bottom = 29.0
+texture_normal = SubResource("AtlasTexture_svdou")
+
+[node name="ArrowButton3" type="TextureButton" parent="Window" unique_id=608714730]
+offset_left = 62.0
+offset_top = 12.0
+offset_right = 79.0
+offset_bottom = 29.0
+texture_normal = SubResource("AtlasTexture_svdou")
+
+[node name="ArrowButton4" type="TextureButton" parent="Window" unique_id=2108142149]
+offset_left = 81.0
+offset_top = 12.0
+offset_right = 98.0
+offset_bottom = 29.0
+texture_normal = SubResource("AtlasTexture_svdou")
+
+[node name="Timer" type="Timer" parent="." unique_id=2124819142]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
+
+[editable path="Window"]

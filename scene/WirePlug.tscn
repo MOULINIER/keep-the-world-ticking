@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://ycosmllimfio" path="res://assets/sounds/freesound_community-bow-loading-38752.mp3" id="2_qur0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qihe5"]
-size = Vector2(6, 5)
+size = Vector2(8, 7)
 
 [sub_resource type="Gradient" id="Gradient_5lb3y"]
 colors = PackedColorArray(0.427493, 0.42749307, 0.42749307, 1, 1, 1, 1, 1)

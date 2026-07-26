@@ -2,6 +2,9 @@ extends Node2D
 
 @export var volumeDbMusic = -10
 
+@onready var sonalert : AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var sonclick : AudioStreamPlayer2D = $AudioStreamPlayer2D2
+
 var mousePos : Vector2 = Vector2.ZERO
 var mouseDifference : Vector2
 var windowArray = []
@@ -10,7 +13,7 @@ var windowAvailable = []
 var windowShort = []
 var windowMedium = []
 var windowLong = []
-
+var premiere = false
 var windowButtonDict : Array
 
 var cursorHandPreload = preload("res://assets/curseur.png")
@@ -35,14 +38,14 @@ func _ready() -> void:
 	windowAvailable = [windowShort,windowLong,windowMedium,windowShort,windowLong,windowMedium]
 	windowTimeArray = [15,25,20,40,60,999]
 	windowButtonDict = [
-		[$WindowButtonTest,$ChinaButton],
-		[$WindowPress,$MexicoButton],
-		[$WindowCalc,$IndiaButton],
-		[$WindowHourglass,$ArgentinaButton],
-		[$WindowMonkey,$JapanButton],
-		[$WindowCableBox,$CanadaButton],
-		[$WindowHellDiver,$FranceButton]
-	]
+			[$WindowButtonTest, $ChinaButton, false],
+			[$WindowPress, $MexicoButton, false],
+			[$WindowCalc, $IndiaButton, false],
+			[$WindowHourglass, $ArgentinaButton, false],
+			[$WindowMonkey, $JapanButton, false],
+			[$WindowCableBox, $CanadaButton, false],
+			[$WindowHellDiver, $FranceButton, false]
+		]
 	windowArray = [$WindowButtonTest]
 	
 	$WindowButtonTest.process_mode = Node.PROCESS_MODE_DISABLED
@@ -62,38 +65,55 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	for windowButton in windowButtonDict:
-		if (windowButton[0].get_node("Timer").time_left)/(windowButton[0].total_seconds) < 0.33:
-			windowButton[1].get_node("WarningAnimatedSprite2D").frame = 1
+		var window = windowButton[0]
+		var button = windowButton[1]
+		var timer = window.get_node("Timer")
+		
+		if window.visible and not timer.is_stopped() and window.total_seconds > 0:
+			var ratio = timer.time_left / window.total_seconds
+			if ratio < 0.33:
+				if not windowButton[2]:
+					sonalert.play()
+					windowButton[2] = true 
+				button.get_node("WarningAnimatedSprite2D").frame = 1
+			else:
+				button.get_node("WarningAnimatedSprite2D").frame = 0
+				windowButton[2] = false 
 		else:
-			windowButton[1].get_node("WarningAnimatedSprite2D").frame = 0
-		if windowButton[0].visible :
-			windowButton[1].visible = true		
+			button.get_node("WarningAnimatedSprite2D").frame = 0
+			windowButton[2] = false
+
+		if window.visible:
+			button.visible = true
+
+	# Mouse movement updates
 	mouseDifference = mousePos - get_global_mouse_position()
 	mousePos = get_global_mouse_position()
-	
-	for i in range(windowArray.size()) :
+
+	for i in range(windowArray.size()):
 		windowArray[i].get_node("Window").velocity = Vector2.ZERO
-	
-	for i in range(windowArray.size()) :
-		if windowArray[i].get_node("Window").shouldMove :
-			#windowArray[i].global_position -= mouseDifference
-			windowArray[i].get_node("Window").velocity -= mouseDifference/delta
+
+	for i in range(windowArray.size()):
+		if windowArray[i].get_node("Window").shouldMove:
+			windowArray[i].get_node("Window").velocity -= mouseDifference / delta
 			break
-			
-	for i in range(windowArray.size()) :
-		if windowArray[i].get_node("Window").onTop :
+
+	for i in range(windowArray.size()):
+		if windowArray[i].get_node("Window").onTop:
 			var temp = windowArray[i]
 			windowArray.remove_at(i)
-			windowArray.insert(0,temp)
+			windowArray.insert(0, temp)
 			break
-	for i in range(windowArray.size()) :
-		windowArray[i].z_index = 100-i
 
+	for i in range(windowArray.size()):
+		windowArray[i].z_index = 100 - i
 
 func _on_back_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		get_tree().change_scene_to_file("res://scene/desk.tscn")
 		
+func _wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds, true, false, false).timeout
 
 
 func _on_timer_window_timeout() -> void:
@@ -131,24 +151,31 @@ func _on_country_button_pressed(window : Control) -> void:
 					break
 
 func _on_china_button_pressed() -> void:
+	sonclick.play()
 	_on_country_button_pressed($WindowButtonTest)
-			
+		
 func _on_mexico_button_pressed() -> void:
+	sonclick.play()
 	_on_country_button_pressed($WindowPress)
 
 func _on_argentina_button_pressed() -> void:
+	sonclick.play()
 	_on_country_button_pressed($WindowHourglass)
 
 func _on_japan_button_pressed() -> void:
+	sonclick.play()
 	_on_country_button_pressed($WindowMonkey)
 
 func _on_canada_button_pressed() -> void:
+	sonclick.play()
 	_on_country_button_pressed($WindowCableBox)
 
 func _on_india_button_pressed() -> void:
+	sonclick.play()
 	_on_country_button_pressed($WindowCalc)
 
 func _on_france_button_pressed() -> void:
+	sonclick.play()
 	_on_country_button_pressed($WindowHellDiver)
 
 
@@ -229,6 +256,7 @@ func _on_timer_filtre_1_timeout() -> void:
 	$TimerFiltre0.start()
 
 func _on_quit_button_pressed() -> void:
+	sonclick.play()
 	get_tree().quit(0)
 
 func _on_mute_button_toggled(toggled_on: bool) -> void:

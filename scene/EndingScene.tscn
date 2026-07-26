@@ -91,9 +91,15 @@ position = Vector2(98, 35)
 [node name="SouthAfrica" type="Marker2D" parent="Map" unique_id=671397446]
 position = Vector2(103, 84)
 
+[node name="Nuke" type="AnimatedSprite2D" parent="Map" unique_id=741623969]
+position = Vector2(-46, -15)
+scale = Vector2(0.095, 0.095)
+sprite_frames = SubResource("SpriteFrames_c40qi")
+frame_progress = 0.850241
+
 [node name="Siren" type="AudioStreamPlayer2D" parent="." unique_id=1335543733]
 stream = ExtResource("2_xverj")
-volume_db = -11.267
+volume_db = -15.361
 
 [node name="BombExploding" type="AudioStreamPlayer2D" parent="." unique_id=1111862169]
 position = Vector2(208, 82.345)
@@ -109,9 +115,3 @@ color = Color(0, 0, 0, 1)
 z_index = -6
 offset_right = 320.0
 offset_bottom = 180.0
-
-[node name="Nuke" type="AnimatedSprite2D" parent="." unique_id=741623969]
-position = Vector2(12, 10)
-scale = Vector2(0.095, 0.095)
-sprite_frames = SubResource("SpriteFrames_c40qi")
-frame_progress = 0.850241

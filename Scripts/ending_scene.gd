@@ -1,15 +1,15 @@
 extends Node2D
 
 @onready var map: TextureRect = $Map
-@onready var nuke: AnimatedSprite2D = $Nuke
+@onready var nuke: AnimatedSprite2D = $Map/Nuke
 @onready var white: ColorRect = $White
 @onready var siren: AudioStreamPlayer2D = $Siren
 @onready var bombsound: AudioStreamPlayer2D = $BombExploding
 
 const FADE_IN := 1.0
 const SIREN_LEAD_IN := 1.2
-const NUKE_HOLD := 1.5
-const FADE_OUT := 2.0
+const NUKE_HOLD := 2
+const FADE_OUT := 3.0
 
 var _triggered := false
 
@@ -56,9 +56,14 @@ func trigger(country: String) -> void:
 		
 	nuke.visible = true
 	nuke.frame = 0
+	await _fade(white, "color:a", 1, 0.2)
 	nuke.play("default")
 	bombsound.play()
+	_shake(map, 1.2, 12.0)
+	await _fade(white, "color:a", 0, 0.2)
+
 	await _wait(NUKE_HOLD)
+
 
 	await _fade(white, "color:a", 1.0, FADE_OUT)
 
@@ -80,3 +85,17 @@ func _fade(node: Node, property: String, to: float, time: float) -> void:
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(node, property, to, time)
 	await tween.finished
+
+func _shake(node: CanvasItem, duration: float, strength: float) -> void:
+	var original: Vector2 = node.position
+	var elapsed := 0.0
+	while elapsed < duration:
+		# decay so it fades out naturally
+		var amount: float = strength * (1.0 - elapsed / duration)
+		node.position = original + Vector2(
+			randf_range(-amount, amount),
+			randf_range(-amount, amount)
+		)
+		await get_tree().create_timer(0.02, true, false, false).timeout
+		elapsed += 0.02
+	node.position = original

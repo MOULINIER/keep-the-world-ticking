@@ -14,11 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://karuqlke2klb" path="res://scene/windowMonkey.tscn" id="12_5uo2x"]
 [ext_resource type="Texture2D" uid="uid://4v2p3t3st2q6" path="res://assets/Window1.png" id="12_jw6hy"]
 [ext_resource type="Texture2D" uid="uid://do5n3cbgwejdf" path="res://assets/red_button-Sheet.png" id="13_t6ydj"]
-[ext_resource type="Texture2D" uid="uid://cbeh1wt22m8ut" path="res://assets/nuke_sent.png" id="14_abnbp"]
 [ext_resource type="Texture2D" uid="uid://cjyd4om8nuvvv" path="res://assets/warning.png" id="14_bmm20"]
 [ext_resource type="PackedScene" uid="uid://dncrvl515c5ot" path="res://scene/windowMail.tscn" id="15_7jxl6"]
 [ext_resource type="Texture2D" uid="uid://ccrx7jxwny1e" path="res://assets/monkey_frame.png" id="15_bmm20"]
 [ext_resource type="Texture2D" uid="uid://chqwrjc1dujrl" path="res://assets/game_over.png" id="16_qdnme"]
+[ext_resource type="Texture2D" uid="uid://c6a0dtkw7d0w0" path="res://assets/sending_nuke.png" id="17_upcsr"]
 [ext_resource type="AudioStream" uid="uid://p5o3r6cfg6ff" path="res://sound/jeu video menu ou chill.mp3" id="18_qdnme"]
 [ext_resource type="AudioStream" uid="uid://bhw1hew2k8ko2" path="res://sound/musique jeu avec tout.mp3" id="19_6d31v"]
 [ext_resource type="AudioStream" uid="uid://doxbelewun7ln" path="res://sound/musique jeu simple.mp3" id="20_7jxl6"]
@@ -92,10 +92,6 @@ region = Rect2(0, 0, 10, 0)
 atlas = ExtResource("11_y4tp0")
 region = Rect2(50, 0, 10, 0)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lr8ox"]
-atlas = ExtResource("14_abnbp")
-region = Rect2(0, 0, 291, 35)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6d31v"]
 atlas = ExtResource("15_bmm20")
 region = Rect2(18, 19, 18, 19)
@@ -116,31 +112,31 @@ region = Rect2(18, 38, 18, 19)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lr8ox")
+"texture": ExtResource("17_upcsr")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6d31v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lr8ox")
+"texture": ExtResource("17_upcsr")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7jxl6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lr8ox")
+"texture": ExtResource("17_upcsr")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_upcsr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lr8ox")
+"texture": ExtResource("17_upcsr")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r7djl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lr8ox")
+"texture": ExtResource("17_upcsr")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6d31v")
@@ -302,9 +298,9 @@ texture_hover = SubResource("AtlasTexture_7o8yx")
 [node name="WindowMail" parent="." unique_id=1868518059 instance=ExtResource("15_7jxl6")]
 z_index = -5
 offset_left = 41.0
-offset_top = 21.0
+offset_top = 19.0
 offset_right = 41.0
-offset_bottom = 21.0
+offset_bottom = 19.0
 
 [node name="ChinaButton" type="TextureButton" parent="." unique_id=1814177103]
 z_index = 500
@@ -433,7 +429,8 @@ one_shot = true
 [node name="NukeSentAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=687535720]
 visible = false
 z_index = 550
-position = Vector2(14, 22)
+position = Vector2(53, 31)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8fb6m")
 centered = false
 

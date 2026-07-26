@@ -18,7 +18,7 @@ var windowButtonDict : Array
 
 var cursorHandPreload = preload("res://assets/curseur.png")
 
-var popUpPreloadArray = [preload("res://scene/popUpHeathcare.tscn"),preload("res://scene/popUpMicroslopeEdge.tscn")]
+var popUpPreloadArray = [preload("res://scene/popUpHeathcare.tscn"),preload("res://scene/popUpMicroslopeEdge.tscn"),preload("res://scene/popUpCaptcha1.tscn"),preload("res://scene/popUpCaptcha2.tscn"),preload("res://scene/popUpCaptcha3.tscn"),preload("res://scene/popUpCaptcha4.tscn")]
 var popUpArray = []
 
 var iClignotage : int

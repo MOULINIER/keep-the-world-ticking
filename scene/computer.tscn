@@ -251,6 +251,7 @@ offset_left = 66.0
 offset_top = 38.0
 offset_right = 66.0
 offset_bottom = 38.0
+total_seconds = 30
 
 [node name="WindowPress" parent="." unique_id=1371987939 instance=ExtResource("7_h4728")]
 z_index = 1
@@ -265,7 +266,7 @@ offset_left = 71.0
 offset_top = 76.0
 offset_right = 71.0
 offset_bottom = 76.0
-total_seconds = 40
+total_seconds = 45
 
 [node name="WindowHourglass" parent="." unique_id=671522378 instance=ExtResource("10_y4tp0")]
 z_index = 1
@@ -273,6 +274,7 @@ offset_left = 97.0
 offset_top = 36.0
 offset_right = 97.0
 offset_bottom = 36.0
+total_seconds = 25
 
 [node name="WindowMonkey" parent="." unique_id=1045078971 instance=ExtResource("12_5uo2x")]
 z_index = 1
@@ -280,7 +282,7 @@ offset_left = 166.0
 offset_top = 78.0
 offset_right = 166.0
 offset_bottom = 78.0
-total_seconds = 30
+total_seconds = 35
 
 [node name="WindowCableBox" parent="." unique_id=1703067553 instance=ExtResource("6_h4728")]
 z_index = 1
@@ -288,6 +290,7 @@ offset_left = 162.0
 offset_top = 18.0
 offset_right = 162.0
 offset_bottom = 18.0
+total_seconds = 45
 metadata/_edit_vertical_guides_ = [5.0, 49.0]
 
 [node name="WindowButtonTest" parent="." unique_id=1614833038 instance=ExtResource("6_g6mmx")]

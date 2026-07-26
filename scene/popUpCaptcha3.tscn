@@ -30,6 +30,7 @@ script = ExtResource("1_5su8s")
 texture = ExtResource("2_0wxy7")
 
 [node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(154025688, 1784525188) index="0" unique_id=1700177945]
+z_index = 0
 position = Vector2(40.5, 5)
 shape = SubResource("RectangleShape2D_5vd8b")
 

@@ -31,7 +31,6 @@ texture = SubResource("GradientTexture1D_4y7eg")
 centered = false
 
 [node name="Line2D" type="Line2D" parent="Area2D" unique_id=465033455]
-z_index = 12
 position = Vector2(4.01, -0.5)
 points = PackedVector2Array(0, 0, 1, 0)
 width = 1.0

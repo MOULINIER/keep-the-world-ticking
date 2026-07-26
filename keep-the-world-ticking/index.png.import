@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drkjymy8cpinn"
-path="res://.godot/imported/index.png-e5e54e3e915d8da81e3295ce7a5b1561.ctex"
+path="res://.godot/imported/index.png-ad2b9b1fae3ad5923f4ed872ea38b3a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://itch-export/index.png"
-dest_files=["res://.godot/imported/index.png-e5e54e3e915d8da81e3295ce7a5b1561.ctex"]
+source_file="res://keep-the-world-ticking/index.png"
+dest_files=["res://.godot/imported/index.png-ad2b9b1fae3ad5923f4ed872ea38b3a1.ctex"]
 
 [params]
 

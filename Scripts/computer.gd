@@ -131,7 +131,7 @@ func _on_timer_window_timeout() -> void:
 func _on_timer_pop_up_timeout() -> void:
 	var randi = randi_range(0,popUpPreloadArray.size()-1)
 	var popUp = popUpPreloadArray[randi]
-	var popUpInst = popUp.instantiate(PackedScene.GEN_EDIT_STATE_MAIN_INHERITED)
+	var popUpInst = popUp.instantiate()
 	add_child(popUpInst)
 	windowArray.insert(0,popUpInst)
 	var randX = randi_range(38,220)
@@ -257,7 +257,7 @@ func _on_timer_filtre_1_timeout() -> void:
 
 func _on_quit_button_pressed() -> void:
 	sonclick.play()
-	get_tree().quit(0)
+	get_tree().change_scene_to_file("res://scene/game.tscn")
 
 func _on_mute_button_toggled(toggled_on: bool) -> void:
 	sonclick.play()

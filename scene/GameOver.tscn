@@ -70,7 +70,8 @@ animations = [{
 
 [node name="GameOver" type="Node2D" unique_id=1996612902]
 script = ExtResource("1_tbok3")
-metadata/_edit_vertical_guides_ = [21.0, 300.0, 277.0, 43.0]
+metadata/_edit_vertical_guides_ = [21.0, 300.0, 277.0, 43.0, 93.0]
+metadata/_edit_horizontal_guides_ = [90.0, 78.0]
 
 [node name="Black" type="ColorRect" parent="." unique_id=865309842]
 offset_right = 320.0
@@ -116,6 +117,17 @@ theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "[font=res://assets/fonts/Ordin-Bold.otf]
 "
+horizontal_alignment = 1
+
+[node name="TimeRichTextLabel2" type="RichTextLabel" parent="Black" unique_id=1025737279]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 91.0
+offset_right = 227.0
+offset_bottom = 102.0
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "[font=res://assets/fonts/Ordin-Bold.otf]"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Black/RestartButton" to="." method="_on_restart_button_pressed"]

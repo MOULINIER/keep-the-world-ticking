@@ -8,6 +8,8 @@ var isend: bool = false
 
 @onready var sprite: Sprite2D = $Area2D/PlaceholderCable
 @onready var line: Line2D = $Area2D/Line2D
+@onready var sonclick: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +20,7 @@ func _process(delta: float) -> void:
 	if is_plugged:
 		line.set_point_position(1, line.to_local(partner_location))
 	elif is_dragging:
+		sonclick.play()
 		line.set_point_position(1, line.to_local(get_global_mouse_position()))
 	else: 
 		line.set_point_position(1, Vector2.ZERO)

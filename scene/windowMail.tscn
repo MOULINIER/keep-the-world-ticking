@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="2_n0nu6"]
 [ext_resource type="Texture2D" uid="uid://m6wu6nwh7kcp" path="res://assets/mail_window1.png" id="3_lgpo8"]
 [ext_resource type="Texture2D" uid="uid://dwes7l8fbs3cx" path="res://assets/mail_window2.png" id="4_dpf4d"]
+[ext_resource type="AudioStream" uid="uid://7ohb231xnd2t" path="res://assets/sounds/universfield-computer-mouse-click-352734.mp3" id="5_n0nu6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjcrh"]
 size = Vector2(0, 0)
@@ -29,11 +30,7 @@ script = ExtResource("1_28f5t")
 
 [node name="Window" parent="." unique_id=154025688 instance=ExtResource("2_n0nu6")]
 
-[node name="Control" parent="Window" index="0" unique_id=349519325]
-offset_right = 222.0
-offset_bottom = 130.0
-
-[node name="windowSprite" parent="Window" index="1" unique_id=1230029786]
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
 texture = ExtResource("3_lgpo8")
 
 [node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(154025688, 1784525188) index="0" unique_id=1700177945]
@@ -44,11 +41,11 @@ shape = SubResource("RectangleShape2D_bjcrh")
 position = Vector2(111, 65)
 shape = SubResource("RectangleShape2D_fx8x1")
 
-[node name="CollisionShape2D" parent="Window" index="2" unique_id=694965729]
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
 position = Vector2(111, 65)
 shape = SubResource("RectangleShape2D_aiulh")
 
-[node name="HideTextureButton" parent="Window" index="3" unique_id=379569171]
+[node name="HideTextureButton" parent="Window" index="2" unique_id=379569171]
 offset_left = 214.0
 offset_right = 219.0
 
@@ -59,6 +56,9 @@ offset_right = 203.0
 offset_bottom = 124.0
 texture_normal = SubResource("AtlasTexture_bjcrh")
 texture_pressed = SubResource("AtlasTexture_fx8x1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1579344018]
+stream = ExtResource("5_n0nu6")
 
 [connection signal="pressed" from="Window/TextureButton" to="." method="_on_texture_button_pressed"]
 

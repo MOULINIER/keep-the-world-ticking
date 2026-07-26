@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://6p5iwwpdxt64" path="res://assets/numpadX-Sheet.png" id="17_o6c1c"]
 [ext_resource type="Texture2D" uid="uid://bwmitxw0ovryl" path="res://assets/numpad#-Sheet.png" id="18_o6c1c"]
 [ext_resource type="Texture2D" uid="uid://hpsdtxokkdsj" path="res://assets/blue_screen.png" id="19_x4yo3"]
+[ext_resource type="AudioStream" uid="uid://7ohb231xnd2t" path="res://assets/sounds/universfield-computer-mouse-click-352734.mp3" id="20_2xvh6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqkyb"]
 size = Vector2(58.999928, 10)
@@ -349,6 +350,9 @@ offset_bottom = 31.0
 texture_normal = SubResource("AtlasTexture_oclhg")
 texture_pressed = SubResource("AtlasTexture_65xn5")
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Window/calcBackgroud" unique_id=748677845]
+stream = ExtResource("20_2xvh6")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]

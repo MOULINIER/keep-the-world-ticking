@@ -3,6 +3,8 @@ extends Control
 @onready var timer: Timer = $Timer
 @onready var bar: TextureProgressBar = $Window/TextureProgressBar
 @onready var buttonArray: Array[TextureButton] = [$Window/NumOOSprite2D,$Window/NumO1Sprite2D,$Window/NumO2Sprite2D,$Window/Num1OSprite2D,$Window/Num11Sprite2D,$Window/Num12Sprite2D,$Window/Num2OSprite2D,$Window/Num21Sprite2D,$Window/Num22Sprite2D]
+@onready var sonclick: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var sonerror: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 
 @export var total_seconds: int = 20
 @export var second_added: int = 5
@@ -90,34 +92,44 @@ func _on_button_pressed(pos: int) -> void:
 			for i in range(9) :
 				buttonArray[i].disabled = false
 	else:
+		sonerror.play()
 		isCorrect = false 
 		loseTime = Time.get_unix_time_from_system()
 
 func _on_num_oo_sprite_2d_pressed() -> void:
+	sonclick.play()
 	_on_button_pressed(0)
 
 func _on_num_o_1_sprite_2d_pressed() -> void:
+	sonclick.play()
 	_on_button_pressed(1)
 
 func _on_num_o_2_sprite_2d_pressed() -> void:
+	sonclick.play()
 	_on_button_pressed(2)
 
 func _on_num_1o_sprite_2d_pressed() -> void:
+	sonclick.play()
 	_on_button_pressed(3)
 
 func _on_num_11_sprite_2d_pressed() -> void:
+	sonclick.play()
 	_on_button_pressed(4)
 
 func _on_num_12_sprite_2d_pressed() -> void:
+	sonclick.play()
 	_on_button_pressed(5)
 
 func _on_num_2o_sprite_2d_pressed() -> void:
+	sonclick.play()
 	_on_button_pressed(6)
 
 func _on_num_21_sprite_2d_pressed() -> void:
+	sonclick.play()
 	_on_button_pressed(7)
 
 func _on_num_22_sprite_2d_pressed() -> void:
+	sonclick.play()
 	_on_button_pressed(8)
 
 func _on_timer_timeout() -> void:

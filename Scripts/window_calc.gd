@@ -12,6 +12,8 @@ extends Control
 @onready var res1: Sprite2D = $Window/BlueScreen/res1Sprite2D
 @onready var res2: Sprite2D = $Window/BlueScreen/res2Sprite2D
 
+@onready var sonclick: AudioStreamPlayer2D = $Window/calcBackgroud/AudioStreamPlayer2D
+
 @export var country: String = "India"
 
 var numberSpriteSheet = preload("res://assets/white_numbers-Sheet.png")
@@ -71,68 +73,81 @@ func _on_texture_progress_bar_value_changed(value: float) -> void:
 
 func _on_texture_button_x_pressed() -> void:
 	playerRes = 0
+	sonclick.play()
+
 
 func _on_texture_button_1_pressed() -> void:
+	sonclick.play()
 	if playerRes*10>999:
 		pass
 	else :
 		playerRes = playerRes*10 + 1
 
 func _on_texture_button_2_pressed() -> void:
+	sonclick.play()
 	if playerRes*10>999:
 		pass
 	else :
 		playerRes = playerRes*10 + 2
 
 func _on_texture_button_3_pressed() -> void:
+	sonclick.play()
 	if playerRes*10>999:
 		pass
 	else :
 		playerRes = playerRes*10 + 3
 
 func _on_texture_button_4_pressed() -> void:
+	sonclick.play()
 	if playerRes*10>999:
 		pass
 	else :
 		playerRes = playerRes*10 + 4
 
 func _on_texture_button_5_pressed() -> void:
+	sonclick.play()
 	if playerRes*10>999:
 		pass
 	else :
 		playerRes = playerRes*10 + 5
 
 func _on_texture_button_6_pressed() -> void:
+	sonclick.play()
 	if playerRes*10>999:
 		pass
 	else :
 		playerRes = playerRes*10 + 6
 
 func _on_texture_button_7_pressed() -> void:
+	sonclick.play()
 	if playerRes*10>999:
 		pass
 	else :
 		playerRes = playerRes*10 + 7
 
 func _on_texture_button_8_pressed() -> void:
+	sonclick.play()
 	if playerRes*10>999:
 		pass
 	else :
 		playerRes = playerRes*10 + 8
 
 func _on_texture_button_9_pressed() -> void:
+	sonclick.play()
 	if playerRes*10>999:
 		pass
 	else :
 		playerRes = playerRes*10 + 9
 
 func _on_texture_button_0_pressed() -> void:
+	sonclick.play()
 	if playerRes*10>999:
 		pass
 	else :
 		playerRes = playerRes*10 + 0
 
 func _on_texture_button_v_pressed() -> void:
+	sonclick.play()
 	if playerRes == 666:
 		EndingScene.trigger("")
 		

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wv6yptix3hgh"]
 
 [ext_resource type="Script" uid="uid://d4fs06ienkx0b" path="res://Scripts/wire_plug.gd" id="1_2n8nd"]
+[ext_resource type="AudioStream" uid="uid://ycosmllimfio" path="res://assets/sounds/freesound_community-bow-loading-38752.mp3" id="2_qur0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qihe5"]
 size = Vector2(6, 5)
@@ -35,5 +36,8 @@ position = Vector2(4.01, -0.5)
 points = PackedVector2Array(0, 0, 1, 0)
 width = 1.0
 gradient = SubResource("Gradient_gpwr6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=582507356]
+stream = ExtResource("2_qur0p")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

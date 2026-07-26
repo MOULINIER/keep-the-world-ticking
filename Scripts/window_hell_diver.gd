@@ -3,6 +3,8 @@ extends Control
 @onready var timer: Timer = $Timer
 @onready var bar: TextureProgressBar = $Window/TextureProgressBar
 @onready var buttonArray: Array[TextureButton] = [$Window/ArrowButton0,$Window/ArrowButton1,$Window/ArrowButton2,$Window/ArrowButton3,$Window/ArrowButton4]
+@onready var sonclick: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var sonrate: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 
 @export var total_seconds: int = 20
 @export var second_added: int = 5
@@ -46,15 +48,21 @@ func _process(delta: float) -> void:
 			buttonArray[i].texture_normal = numberTexture[arrowOrder[i]+4]
 			
 	if Input.is_action_just_pressed("Left"):
+		sonclick.play()
 		arrowInput.insert(arrowInput.size(),0)
 	if Input.is_action_just_pressed("Up"):
+		sonclick.play()
 		arrowInput.insert(arrowInput.size(),1)
 	if Input.is_action_just_pressed("Down"):
+		sonclick.play()
 		arrowInput.insert(arrowInput.size(),2)
 	if Input.is_action_just_pressed("Right"):
+		sonclick.play()
 		arrowInput.insert(arrowInput.size(),3)
+		
 	for i in range(arrowInput.size()):
 		if arrowInput[i] != arrowOrder[i]:
+			sonrate.play()
 			arrowOrder.clear()
 			arrowInput.clear()
 			for j in range(5):

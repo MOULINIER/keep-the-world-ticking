@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bs84bbt403yxg" path="res://assets/window5.png" id="2_5wk3d"]
 [ext_resource type="Texture2D" uid="uid://cyjmvcyrvrcnc" path="res://assets/Window1TimeBarGreen.png" id="3_2p0pq"]
 [ext_resource type="Texture2D" uid="uid://drwxef3xkjj3w" path="res://assets/monkey_test-spritesheet.png" id="4_j1qyp"]
+[ext_resource type="AudioStream" uid="uid://dgiyk03ukxfcw" path="res://assets/sounds/thepixelguymaker-button-click-vintage-sound-fx-541135.mp3" id="7_mrg5c"]
+[ext_resource type="AudioStream" uid="uid://c6xqwqtfrftii" path="res://assets/sounds/soundshelfstudio-ui-error-pop-515668.mp3" id="8_eusu8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1qyp"]
 size = Vector2(72.999916, 10)
@@ -167,6 +169,12 @@ centered = false
 wait_time = 60.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=906108562]
+stream = ExtResource("7_mrg5c")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=997308112]
+stream = ExtResource("8_eusu8")
 
 [connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
 [connection signal="pressed" from="Window/NumOOSprite2D" to="." method="_on_num_oo_sprite_2d_pressed"]

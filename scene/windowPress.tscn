@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dh0uyasrlabfb" path="res://assets/blue_button-Sheet.png" id="3_qouo5"]
 [ext_resource type="Texture2D" uid="uid://bsmnsfbrb81lq" path="res://assets/gauge.png" id="5_qouo5"]
 [ext_resource type="Texture2D" uid="uid://cxfejyhs72tn5" path="res://assets/gauge_hand.png" id="6_2n5ry"]
+[ext_resource type="AudioStream" uid="uid://7ohb231xnd2t" path="res://assets/sounds/universfield-computer-mouse-click-352734.mp3" id="7_61mgk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulaig"]
 atlas = ExtResource("3_qouo5")
@@ -64,6 +65,9 @@ offset = Vector2(-1.5, -7.5)
 wait_time = 60.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=946112819]
+stream = ExtResource("7_61mgk")
 
 [connection signal="pressed" from="Window/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]

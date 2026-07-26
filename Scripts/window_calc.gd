@@ -12,6 +12,8 @@ extends Control
 @onready var res1: Sprite2D = $Window/BlueScreen/res1Sprite2D
 @onready var res2: Sprite2D = $Window/BlueScreen/res2Sprite2D
 
+@export var country: String = "India"
+
 var numberSpriteSheet = preload("res://assets/white_numbers-Sheet.png")
 var numberTexture: Array[AtlasTexture] = []
 var numberTextureWidth = 6
@@ -131,8 +133,15 @@ func _on_texture_button_0_pressed() -> void:
 		playerRes = playerRes*10 + 0
 
 func _on_texture_button_v_pressed() -> void:
+	if playerRes == 666:
+		EndingScene.trigger("")
+		
 	if playerRes == rand0 + rand1 :
 		timer.start(total_seconds)
 	rand0 = randi_range(1,99)
 	rand1 = randi_range(1,99)
 	playerRes = 0
+
+
+func _on_timer_timeout() -> void:
+	EndingScene.trigger(country)

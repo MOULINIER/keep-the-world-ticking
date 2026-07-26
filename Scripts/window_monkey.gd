@@ -7,6 +7,8 @@ extends Control
 @export var total_seconds: int = 20
 @export var second_added: int = 5
 
+@export var country: String = "Japan"
+
 var greenTexture = preload("res://assets/Window5TimeBarGreen.png")
 var orangeTexture = preload("res://assets/Window5TimeBarOrange.png")
 var redTexture = preload("res://assets/Window5TimeBarRed.png")
@@ -117,3 +119,6 @@ func _on_num_21_sprite_2d_pressed() -> void:
 
 func _on_num_22_sprite_2d_pressed() -> void:
 	_on_button_pressed(8)
+
+func _on_timer_timeout() -> void:
+	EndingScene.trigger(country)

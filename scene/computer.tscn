@@ -406,7 +406,7 @@ collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1725488580]
 z_index = 500
-polygon = PackedVector2Array(32, 12, 296, 12, 296, 193, 15, 193, 6, 193, 7, 13, -16, 56, -17, 214, 328, 222, 321, -1, 0, 7, 7, 13)
+polygon = PackedVector2Array(32, 12, 296, 12, 296, 182, 16, 182, 7, 182, 7, 12, -16, 56, -17, 214, 328, 222, 321, -1, 0, 7, 7, 12)
 
 [node name="TimerWindow" type="Timer" parent="." unique_id=2093246973]
 wait_time = 10.0

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cgia0c42qkn05" path="res://Scripts/window_cable_box.gd" id="1_lprgb"]
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_n78g2"]
-[ext_resource type="Texture2D" uid="uid://cyjmvcyrvrcnc" path="res://assets/Window1TimeBarGreen.png" id="2_als56"]
 [ext_resource type="Texture2D" uid="uid://dv61grfwvq5qb" path="res://assets/Window3.png" id="3_f7ugw"]
 [ext_resource type="Texture2D" uid="uid://dylt45q2j2v7k" path="res://assets/cabble_box.png" id="4_4y7eg"]
+[ext_resource type="Texture2D" uid="uid://cj8nrxyiti5gb" path="res://assets/Window3TimeBarGreen.png" id="4_5lb3y"]
 [ext_resource type="PackedScene" uid="uid://wv6yptix3hgh" path="res://scene/WirePlug.tscn" id="4_ktiis"]
 [ext_resource type="Texture2D" uid="uid://qqpa01645fqa" path="res://assets/bulb-Sheet.png" id="7_5lb3y"]
 
@@ -28,11 +28,7 @@ script = ExtResource("1_lprgb")
 
 [node name="Window" parent="." unique_id=341003668 instance=ExtResource("1_n78g2")]
 
-[node name="Control" parent="Window" index="0" unique_id=349519325]
-offset_right = 69.0
-offset_bottom = 87.0
-
-[node name="windowSprite" parent="Window" index="1" unique_id=1230029786]
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
 texture = ExtResource("3_f7ugw")
 
 [node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(341003668, 1784525188) index="0" unique_id=1700177945]
@@ -45,11 +41,11 @@ position = Vector2(34.5, 43.5)
 scale = Vector2(1.0000018, 1)
 shape = SubResource("RectangleShape2D_f7ugw")
 
-[node name="CollisionShape2D" parent="Window" index="2" unique_id=694965729]
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
 position = Vector2(34.5, 43.5)
 shape = SubResource("RectangleShape2D_5lb3y")
 
-[node name="HideTextureButton" parent="Window" index="3" unique_id=379569171]
+[node name="HideTextureButton" parent="Window" index="2" unique_id=379569171]
 offset_left = 61.0
 offset_right = 66.0
 
@@ -59,7 +55,7 @@ offset_top = 5.0
 offset_right = 58.0
 offset_bottom = 7.0
 value = 100.0
-texture_progress = ExtResource("2_als56")
+texture_progress = ExtResource("4_5lb3y")
 
 [node name="CabbleBox" type="Sprite2D" parent="Window" unique_id=1512901889]
 position = Vector2(14, 27)
@@ -139,5 +135,6 @@ wait_time = 40.0
 one_shot = true
 
 [connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="Window"]

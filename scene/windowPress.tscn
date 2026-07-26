@@ -67,3 +67,4 @@ autostart = true
 
 [connection signal="pressed" from="Window/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

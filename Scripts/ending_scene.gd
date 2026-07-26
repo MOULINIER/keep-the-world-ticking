@@ -34,11 +34,26 @@ func trigger(country: String) -> void:
 
 	var marker := map.get_node_or_null(country) as Marker2D
 	nuke.global_position = marker.global_position if marker else map.global_position + map.size * 0.5
-
+	
+	var nukeArray = []
+	var countryArray = ["China","India","Canada","Mexico","Egypt","Australia","France","Argentina","Russia","Japan","Danmark","SouthAfrica"]
+	if !marker:
+		nuke.global_position = map.get_node(countryArray[7]).global_position
+		for i in range(12):
+			nukeArray.insert(0,nuke.duplicate())
+			self.add_child(nukeArray[0])
+	
 	siren.play()
 	await _fade(self, "modulate:a", 1.0, FADE_IN)
 	await _wait(SIREN_LEAD_IN)
 
+	for i in range(nukeArray.size()):
+		nukeArray[i].global_position = map.get_node(countryArray[i]).global_position
+		nukeArray[i].visible = true
+		nukeArray[i].frame = 0
+		nukeArray[i].process_mode = Node.PROCESS_MODE_ALWAYS
+		nukeArray[i].play("default")
+		
 	nuke.visible = true
 	nuke.frame = 0
 	nuke.play("default")
@@ -49,6 +64,7 @@ func trigger(country: String) -> void:
 
 	get_tree().paused = false
 	visible = false
+	for i in range(nukeArray.size()): nukeArray[i].visible = false
 	nuke.visible = false
 	white.color.a = 0.0
 	_triggered = false

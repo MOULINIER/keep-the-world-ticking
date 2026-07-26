@@ -174,11 +174,7 @@ script = ExtResource("1_1xpyq")
 
 [node name="Window" parent="." unique_id=154025688 instance=ExtResource("1_fljx6")]
 
-[node name="Control" parent="Window" index="0" unique_id=349519325]
-offset_right = 45.0
-offset_bottom = 40.0
-
-[node name="windowSprite" parent="Window" index="1" unique_id=1230029786]
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
 texture = ExtResource("2_2hjsp")
 
 [node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(154025688, 1784525188) index="0" unique_id=1700177945]
@@ -189,11 +185,11 @@ shape = SubResource("RectangleShape2D_1xpyq")
 position = Vector2(22.5, 20)
 shape = SubResource("RectangleShape2D_yjb52")
 
-[node name="CollisionShape2D" parent="Window" index="2" unique_id=694965729]
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
 position = Vector2(22.5, 20)
 shape = SubResource("RectangleShape2D_x3ih7")
 
-[node name="HideTextureButton" parent="Window" index="3" unique_id=379569171]
+[node name="HideTextureButton" parent="Window" index="2" unique_id=379569171]
 offset_left = 37.0
 offset_right = 42.0
 
@@ -230,5 +226,6 @@ autostart = true
 
 [connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
 [connection signal="pressed" from="Window/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="Window"]

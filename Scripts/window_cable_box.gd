@@ -14,6 +14,7 @@ var COLORS := [
 
 var complete: bool = false
 @export var total_seconds: int = 40
+@export var country: String = "Canada"
 
 var greenTexture = preload("res://assets/Window3TimeBarGreen.png")
 var orangeTexture = preload("res://assets/Window3TimeBarOrange.png")
@@ -106,3 +107,6 @@ func _on_texture_progress_bar_value_changed(value: float) -> void:
 		bar.texture_progress = whiteTexture
 	else :
 		bar.texture_progress = redTexture
+
+func _on_timer_timeout() -> void:
+	EndingScene.trigger(country)

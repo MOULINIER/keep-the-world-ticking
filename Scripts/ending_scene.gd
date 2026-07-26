@@ -25,6 +25,7 @@ func _ready() -> void:
 
 
 func trigger(country: String) -> void:
+	Global.loseTime = Time.get_unix_time_from_system()
 	if _triggered:
 		return
 	_triggered = true
@@ -41,7 +42,7 @@ func trigger(country: String) -> void:
 		nuke.global_position = map.get_node(countryArray[7]).global_position
 		for i in range(12):
 			nukeArray.insert(0,nuke.duplicate())
-			self.add_child(nukeArray[0])
+			$Map.add_child(nukeArray[0])
 	
 	siren.play()
 	await _fade(self, "modulate:a", 1.0, FADE_IN)

@@ -112,6 +112,6 @@ offset_bottom = -1.0
 color = Color(0, 0, 0, 1)
 
 [node name="White" type="ColorRect" parent="." unique_id=1338428886]
-z_index = -6
+z_index = 1000
 offset_right = 320.0
 offset_bottom = 180.0

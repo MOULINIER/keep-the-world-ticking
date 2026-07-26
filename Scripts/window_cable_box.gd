@@ -24,6 +24,7 @@ var whiteTexture = preload("res://assets/Window3TimeBarWhite.png")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	shuffle_cables_initialise()
+	timer.wait_time = total_seconds
 	timer.start()
 	
 	bulbs.sort_custom(func(a, b): return a.position.x < b.position.x)

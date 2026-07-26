@@ -22,6 +22,8 @@
 [ext_resource type="AudioStream" uid="uid://p5o3r6cfg6ff" path="res://sound/jeu video menu ou chill.mp3" id="18_qdnme"]
 [ext_resource type="AudioStream" uid="uid://bhw1hew2k8ko2" path="res://sound/musique jeu avec tout.mp3" id="19_6d31v"]
 [ext_resource type="AudioStream" uid="uid://doxbelewun7ln" path="res://sound/musique jeu simple.mp3" id="20_7jxl6"]
+[ext_resource type="Texture2D" uid="uid://cp0x6nkp5x6si" path="res://assets/grayBackgroud.png" id="23_ipjwl"]
+[ext_resource type="Texture2D" uid="uid://cym772sxjgpqa" path="res://assets/sound_icon.png" id="23_r7djl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svdou"]
 size = Vector2(276.76056, 74)
@@ -201,6 +203,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_var4b"]
+atlas = ExtResource("23_ipjwl")
+region = Rect2(0, 0, 14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvj77"]
+atlas = ExtResource("23_r7djl")
+region = Rect2(0, 2, 16, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7gfx"]
+atlas = ExtResource("23_r7djl")
+region = Rect2(16, 2, 16, 12)
+
 [node name="ComputerNode2D" type="Node2D" unique_id=1027316699]
 script = ExtResource("1_36qyv")
 
@@ -249,6 +263,7 @@ offset_left = 71.0
 offset_top = 76.0
 offset_right = 71.0
 offset_bottom = 76.0
+total_seconds = 40
 
 [node name="WindowHourglass" parent="." unique_id=671522378 instance=ExtResource("10_y4tp0")]
 z_index = 1
@@ -263,6 +278,7 @@ offset_left = 166.0
 offset_top = 78.0
 offset_right = 166.0
 offset_bottom = 78.0
+total_seconds = 30
 
 [node name="WindowCableBox" parent="." unique_id=1703067553 instance=ExtResource("6_h4728")]
 z_index = 1
@@ -406,10 +422,11 @@ collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1725488580]
 z_index = 500
-polygon = PackedVector2Array(32, 12, 296, 12, 296, 182, 16, 182, 7, 182, 7, 12, -16, 56, -17, 214, 328, 222, 321, -1, 0, 7, 7, 12)
+polygon = PackedVector2Array(32, 12, 296, 12, 296, 182, 120.70765, 182, 16, 182, 7, 182, 7, 12, -16, 56, -17, 214, 328, 222, 321, -1, 0, 7, 7, 12)
 
 [node name="TimerWindow" type="Timer" parent="." unique_id=2093246973]
 wait_time = 10.0
+one_shot = true
 
 [node name="TimerPopUp" type="Timer" parent="." unique_id=1247466843]
 wait_time = 25.0
@@ -463,9 +480,26 @@ parameters/looping = true
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1114208478]
 position = Vector2(41, 21)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=542324226]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="QuitButton" type="TextureButton" parent="." unique_id=1883752701]
+offset_left = 35.0
+offset_top = 153.0
+offset_right = 68.0
+offset_bottom = 162.0
+
+[node name="GrayBackgroud" type="Sprite2D" parent="." unique_id=1793798348]
+z_index = 570
+position = Vector2(81, 158)
+texture = SubResource("AtlasTexture_var4b")
+
+[node name="MuteButton" type="TextureButton" parent="GrayBackgroud" unique_id=754256562]
+z_index = 500
+offset_left = -9.0
+offset_top = -6.0
+offset_right = 7.0
+offset_bottom = 6.0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_pvj77")
+texture_pressed = SubResource("AtlasTexture_u7gfx")
 
 [connection signal="mouse_entered" from="ComputerDesktopSprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="ComputerDesktopSprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]
@@ -477,8 +511,11 @@ offset_bottom = 40.0
 [connection signal="pressed" from="ArgentinaButton" to="." method="_on_argentina_button_pressed"]
 [connection signal="pressed" from="JapanButton" to="." method="_on_japan_button_pressed"]
 [connection signal="pressed" from="CanadaButton" to="." method="_on_canada_button_pressed"]
+[connection signal="pressed" from="FranceButton" to="." method="_on_france_button_pressed"]
 [connection signal="timeout" from="TimerWindow" to="." method="_on_timer_window_timeout"]
 [connection signal="timeout" from="TimerPopUp" to="." method="_on_timer_pop_up_timeout"]
 [connection signal="timeout" from="TimerMusicInstr" to="." method="_on_timer_music_instr_timeout"]
 [connection signal="timeout" from="TimerFiltre0" to="." method="_on_timer_filtre_timeout"]
 [connection signal="timeout" from="TimerFiltre1" to="." method="_on_timer_filtre_1_timeout"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="toggled" from="GrayBackgroud/MuteButton" to="." method="_on_mute_button_toggled"]

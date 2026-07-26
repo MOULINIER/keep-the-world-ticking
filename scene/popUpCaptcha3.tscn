@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://c1wjhiu3blssy"]
+
+[ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_0wxy7"]
+[ext_resource type="Script" uid="uid://bcybrheseyvb3" path="res://scene/pop_up_captcha_3.gd" id="1_5su8s"]
+[ext_resource type="Texture2D" uid="uid://dhm4ph8ych0bn" path="res://assets/captcha3.png" id="2_0wxy7"]
+[ext_resource type="Texture2D" uid="uid://cqr4g3krbegh5" path="res://assets/captcha_selection.png" id="3_0fga7"]
+[ext_resource type="Texture2D" uid="uid://c2j1r7aeg8u8y" path="res://assets/WindowCaptchaTimeBarGreen.png" id="5_5su8s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vd8b"]
+size = Vector2(80.99989, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bnw8"]
+size = Vector2(80.99988, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tcus"]
+size = Vector2(81, 68)
+
+[node name="Control" type="Control" unique_id=312414127]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5su8s")
+
+[node name="Window" parent="." unique_id=154025688 instance=ExtResource("1_0wxy7")]
+
+[node name="windowSprite" parent="Window" index="0" unique_id=1230029786]
+texture = ExtResource("2_0wxy7")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/moveWindowArea" parent_id_path=PackedInt32Array(154025688, 1784525188) index="0" unique_id=1700177945]
+position = Vector2(40.5, 5)
+shape = SubResource("RectangleShape2D_5vd8b")
+
+[node name="CollisionShape2D" parent="Window/windowSprite/WindowArea" parent_id_path=PackedInt32Array(154025688, 1135412940) index="0" unique_id=1706110952]
+position = Vector2(40.5, 34)
+shape = SubResource("RectangleShape2D_2bnw8")
+
+[node name="CollisionShape2D" parent="Window" index="1" unique_id=694965729]
+position = Vector2(40.5, 34)
+shape = SubResource("RectangleShape2D_8tcus")
+
+[node name="HideTextureButton" parent="Window" index="2" unique_id=379569171]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton0" type="TextureButton" parent="Window" unique_id=6641878]
+offset_left = 4.0
+offset_top = 24.0
+offset_right = 27.0
+offset_bottom = 37.0
+toggle_mode = true
+texture_pressed = ExtResource("3_0fga7")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton1" type="TextureButton" parent="Window" unique_id=1492965509]
+offset_left = 29.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 37.0
+toggle_mode = true
+texture_pressed = ExtResource("3_0fga7")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton2" type="TextureButton" parent="Window" unique_id=931173601]
+offset_left = 54.0
+offset_top = 24.0
+offset_right = 78.0
+offset_bottom = 37.0
+toggle_mode = true
+texture_pressed = ExtResource("3_0fga7")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton3" type="TextureButton" parent="Window" unique_id=1913637431]
+offset_left = 4.0
+offset_top = 39.0
+offset_right = 27.0
+offset_bottom = 50.0
+toggle_mode = true
+texture_pressed = ExtResource("3_0fga7")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton4" type="TextureButton" parent="Window" unique_id=2119257868]
+offset_left = 29.0
+offset_top = 39.0
+offset_right = 52.0
+offset_bottom = 50.0
+toggle_mode = true
+texture_pressed = ExtResource("3_0fga7")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton5" type="TextureButton" parent="Window" unique_id=2038184606]
+offset_left = 54.0
+offset_top = 39.0
+offset_right = 78.0
+offset_bottom = 50.0
+toggle_mode = true
+texture_pressed = ExtResource("3_0fga7")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton6" type="TextureButton" parent="Window" unique_id=966019570]
+offset_left = 4.0
+offset_top = 52.0
+offset_right = 27.0
+offset_bottom = 65.0
+toggle_mode = true
+texture_pressed = ExtResource("3_0fga7")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton7" type="TextureButton" parent="Window" unique_id=87554253]
+offset_left = 29.0
+offset_top = 52.0
+offset_right = 52.0
+offset_bottom = 65.0
+toggle_mode = true
+texture_pressed = ExtResource("3_0fga7")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton8" type="TextureButton" parent="Window" unique_id=485293382]
+offset_left = 54.0
+offset_top = 52.0
+offset_right = 78.0
+offset_bottom = 65.0
+toggle_mode = true
+texture_pressed = ExtResource("3_0fga7")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Window" unique_id=576684633]
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 58.0
+offset_bottom = 7.0
+value = 100.0
+texture_progress = ExtResource("5_5su8s")
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="." unique_id=190440537]
+wait_time = 40.0
+one_shot = true
+
+[connection signal="toggled" from="Window/TextureButton0" to="." method="_on_texture_button_0_toggled"]
+[connection signal="toggled" from="Window/TextureButton1" to="." method="_on_texture_button_1_toggled"]
+[connection signal="toggled" from="Window/TextureButton2" to="." method="_on_texture_button_2_toggled"]
+[connection signal="toggled" from="Window/TextureButton3" to="." method="_on_texture_button_3_toggled"]
+[connection signal="toggled" from="Window/TextureButton4" to="." method="_on_texture_button_4_toggled"]
+[connection signal="toggled" from="Window/TextureButton5" to="." method="_on_texture_button_5_toggled"]
+[connection signal="toggled" from="Window/TextureButton6" to="." method="_on_texture_button_6_toggled"]
+[connection signal="toggled" from="Window/TextureButton7" to="." method="_on_texture_button_7_toggled"]
+[connection signal="toggled" from="Window/TextureButton8" to="." method="_on_texture_button_8_toggled"]
+[connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Window"]

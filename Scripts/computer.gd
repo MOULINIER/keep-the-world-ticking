@@ -232,7 +232,7 @@ func _on_quit_button_pressed() -> void:
 	get_tree().quit(0)
 
 func _on_mute_button_toggled(toggled_on: bool) -> void:
-	var bus_index = AudioServer.get_bus_index("Music")
+	var bus_index = AudioServer.get_bus_index("Master")
 	if !toggled_on :
 		AudioServer.set_bus_volume_db(bus_index, 0)
 	else :

@@ -41,3 +41,7 @@ func _on_window_area_mouse_exited() -> void:
 
 func _on_hide_texture_button_pressed() -> void:
 	visible = false
+
+
+func _on_texture_button_0_toggled(toggled_on: bool) -> void:
+	pass # Replace with function body.

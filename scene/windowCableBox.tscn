@@ -54,6 +54,7 @@ offset_left = 7.0
 offset_top = 5.0
 offset_right = 58.0
 offset_bottom = 7.0
+mouse_filter = 2
 value = 100.0
 texture_progress = ExtResource("4_5lb3y")
 

@@ -85,6 +85,7 @@ offset_left = 7.0
 offset_top = 5.0
 offset_right = 44.0
 offset_bottom = 7.0
+mouse_filter = 2
 value = 100.0
 texture_progress = ExtResource("3_2p0pq")
 metadata/_edit_use_anchors_ = true

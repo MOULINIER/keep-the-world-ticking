@@ -110,9 +110,9 @@ horizontal_alignment = 1
 [node name="TimeRichTextLabel" type="RichTextLabel" parent="Black" unique_id=805714827]
 layout_mode = 0
 offset_left = 93.0
-offset_top = 79.0
+offset_top = 88.0
 offset_right = 227.0
-offset_bottom = 90.0
+offset_bottom = 99.0
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "[font=res://assets/fonts/Ordin-Bold.otf]
@@ -122,9 +122,9 @@ horizontal_alignment = 1
 [node name="TimeRichTextLabel2" type="RichTextLabel" parent="Black" unique_id=1025737279]
 layout_mode = 0
 offset_left = 93.0
-offset_top = 91.0
+offset_top = 84.0
 offset_right = 227.0
-offset_bottom = 102.0
+offset_bottom = 95.0
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "[font=res://assets/fonts/Ordin-Bold.otf]"

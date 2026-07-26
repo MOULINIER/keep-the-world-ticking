@@ -42,8 +42,8 @@ func _ready() -> void:
 		numberTexture.append(tex)
 	timer.wait_time = total_seconds
 	timer.start()
-	rand0 = randi_range(1,99)
-	rand1 = randi_range(1,99)
+	rand0 = randi_range(1,60)
+	rand1 = randi_range(1,60)
 	playerRes = 0
 
 
@@ -153,8 +153,8 @@ func _on_texture_button_v_pressed() -> void:
 		
 	if playerRes == rand0 + rand1 :
 		timer.start(total_seconds)
-	rand0 = randi_range(1,99)
-	rand1 = randi_range(1,99)
+	rand0 = randi_range(1,60)
+	rand1 = randi_range(1,60)
 	playerRes = 0
 
 

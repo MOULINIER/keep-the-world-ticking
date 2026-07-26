@@ -7,17 +7,18 @@ extends Control
 @export var total_seconds: int = 20
 @export var second_added: int = 5
 
-var greenTexture = preload("res://assets/Window5TimeBarGreen.png")
-var orangeTexture = preload("res://assets/Window5TimeBarOrange.png")
-var redTexture = preload("res://assets/Window5TimeBarRed.png")
-var whiteTexture = preload("res://assets/Window5TimeBarWhite.png")
+var greenTexture = preload("res://assets/Window6TimeBarGreen.png")
+var orangeTexture = preload("res://assets/Window6TimeBarOrange.png")
+var redTexture = preload("res://assets/Window6TimeBarRed.png")
+var whiteTexture = preload("res://assets/Window6TimeBarWhite.png")
 
-var numberSpriteSheet = preload("res://assets/monkey_test-spritesheet.png")
+var numberSpriteSheet = preload("res://assets/arrows-Sheet.png")
 var numberTexture: Array[AtlasTexture] = []
 var numberTextureWidth = 17
 var numberTextureHight = 17
 
 var arrowOrder: Array[int]
+var arrowInput: Array[int]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,17 +30,44 @@ func _ready() -> void:
 			numberTexture.append(tex)
 	timer.wait_time = total_seconds
 	timer.start()
-	for i in range(4):
+	for i in range(5):
 		var randi = randi_range(0,3)
-		arrowOrder[i] = randi
+		arrowOrder.insert(i, randi)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	bar.value = timer.time_left/total_seconds * bar.max_value
-	for i in range(buttonArray.size):
-		buttonArray[i].texture_pressed = numberTexture[arrowOrder[i]]
-
+	for i in range(buttonArray.size()):
+		buttonArray[i].texture_normal = numberTexture[arrowOrder[i]]
+		if arrowInput.size()>i:
+			buttonArray[i].texture_normal = numberTexture[arrowOrder[i]+4]
+			
+	if Input.is_action_just_pressed("Left"):
+		arrowInput.insert(arrowInput.size(),0)
+	if Input.is_action_just_pressed("Up"):
+		arrowInput.insert(arrowInput.size(),1)
+	if Input.is_action_just_pressed("Down"):
+		arrowInput.insert(arrowInput.size(),2)
+	if Input.is_action_just_pressed("Right"):
+		arrowInput.insert(arrowInput.size(),3)
+	for i in range(arrowInput.size()):
+		if arrowInput[i] != arrowOrder[i]:
+			arrowOrder.clear()
+			arrowInput.clear()
+			for j in range(5):
+				var randi = randi_range(0,3)
+				arrowOrder.insert(j, randi)
+			break
+		elif arrowInput.size() == arrowOrder.size():
+			timer.start(total_seconds)
+			arrowOrder.clear()
+			arrowInput.clear()
+			for j in range(5):
+				var randi = randi_range(0,3)
+				arrowOrder.insert(j, randi)
+			break
+			
 
 func _on_texture_progress_bar_value_changed(value: float) -> void:
 	if value >= 67:

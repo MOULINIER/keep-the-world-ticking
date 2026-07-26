@@ -29,16 +29,17 @@ func _ready() -> void:
 	$AudioPlayerGame.volume_db = -80
 	$AudioPlayerGameInstr.volume_db = -80
 	windowShort = [$WindowPress,$WindowHourglass]
-	windowMedium = [$WindowMonkey]
+	windowMedium = [$WindowMonkey,$WindowHellDiver]
 	windowLong = [$WindowCalc,$WindowCableBox]
-	windowAvailable = [windowShort,windowLong,windowMedium,windowShort,windowLong]
+	windowAvailable = [windowShort,windowLong,windowMedium,windowShort,windowLong,windowMedium]
 	windowButtonDict = [
 		[$WindowButtonTest,$ChinaButton],
 		[$WindowPress,$MexicoButton],
 		[$WindowCalc,$IndiaButton],
 		[$WindowHourglass,$ArgentinaButton],
 		[$WindowMonkey,$JapanButton],
-		[$WindowCableBox,$CanadaButton]
+		[$WindowCableBox,$CanadaButton],
+		[$WindowHellDiver,$FranceButton]
 	]
 	windowArray = [$WindowButtonTest]
 	

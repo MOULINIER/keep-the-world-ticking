@@ -4,6 +4,7 @@ extends Control
 @onready var button: TextureButton = $Window/TextureButton
 @onready var bar: TextureProgressBar = $Window/TextureProgressBar
 @onready var gaugeHand: Sprite2D = $Window/GaugeSprite2D/GaugeHandSprite2D
+@onready var sonclick: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var total_seconds: int = 20
 @export var second_added: int = 2
@@ -32,6 +33,7 @@ func _on_Timer_timeout() -> void:
 
 
 func _on_texture_button_pressed() -> void:
+	sonclick.play()
 	if timer.time_left > total_seconds - second_added :
 		timer.start(timer.time_left + (total_seconds - timer.time_left))
 	else:

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bqt6fhus82m0r" path="res://Scripts/window_button.gd" id="1_bqmkv"]
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_r4apc"]
 [ext_resource type="Texture2D" uid="uid://do5n3cbgwejdf" path="res://assets/red_button-Sheet.png" id="3_bqmkv"]
+[ext_resource type="AudioStream" uid="uid://cp54eup756kqc" path="res://assets/sounds/dragon-studio-button-press-382713.mp3" id="4_k8qsm"]
 [ext_resource type="Texture2D" uid="uid://cyjmvcyrvrcnc" path="res://assets/Window1TimeBarGreen.png" id="4_r4nkh"]
 [ext_resource type="Texture2D" uid="uid://dilpy43h74vjh" path="res://assets/green_counter-Sheet.png" id="5_tcr7i"]
 [ext_resource type="Texture2D" uid="uid://bx8dnn1183w3" path="res://assets/green_counter_number-Sheet.png" id="6_komj5"]
@@ -65,6 +66,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Window/TextureButton" unique_id=114948809]
 root_node = NodePath("../../..")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Window/TextureButton" unique_id=1296264765]
+stream = ExtResource("4_k8qsm")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Window" unique_id=624858404]
 offset_left = 7.0

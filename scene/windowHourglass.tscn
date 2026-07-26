@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dnpuulanrl0yb" path="res://scene/window.tscn" id="1_fljx6"]
 [ext_resource type="Texture2D" uid="uid://bogt4vuunvxpb" path="res://assets/Window4.png" id="2_2hjsp"]
 [ext_resource type="Texture2D" uid="uid://q73b0xh00gey" path="res://assets/hourglass-Sheet.png" id="4_yjb52"]
+[ext_resource type="AudioStream" uid="uid://cdnlurqpgiu60" path="res://assets/sounds/freesound_community-sand_step-87182.mp3" id="6_3u2ec"]
 [ext_resource type="Texture2D" uid="uid://bhfethujrnihe" path="res://assets/spin_button-Sheet.png" id="6_x3ih7"]
+[ext_resource type="AudioStream" uid="uid://7ohb231xnd2t" path="res://assets/sounds/universfield-computer-mouse-click-352734.mp3" id="6_y1t5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xpyq"]
 size = Vector2(44.999943, 10)
@@ -219,10 +221,16 @@ offset_bottom = 29.0
 texture_normal = SubResource("AtlasTexture_svdou")
 texture_pressed = SubResource("AtlasTexture_8fb6m")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Window/TextureButton" unique_id=2121713181]
+stream = ExtResource("6_y1t5a")
+
 [node name="Timer" type="Timer" parent="." unique_id=1960937097]
 wait_time = 20.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1133842848]
+stream = ExtResource("6_3u2ec")
 
 [connection signal="value_changed" from="Window/TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]
 [connection signal="pressed" from="Window/TextureButton" to="." method="_on_texture_button_pressed"]

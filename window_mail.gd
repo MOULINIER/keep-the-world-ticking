@@ -1,4 +1,5 @@
 extends Control
+@onready var sonclick: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,4 +13,5 @@ func _process(delta: float) -> void:
 
 
 func _on_texture_button_pressed() -> void:
+	sonclick.play()
 	$Window.visible = false

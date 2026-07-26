@@ -24,6 +24,7 @@ centered = false
 [node name="moveWindowArea" type="Area2D" parent="windowSprite" unique_id=1784525188]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="windowSprite/moveWindowArea" unique_id=1700177945]
+z_index = 1
 position = Vector2(27.500002, 5)
 scale = Vector2(1.0000012, 1)
 shape = SubResource("RectangleShape2D_2x567")

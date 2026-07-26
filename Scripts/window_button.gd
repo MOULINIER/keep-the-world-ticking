@@ -8,7 +8,7 @@ extends Control
 @onready var count1: Sprite2D = $Window/Counter1Sprite2D
 @onready var count2: Sprite2D = $Window/Counter2Sprite2D
 @onready var count3: Sprite2D = $Window/Counter3Sprite2D
-
+@onready var sonclick: AudioStreamPlayer2D = $Window/TextureButton/AudioStreamPlayer2D
 @export var total_seconds: int = 60
 @export var second_added: int = 5
 @export var country: String = "China"
@@ -55,6 +55,7 @@ func _on_texture_button_pressed() -> void:
 	#else:
 	#	timer.start(timer.time_left + second_added)
 	timer.start(total_seconds)
+	sonclick.play()
 
 
 func _on_texture_progress_bar_value_changed(value: float) -> void:

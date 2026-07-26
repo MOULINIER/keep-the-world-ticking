@@ -91,7 +91,6 @@ func _shake(node: CanvasItem, duration: float, strength: float) -> void:
 	var original: Vector2 = node.position
 	var elapsed := 0.0
 	while elapsed < duration:
-		# decay so it fades out naturally
 		var amount: float = strength * (1.0 - elapsed / duration)
 		node.position = original + Vector2(
 			randf_range(-amount, amount),

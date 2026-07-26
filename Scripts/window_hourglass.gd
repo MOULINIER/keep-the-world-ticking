@@ -3,6 +3,8 @@ extends Control
 @onready var timer: Timer = $Timer
 @onready var bar: TextureProgressBar = $Window/TextureProgressBar
 @onready var hourglass : AnimatedSprite2D = $Window/HourglassAnimatedSprite2D
+@onready var sonclick: AudioStreamPlayer2D = $Window/TextureButton/AudioStreamPlayer2D
+@onready var sonsable: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var total_seconds: int = 20
 @export var second_added: int = 5
@@ -50,6 +52,8 @@ func _on_texture_progress_bar_value_changed(value: float) -> void:
 
 func _on_texture_button_pressed() -> void:
 	isRotating = true
+	sonclick.play()
+	sonsable.play()
 
 func _on_timer_timeout() -> void:
 	EndingScene.trigger(country)

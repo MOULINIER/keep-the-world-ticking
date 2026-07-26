@@ -436,7 +436,7 @@ wait_time = 10.0
 one_shot = true
 
 [node name="TimerPopUp" type="Timer" parent="." unique_id=1247466843]
-wait_time = 15.0
+wait_time = 17.0
 one_shot = true
 
 [node name="TimerMusicInstr" type="Timer" parent="." unique_id=1402987307]

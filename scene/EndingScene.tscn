@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://cqykc5s4m15pw"]
+
+[ext_resource type="Script" uid="uid://c0wc3eao0pnjy" path="res://Scripts/ending_scene.gd" id="1_xverj"]
+[ext_resource type="AudioStream" uid="uid://bwduc4yid56xq" path="res://assets/sounds/nuclear-siren-emergency-alarm-ra-music-1-00-11.mp3" id="2_xverj"]
+[ext_resource type="AudioStream" uid="uid://c6isgp0knd5m0" path="res://assets/sounds/322365__svarvarn__nuclear-distant.mp3" id="3_kpx8l"]
+[ext_resource type="Texture2D" uid="uid://dqu35hlp85dkn" path="res://65441385-07a1-45aa-92a6-6b68be386da9-0.png" id="4_kpx8l"]
+[ext_resource type="Texture2D" uid="uid://bbxjytu6sgpjl" path="res://65441385-07a1-45aa-92a6-6b68be386da9-1.png" id="5_bb0sd"]
+[ext_resource type="Texture2D" uid="uid://b0ctsdx4ieqs8" path="res://65441385-07a1-45aa-92a6-6b68be386da9-2.png" id="6_7oa06"]
+[ext_resource type="Texture2D" uid="uid://dnqymhcl0v3dn" path="res://65441385-07a1-45aa-92a6-6b68be386da9-3.png" id="7_0d5ha"]
+[ext_resource type="Texture2D" uid="uid://g1mke0hfc24x" path="res://65441385-07a1-45aa-92a6-6b68be386da9-4.png" id="8_gpwut"]
+[ext_resource type="Texture2D" uid="uid://bhmunktbhd8ey" path="res://65441385-07a1-45aa-92a6-6b68be386da9-5.png" id="9_66pp2"]
+[ext_resource type="Texture2D" uid="uid://bw1iyg8mo31hf" path="res://65441385-07a1-45aa-92a6-6b68be386da9-6.png" id="10_lyg3o"]
+[ext_resource type="Texture2D" uid="uid://duimouoebai28" path="res://assets/world_map_with_flags.png" id="11_bb0sd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c40qi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kpx8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bb0sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7oa06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0d5ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gpwut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_66pp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lyg3o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="GameOver" type="Node2D" unique_id=1923720527]
+z_index = 1000
+script = ExtResource("1_xverj")
+metadata/_edit_vertical_guides_ = [205.0]
+metadata/_edit_horizontal_guides_ = [81.0]
+
+[node name="Map" type="TextureRect" parent="." unique_id=271052714]
+offset_left = 58.0
+offset_top = 25.0
+offset_right = 249.0
+offset_bottom = 140.0
+texture = ExtResource("11_bb0sd")
+stretch_mode = 4
+
+[node name="China" type="Marker2D" parent="Map" unique_id=1829202135]
+position = Vector2(139, 52)
+
+[node name="India" type="Marker2D" parent="Map" unique_id=105623242]
+position = Vector2(127, 65)
+
+[node name="Egypt" type="Marker2D" parent="Map" unique_id=680315558]
+position = Vector2(103, 61)
+
+[node name="Australia" type="Marker2D" parent="Map" unique_id=1531284219]
+position = Vector2(156, 85)
+
+[node name="France" type="Marker2D" parent="Map" unique_id=467817448]
+position = Vector2(89, 49)
+
+[node name="Mexico" type="Marker2D" parent="Map" unique_id=162515322]
+position = Vector2(49, 64)
+
+[node name="Canada" type="Marker2D" parent="Map" unique_id=1562418041]
+position = Vector2(44, 39)
+
+[node name="Argentina" type="Marker2D" parent="Map" unique_id=446925384]
+position = Vector2(61, 87)
+
+[node name="Russia" type="Marker2D" parent="Map" unique_id=2123077132]
+position = Vector2(137, 35)
+
+[node name="Japan" type="Marker2D" parent="Map" unique_id=303617735]
+position = Vector2(158, 54)
+
+[node name="Danmark" type="Marker2D" parent="Map" unique_id=1292857882]
+position = Vector2(98, 35)
+
+[node name="SouthAfrica" type="Marker2D" parent="Map" unique_id=671397446]
+position = Vector2(103, 84)
+
+[node name="Siren" type="AudioStreamPlayer2D" parent="." unique_id=1335543733]
+stream = ExtResource("2_xverj")
+volume_db = -11.267
+
+[node name="BombExploding" type="AudioStreamPlayer2D" parent="." unique_id=1111862169]
+position = Vector2(208, 82.345)
+stream = ExtResource("3_kpx8l")
+
+[node name="Black" type="ColorRect" parent="." unique_id=619972789]
+offset_left = -40.0
+offset_top = -41.0
+offset_bottom = -1.0
+color = Color(0, 0, 0, 1)
+
+[node name="White" type="ColorRect" parent="." unique_id=1338428886]
+z_index = -6
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Nuke" type="AnimatedSprite2D" parent="." unique_id=741623969]
+position = Vector2(12, 10)
+scale = Vector2(0.095, 0.095)
+sprite_frames = SubResource("SpriteFrames_c40qi")
+frame_progress = 0.850241
